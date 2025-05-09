@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6789152902189210675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3241466ace959c04c942eaf2a3b964e2, type: 3}
+  m_Name: "\u7B49\u7EA73"
+  m_EditorClassIdentifier: 
+  turret: {fileID: 11400000}
+  Name: "\u7B49\u7EA73"
+  icon: {fileID: 21300000, guid: 9b824be62fd18b648bcf9e9c1468dff7, type: 3}
+  prefab: {fileID: 4991594140085072886, guid: 1335e2b8c782c53419185e48c2c4c44b, type: 3}
+  upgradeValue: 320
+  attack: 150
+  attackSpeed: 5
+  minAttackRange: 1.5
+  maxAttackRange: 5.5
+  skills:
+  - {fileID: 11400000, guid: 0817f5a6a0c884e43af551fe7dd3b8a6, type: 2}
+  - {fileID: 11400000, guid: e21604c4dc6cadf41ab9f06490830fc1, type: 2}
+--- !u!114 &-5744630793143774386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3241466ace959c04c942eaf2a3b964e2, type: 3}
+  m_Name: "\u7B49\u7EA74"
+  m_EditorClassIdentifier: 
+  turret: {fileID: 11400000}
+  Name: "\u7B49\u7EA74"
+  icon: {fileID: 21300000, guid: 873a8249cc8880d4fbad57e1b5c05d5a, type: 3}
+  prefab: {fileID: 7292381431691343457, guid: d94a6c55c6c65f547a205efc3215a99e, type: 3}
+  upgradeValue: 0
+  attack: 200
+  attackSpeed: 2.5
+  minAttackRange: 1.5
+  maxAttackRange: 5.5
+  skills:
+  - {fileID: 11400000, guid: 0817f5a6a0c884e43af551fe7dd3b8a6, type: 2}
+  - {fileID: 11400000, guid: de4bed4b8050e7549a56fef67b39f0e0, type: 2}
+--- !u!114 &-1751359703652511768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3241466ace959c04c942eaf2a3b964e2, type: 3}
+  m_Name: "\u7B49\u7EA71"
+  m_EditorClassIdentifier: 
+  turret: {fileID: 11400000}
+  Name: "\u7B49\u7EA71"
+  icon: {fileID: 21300000, guid: 557b948f2431a3c42bd8f83813b6a77e, type: 3}
+  prefab: {fileID: 3831279994018109765, guid: 9ffd9819bd8e3e04db79d0ab7a904847, type: 3}
+  upgradeValue: 80
+  attack: 50
+  attackSpeed: 5
+  minAttackRange: 1.5
+  maxAttackRange: 5.5
+  skills:
+  - {fileID: 11400000, guid: 0817f5a6a0c884e43af551fe7dd3b8a6, type: 2}
+  - {fileID: 11400000, guid: 6cfed2700d870cc4584c56aa1c579536, type: 2}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680cd698e9a6404448b8f09152dce7b3, type: 3}
+  m_Name: "\u8FEB\u51FB\u70AE(\u5BD2\u51B0)"
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 557b948f2431a3c42bd8f83813b6a77e, type: 3}
+  buildValue: 40
+  dataFile: {fileID: 4900000, guid: a0bce76ac0f968a4b9fac1eae3fa9002, type: 3}
+  grades:
+  - {fileID: -1751359703652511768}
+  - {fileID: 3920042404489459167}
+  - {fileID: -6789152902189210675}
+  - {fileID: -5744630793143774386}
+  Count: 0
+  skills: []
+--- !u!114 &3920042404489459167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3241466ace959c04c942eaf2a3b964e2, type: 3}
+  m_Name: "\u7B49\u7EA72"
+  m_EditorClassIdentifier: 
+  turret: {fileID: 11400000}
+  Name: "\u7B49\u7EA72"
+  icon: {fileID: 21300000, guid: 1408d275e8f54d94aaa594461c3f549c, type: 3}
+  prefab: {fileID: 7096802535597048194, guid: 2c5555bcf8c2f6e41b3655909e0cd421, type: 3}
+  upgradeValue: 120
+  attack: 100
+  attackSpeed: 5
+  minAttackRange: 1.5
+  maxAttackRange: 5.5
+  skills:
+  - {fileID: 11400000, guid: 0817f5a6a0c884e43af551fe7dd3b8a6, type: 2}
+  - {fileID: 11400000, guid: bbd1b57b7ce517b45a2ee88f31b628f1, type: 2}

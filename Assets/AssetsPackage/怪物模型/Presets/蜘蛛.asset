@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8464966891145369737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af652c48a57bb47a969787b0b9d76f, type: 3}
+  m_Name: "\u7B49\u7EA77"
+  m_EditorClassIdentifier: 
+  monster: {fileID: 11400000}
+  Name: "\u7B49\u7EA77"
+  cost: 2
+  hp: 350
+  ac: 0
+  es: 0
+  speed: 1
+--- !u!114 &-5317117466156156286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af652c48a57bb47a969787b0b9d76f, type: 3}
+  m_Name: "\u7B49\u7EA75"
+  m_EditorClassIdentifier: 
+  monster: {fileID: 11400000}
+  Name: "\u7B49\u7EA75"
+  cost: 2
+  hp: 250
+  ac: 0
+  es: 0
+  speed: 1
+--- !u!114 &-2931191949743031810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af652c48a57bb47a969787b0b9d76f, type: 3}
+  m_Name: "\u7B49\u7EA76"
+  m_EditorClassIdentifier: 
+  monster: {fileID: 11400000}
+  Name: "\u7B49\u7EA76"
+  cost: 2
+  hp: 300
+  ac: 0
+  es: 0
+  speed: 1
+--- !u!114 &-2432677189916765944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af652c48a57bb47a969787b0b9d76f, type: 3}
+  m_Name: "\u7B49\u7EA710"
+  m_EditorClassIdentifier: 
+  monster: {fileID: 11400000}
+  Name: "\u7B49\u7EA710"
+  cost: 2
+  hp: 500
+  ac: 0
+  es: 0
+  speed: 1
+--- !u!114 &-1099174436132397230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af652c48a57bb47a969787b0b9d76f, type: 3}
+  m_Name: "\u7B49\u7EA71"
+  m_EditorClassIdentifier: 
+  monster: {fileID: 11400000}
+  Name: "\u7B49\u7EA71"
+  cost: 2
+  hp: 50
+  ac: 0
+  es: 0
+  speed: 1
+--- !u!114 &-240160127686363424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af652c48a57bb47a969787b0b9d76f, type: 3}
+  m_Name: "\u7B49\u7EA78"
+  m_EditorClassIdentifier: 
+  monster: {fileID: 11400000}
+  Name: "\u7B49\u7EA78"
+  cost: 2
+  hp: 400
+  ac: 0
+  es: 0
+  speed: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6b9fcb494d1ee4f83ebb55201a33d0, type: 3}
+  m_Name: "\u8718\u86DB"
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  prefab: {fileID: 3558847064436998404, guid: 2f8b21d723ab9c44d9232c633c61b4ba, type: 3}
+  dataFile: {fileID: 4900000, guid: 0189db03a9fd5dd40b16929b1c8d00e1, type: 3}
+  grades:
+  - {fileID: -1099174436132397230}
+  - {fileID: 4006533124808483422}
+  - {fileID: 457337176242256267}
+  - {fileID: 8900093514349151328}
+  - {fileID: -5317117466156156286}
+  - {fileID: -2931191949743031810}
+  - {fileID: -8464966891145369737}
+  - {fileID: -240160127686363424}
+  - {fileID: 2401283349588221719}
+  - {fileID: -2432677189916765944}
+--- !u!114 &457337176242256267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af652c48a57bb47a969787b0b9d76f, type: 3}
+  m_Name: "\u7B49\u7EA73"
+  m_EditorClassIdentifier: 
+  monster: {fileID: 11400000}
+  Name: "\u7B49\u7EA73"
+  cost: 2
+  hp: 150
+  ac: 0
+  es: 0
+  speed: 1
+--- !u!114 &2401283349588221719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af652c48a57bb47a969787b0b9d76f, type: 3}
+  m_Name: "\u7B49\u7EA79"
+  m_EditorClassIdentifier: 
+  monster: {fileID: 11400000}
+  Name: "\u7B49\u7EA79"
+  cost: 2
+  hp: 450
+  ac: 0
+  es: 0
+  speed: 1
+--- !u!114 &4006533124808483422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af652c48a57bb47a969787b0b9d76f, type: 3}
+  m_Name: "\u7B49\u7EA72"
+  m_EditorClassIdentifier: 
+  monster: {fileID: 11400000}
+  Name: "\u7B49\u7EA72"
+  cost: 2
+  hp: 100
+  ac: 0
+  es: 0
+  speed: 1
+--- !u!114 &8900093514349151328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87af652c48a57bb47a969787b0b9d76f, type: 3}
+  m_Name: "\u7B49\u7EA74"
+  m_EditorClassIdentifier: 
+  monster: {fileID: 11400000}
+  Name: "\u7B49\u7EA74"
+  cost: 2
+  hp: 200
+  ac: 0
+  es: 0
+  speed: 1

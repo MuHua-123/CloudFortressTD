@@ -1,0 +1,14 @@
+.document-page {
+    opacity: 1;
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.document-page-hide {
+    opacity: 0;
+    display: none;
+}

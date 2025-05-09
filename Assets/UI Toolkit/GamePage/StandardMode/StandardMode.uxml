@@ -1,0 +1,59 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="InspectorTurret" src="project://database/Assets/UI%20Toolkit/StandardMode/InspectorTurret/InspectorTurret.uxml?fileID=9197481963319205126&amp;guid=7d6560b9ba4bca94593ebdcb7906c994&amp;type=3#InspectorTurret" />
+    <ui:Template name="TurretTemplate" src="project://database/Assets/UI%20Toolkit/StandardMode/TurretTemplate/TurretTemplate.uxml?fileID=9197481963319205126&amp;guid=cc5d507d589a2e24fb7a0ac7ebed5e46&amp;type=3#TurretTemplate" />
+    <ui:Template name="DrawCards" src="project://database/Assets/UI%20Toolkit/DrawCards/DrawCards.uxml?fileID=9197481963319205126&amp;guid=3284ef103aefaec4e8cca0121c4953fa&amp;type=3#DrawCards" />
+    <ui:Template name="ReplaceTurret" src="project://database/Assets/UI%20Toolkit/ReplaceTurret/ReplaceTurret.uxml?fileID=9197481963319205126&amp;guid=1d8b2885d0e537f4c92c123edbbb6bc1&amp;type=3#ReplaceTurret" />
+    <ui:Template name="PauseWindow" src="project://database/Assets/UI%20Toolkit/PauseMenu/PauseMenu.uxml?fileID=9197481963319205126&amp;guid=f28a182a9f51ff04191ee45dd1f58c2f&amp;type=3#PauseMenu" />
+    <Style src="project://database/Assets/UI%20Toolkit/StandardMode/StandardMode.uss?fileID=7433441132597879392&amp;guid=769bababe2cc3ea40bb668bf75be70d6&amp;type=3#StandardMode" />
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: column; flex-shrink: 1; align-items: center;">
+        <ui:VisualElement name="Top1" style="align-items: center; justify-content: space-around; position: absolute; top: 30px; width: 100%; height: auto; display: flex;">
+            <ui:Label tabindex="-1" text="波次 1/50" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="true" name="Waves" style="margin-top: 0; margin-right: 0; margin-bottom: 6px; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 36px; -unity-text-align: middle-center; color: rgb(255, 255, 255); letter-spacing: 20px; -unity-font-style: bold; -unity-text-outline-width: 1px; -unity-text-outline-color: rgb(0, 0, 0); -unity-font-definition: url(&quot;project://database/Assets/FontLibrary/UIToolkit/SourceHanSansCN-Medium%20SDF.asset?fileID=11400000&amp;guid=500f473f880266d43aaf04a728879085&amp;type=2#SourceHanSansCN-Medium SDF&quot;); height: 58px;" />
+            <ui:Label tabindex="-1" text="00 : 00" parse-escape-sequences="true" display-tooltip-when-elided="true" style="position: absolute; bottom: -25px; color: rgb(255, 255, 255); font-size: 24px; -unity-font-style: bold;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Top2" style="flex-grow: 1; position: absolute; width: 100%; height: auto; flex-direction: row; display: flex; left: 30px; top: 30px;">
+            <ui:VisualElement class="sm-value">
+                <ui:VisualElement class="sm-value-icon">
+                    <ui:VisualElement style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E7%94%9F%E5%91%BD.png?fileID=2800000&amp;guid=1544e6b44229983428472219a7ae59a3&amp;type=3#生命&quot;); width: 64px; height: 52px;" />
+                </ui:VisualElement>
+                <ui:Label tabindex="-1" text="999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label1" class="sm-value-label" />
+            </ui:VisualElement>
+            <ui:VisualElement class="sm-value">
+                <ui:VisualElement class="sm-value-icon">
+                    <ui:VisualElement style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/icon_itemicon_jewel1_purple.png?fileID=2800000&amp;guid=60fbf9f84d96eb64eb06a61a0e29af1c&amp;type=3#icon_itemicon_jewel1_purple&quot;); width: 60px; height: 71px;" />
+                </ui:VisualElement>
+                <ui:Label tabindex="-1" text="999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label2" class="sm-value-label" style="color: rgb(255, 102, 243);" />
+            </ui:VisualElement>
+            <ui:VisualElement class="sm-value">
+                <ui:VisualElement class="sm-value-icon">
+                    <ui:VisualElement style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E9%87%91%E5%B8%81.png?fileID=2800000&amp;guid=81f52da0d11a8ef4aaafaa42ea8b0183&amp;type=3#金币&quot;); width: 60px; height: 60px;" />
+                </ui:VisualElement>
+                <ui:Label tabindex="-1" text="99999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label3" class="sm-value-label" style="color: rgb(255, 188, 18);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Top3" style="flex-grow: 1; position: absolute; width: 100%; height: auto; flex-direction: row-reverse; right: 30px; top: 30px;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button1" class="sm-button">
+                <ui:VisualElement picking-mode="Ignore" name="VisualElement" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E6%92%AD%E6%94%BE/%E8%AE%BE%E7%BD%AE.png?fileID=2800000&amp;guid=ed0223a85af1f7f419e64839727d54a8&amp;type=3#设置&quot;); width: 100px; height: 100px; flex-shrink: 0;" />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button2" class="sm-button">
+                <ui:VisualElement picking-mode="Ignore" name="VisualElement" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E6%92%AD%E6%94%BE/%E5%BF%AB%E8%BF%9B.png?fileID=2800000&amp;guid=46f910f60b4732e48b5ddd309786a927&amp;type=3#快进&quot;); width: 100px; height: 100px; flex-shrink: 0;" />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button3" class="sm-button">
+                <ui:VisualElement picking-mode="Ignore" name="VisualElement" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E6%92%AD%E6%94%BE/%E5%BC%80%E5%A7%8B.png?fileID=2800000&amp;guid=d162d009abdd9174a9bfdedd0b16a9b6&amp;type=3#开始&quot;); width: 100px; height: 100px; flex-shrink: 0;" />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button4" class="sm-button">
+                <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="sm-button-s" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E6%92%AD%E6%94%BE/%E6%9A%82%E5%81%9C.png?fileID=2800000&amp;guid=0bd6aa474dffbc8498b1dcd1542846aa&amp;type=3#暂停&quot;); width: 100px; height: 100px; flex-shrink: 0;" />
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement style="position: absolute; right: 30px; bottom: 30px;">
+            <ui:Instance template="InspectorTurret" name="InspectorTurret" class="sm-inspector" />
+        </ui:VisualElement>
+        <ui:VisualElement name="TurretList" style="width: auto; height: 200px; align-items: flex-end; justify-content: center; flex-direction: row; align-self: auto; position: absolute; bottom: 25px; left: 25px;">
+            <ui:Instance template="TurretTemplate" name="TurretTemplate" />
+            <ui:Instance template="TurretTemplate" name="TurretTemplate" />
+            <ui:Instance template="TurretTemplate" name="TurretTemplate" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Instance template="DrawCards" name="DrawCards" picking-mode="Ignore" style="position: absolute; right: 0; bottom: 0; top: 0; left: 0;" />
+    <ui:Instance template="ReplaceTurret" name="ReplaceTurret" picking-mode="Ignore" style="position: absolute; left: 0; top: 0; bottom: 0; right: 0;" />
+    <ui:Instance template="PauseWindow" name="PauseMenu" picking-mode="Ignore" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;" />
+</ui:UXML>

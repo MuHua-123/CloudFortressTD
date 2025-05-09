@@ -1,0 +1,4 @@
+.unity-text-element {
+    -unity-font-definition: url("project://database/Assets/MuHua/UITool/FontLibrary/Fonts/ZhanKuKuaiLeTi2016XiuDingBan-1%20SDF.asset?fileID=11400000&guid=bfff56d8c0e9dbc47a280352ff36f125&type=2#ZhanKuKuaiLeTi2016XiuDingBan-1 SDF");
+    text-shadow: 2px 2px 0 rgb(0, 0, 0);
+}

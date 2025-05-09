@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/GamePage/GamePage.uss?fileID=7433441132597879392&amp;guid=b50610cb5b8fd9e45a739191112bfebe&amp;type=3#GamePage" />
+    <ui:VisualElement name="Background" style="width: 550px; height: 100%; align-self: center; background-color: rgba(0, 0, 0, 0.7);">
+        <ui:VisualElement name="Logo" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Logo/Logo@1x.png?fileID=21300000&amp;guid=7525c45e8d8b3ba4cb8d4037eee6731f&amp;type=3#Logo@1x&quot;); width: 550px; height: 300px;" />
+        <ui:VisualElement name="Menu" style="flex-grow: 0; top: 100px; flex-shrink: 0;">
+            <ui:Button text="开始游戏" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button1" class="menu-button" />
+            <ui:Button text="卡牌科技" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button2" class="menu-button" style="display: none;" />
+            <ui:Button text="游戏设置" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button3" class="menu-button" />
+            <ui:Button text="退出游戏" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button4" class="menu-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

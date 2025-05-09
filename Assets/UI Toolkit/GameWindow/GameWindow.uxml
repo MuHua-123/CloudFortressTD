@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/GameWindow/GameWindow.uss?fileID=7433441132597879392&amp;guid=71fd1505cc1aa1e4297e4f4534cc0124&amp;type=3#GameWindow" />
+    <ui:VisualElement name="Window" class="window">
+        <ui:VisualElement name="Top" class="window-top">
+            <ui:Label text="窗口标题" name="Title" class="window-title" />
+            <ui:VisualElement name="Close" class="window-close-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Container" class="window-container" />
+    </ui:VisualElement>
+</ui:UXML>

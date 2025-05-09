@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6998667266484119669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3241466ace959c04c942eaf2a3b964e2, type: 3}
+  m_Name: "\u7B49\u7EA74"
+  m_EditorClassIdentifier: 
+  turret: {fileID: 11400000}
+  Name: "\u7B49\u7EA74"
+  icon: {fileID: 21300000, guid: 5afa578ff62f4c449a88ff6c42d9d1cc, type: 3}
+  prefab: {fileID: 5511864399272128953, guid: 606fd437083572b469be58c264393796, type: 3}
+  upgradeValue: 0
+  attack: 200
+  attackSpeed: 5
+  minAttackRange: 1.5
+  maxAttackRange: 3.5
+  skills:
+  - {fileID: 11400000, guid: 86b1b16fde9059a48b4ae461e3b7d4ad, type: 2}
+  - {fileID: 11400000, guid: de4bed4b8050e7549a56fef67b39f0e0, type: 2}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680cd698e9a6404448b8f09152dce7b3, type: 3}
+  m_Name: "\u6295\u5F39\u5668(\u5BD2\u51B0)"
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: c7c71f82e3e550048a576d3ed8738e06, type: 3}
+  buildValue: 40
+  dataFile: {fileID: 4900000, guid: 764a0cbdcb6bff640b6877778e543a24, type: 3}
+  grades:
+  - {fileID: 1521191084269721246}
+  - {fileID: 5876362419508745036}
+  - {fileID: 211068854094829267}
+  - {fileID: -6998667266484119669}
+  Count: 1
+  skills: []
+--- !u!114 &211068854094829267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3241466ace959c04c942eaf2a3b964e2, type: 3}
+  m_Name: "\u7B49\u7EA73"
+  m_EditorClassIdentifier: 
+  turret: {fileID: 11400000}
+  Name: "\u7B49\u7EA73"
+  icon: {fileID: 21300000, guid: 0f46210fcc02a2343b29778ee4dcb8fe, type: 3}
+  prefab: {fileID: 8798452200636909381, guid: 2e1942bdb917c9c4da7b5d7703e85315, type: 3}
+  upgradeValue: 320
+  attack: 150
+  attackSpeed: 5
+  minAttackRange: 1.5
+  maxAttackRange: 3.5
+  skills:
+  - {fileID: 11400000, guid: 86b1b16fde9059a48b4ae461e3b7d4ad, type: 2}
+  - {fileID: 11400000, guid: e21604c4dc6cadf41ab9f06490830fc1, type: 2}
+--- !u!114 &1521191084269721246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3241466ace959c04c942eaf2a3b964e2, type: 3}
+  m_Name: "\u7B49\u7EA71"
+  m_EditorClassIdentifier: 
+  turret: {fileID: 11400000}
+  Name: "\u7B49\u7EA71"
+  icon: {fileID: 21300000, guid: c7c71f82e3e550048a576d3ed8738e06, type: 3}
+  prefab: {fileID: 1947875257018151801, guid: f59d93919ef1a244faef03adca16e288, type: 3}
+  upgradeValue: 80
+  attack: 50
+  attackSpeed: 5
+  minAttackRange: 1.5
+  maxAttackRange: 3.5
+  skills:
+  - {fileID: 11400000, guid: 86b1b16fde9059a48b4ae461e3b7d4ad, type: 2}
+  - {fileID: 11400000, guid: 6cfed2700d870cc4584c56aa1c579536, type: 2}
+--- !u!114 &5876362419508745036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3241466ace959c04c942eaf2a3b964e2, type: 3}
+  m_Name: "\u7B49\u7EA72"
+  m_EditorClassIdentifier: 
+  turret: {fileID: 11400000}
+  Name: "\u7B49\u7EA72"
+  icon: {fileID: 21300000, guid: 1cf2865a7681da148b2eed6a1793de90, type: 3}
+  prefab: {fileID: 1045092082533060433, guid: 668b4d3db8cbbf44698d08194c1359df, type: 3}
+  upgradeValue: 120
+  attack: 100
+  attackSpeed: 5
+  minAttackRange: 1.5
+  maxAttackRange: 3.5
+  skills:
+  - {fileID: 11400000, guid: 86b1b16fde9059a48b4ae461e3b7d4ad, type: 2}
+  - {fileID: 11400000, guid: bbd1b57b7ce517b45a2ee88f31b628f1, type: 2}
