@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisualBullet : ModuleFixed, ModuleVisual<DataBullet> {
+public class VisualBullet : ModuleFixed, ModuleVisualOld<DataBullet> {
 
     public void Awake() => ModuleCore.VisualBullet = this;
 

@@ -10,9 +10,9 @@ public class AssetsMonster : ModuleAssets<DataMonster> {
     public override event Action OnChange;
 
     /// <summary> 怪物 可视化内容生成模块 </summary>
-    public ModuleVisual<DataMonster> VisualMonster => ModuleCore.VisualMonster;
+    public ModuleVisualOld<DataMonster> VisualMonster => ModuleCore.VisualMonster;
     /// <summary> 生命值 可视化内容生成模块 </summary>
-    public ModuleVisual<DataMonster> VisualHitPoints => ModuleCore.VisualHitPoints;
+    public ModuleVisualOld<DataMonster> VisualHitPoints => ModuleCore.VisualHitPoints;
 
     public override void Add(DataMonster monster) {
         if (Datas.Contains(monster)) { return; }

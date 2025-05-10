@@ -69,15 +69,15 @@ public class ModuleCore : Module<ModuleCore> {
 
     #region 可视模块
     /// <summary> 炮塔 可视化内容生成模块 </summary>
-    public ModuleVisual<DataTurret> VisualTurret;
+    public ModuleVisualOld<DataTurret> VisualTurret;
     /// <summary> 炮弹 DataBullet 可视化内容生成模块 </summary>
-    public ModuleVisual<DataBullet> VisualBullet;
+    public ModuleVisualOld<DataBullet> VisualBullet;
     /// <summary> 怪物 可视化内容生成模块 </summary>
-    public ModuleVisual<DataMonster> VisualMonster;
+    public ModuleVisualOld<DataMonster> VisualMonster;
     /// <summary> 怪物生产 可视化内容生成模块 </summary>
-    public ModuleVisual<FixedMonsterSpawn> VisualMonsterSpawn;
+    public ModuleVisualOld<FixedMonsterSpawn> VisualMonsterSpawn;
     /// <summary> 生命值 可视化内容生成模块 </summary>
-    public ModuleVisual<DataMonster> VisualHitPoints;
+    public ModuleVisualOld<DataMonster> VisualHitPoints;
     #endregion
 }
 /// <summary>

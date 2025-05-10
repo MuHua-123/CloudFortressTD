@@ -4,12 +4,8 @@ using UnityEngine;
 using MuHua;
 
 /// <summary>
-/// 可视化模块
+/// 音频模块
 /// </summary>
-public class ModuleVisual : ModuleSingle<ModuleVisual> {
-
-	// public VisualController<KinesisController> KinesisController;
-
+public class ModuleAudio : ModuleSingle<ModuleAudio> {
 	protected override void Awake() => NoReplace();
-
 }

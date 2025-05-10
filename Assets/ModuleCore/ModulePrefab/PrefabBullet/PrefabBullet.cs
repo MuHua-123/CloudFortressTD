@@ -20,7 +20,7 @@ public abstract class PrefabBullet : ModulePrefab<DataBullet> {
     /// <summary> 临时道具 执行模块 </summary>
     public ModuleExecute<DataTemporaryProps> ExecuteTemporaryProps => ModuleCore.ExecuteTemporaryProps;
     /// <summary> 炮弹 DataBullet 可视化内容生成模块 </summary>
-    public ModuleVisual<DataBullet> VisualBullet => ModuleCore.VisualBullet;
+    public ModuleVisualOld<DataBullet> VisualBullet => ModuleCore.VisualBullet;
 
     public virtual void Update() {
         if (Target != null) { TrackTarget(); }

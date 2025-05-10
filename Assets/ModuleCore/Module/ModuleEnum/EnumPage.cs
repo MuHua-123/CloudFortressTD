@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 页面类型
 /// </summary>
-public enum DataPage {
+public enum EnumPage {
 	None,
 	Menu,// 主菜单
 	Scene,// 场景选择

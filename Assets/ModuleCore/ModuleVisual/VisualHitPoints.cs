@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisualHitPoints : ModuleFixed, ModuleVisual<DataMonster> {
+public class VisualHitPoints : ModuleFixed, ModuleVisualOld<DataMonster> {
     public Transform parent;
     public Transform hitPoints;
 

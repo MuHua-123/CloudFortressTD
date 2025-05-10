@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 怪物生产倒计时
 /// </summary>
-public class VisualMonsterSpawn : ModuleFixed, ModuleVisual<FixedMonsterSpawn> {
+public class VisualMonsterSpawn : ModuleFixed, ModuleVisualOld<FixedMonsterSpawn> {
     public Transform parent;
     public Transform spawnCountdown;
 

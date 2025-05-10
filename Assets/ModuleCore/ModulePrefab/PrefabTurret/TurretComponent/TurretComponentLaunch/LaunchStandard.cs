@@ -9,7 +9,7 @@ public class LaunchStandard : TurretComponentLaunch {
     public Animator animator => GetComponent<Animator>();
 
     /// <summary> 炮弹 DataBullet 可视化内容生成模块 </summary>
-    public ModuleVisual<DataBullet> VisualBullet => ModuleCore.VisualBullet;
+    public ModuleVisualOld<DataBullet> VisualBullet => ModuleCore.VisualBullet;
 
     protected override void Launcher() {
         animator.SetTrigger("Fire");

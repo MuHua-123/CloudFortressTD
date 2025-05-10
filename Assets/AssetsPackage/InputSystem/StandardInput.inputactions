@@ -1,6 +1,54 @@
 {
-    "name": "Input",
+    "name": "StandardInput",
     "maps": [
+        {
+            "name": "InputBasic",
+            "id": "574020d8-e5f4-4943-8878-10a7416938c6",
+            "actions": [
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "7e84cfca-63dc-42bb-a7bd-2825159f1864",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SelectTarget",
+                    "type": "Button",
+                    "id": "72c677d9-0862-4b1c-901f-5b0ab3423d86",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "350c99d3-056f-4e31-aff8-25368e561309",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8abef99d-edcd-46a0-92a3-2c9f0f808efb",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectTarget",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
         {
             "name": "InputCamera",
             "id": "4213d4a4-4a60-4169-960f-920664dd4f0a",

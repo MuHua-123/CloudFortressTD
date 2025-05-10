@@ -7,7 +7,8 @@ using MuHua;
 /// <summary>
 /// 游戏设置页面
 /// </summary>
-public class UISettingsPage : ModuleUIPage {
+public class UISettingsPage : ModuleUIPage
+{
 	public override VisualElement Element => root.Q<VisualElement>("SettingsPage");
 
 	public VisualElement Bottom => Q<VisualElement>("Bottom");
@@ -15,15 +16,17 @@ public class UISettingsPage : ModuleUIPage {
 	public Button Button2 => Bottom.Q<Button>("Button2");// ???
 	public Button Button3 => Bottom.Q<Button>("Button3");// ???
 
-	private void Awake() {
-		Button1.clicked += () => ModuleUI.Jump(DataPage.Menu);
+	private void Awake()
+	{
+		Button1.clicked += () => ModuleUI.Jump(EnumPage.Menu);
 		// Button2.clicked += () => { };
 		// Button3.clicked += () => { };
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
 	}
 
-	private void ModuleUI_OnJumpPage(DataPage page) {
-		Element.EnableInClassList("document-page-hide", page != DataPage.Settings);
+	private void ModuleUI_OnJumpPage(EnumPage page)
+	{
+		Element.EnableInClassList("document-page-hide", page != EnumPage.Settings);
 	}
 }

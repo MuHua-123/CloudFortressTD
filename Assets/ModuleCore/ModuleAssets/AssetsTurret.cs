@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AssetsTurret : ModuleAssets<DataTurret> {
     /// <summary> 炮塔 可视化内容生成模块 </summary>
-    public ModuleVisual<DataTurret> VisualTurret => ModuleCore.VisualTurret;
+    public ModuleVisualOld<DataTurret> VisualTurret => ModuleCore.VisualTurret;
 
     public override void Add(DataTurret turret) {
         base.Add(turret);

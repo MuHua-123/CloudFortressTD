@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisualMonster : ModuleFixed, ModuleVisual<DataMonster> {
+public class VisualMonster : ModuleFixed, ModuleVisualOld<DataMonster> {
 
     public void Awake() => ModuleCore.VisualMonster = this;
 

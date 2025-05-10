@@ -8,27 +8,33 @@ using MuHua;
 /// </summary>
 public class SingleManager : ModuleSingle<SingleManager> {
 
-	public static DataSceneConfig sceneConfig;// 场景配置
+	/// <summary> 运行模式 </summary>
+	public static EnumRunningMode runningMode;
 
-	protected override void Awake() => NoReplace();
-
-	/// <summary> 设置场景数据 </summary>
-	public static void SetSceneConfig(DataSceneConfig sceneConfig) {
-		SingleManager.sceneConfig = sceneConfig;
+	/// <summary> 设置运行模式 </summary>
+	public static void SetRunningMode(EnumRunningMode runningMode) {
+		SingleManager.runningMode = runningMode;
 	}
 
-	/// <summary> 开始游戏 </summary>
-	public void StartGame() {
-		StartCoroutine(IStartGame());
+	protected override void Awake() {
+		NoReplace();
+		ManagerScene.OnComplete += ManagerScene_OnComplete;
 	}
-	/// <summary> 开始游戏 </summary>
-	public IEnumerator IStartGame() {
-		// 加载场景
-		yield return sceneConfig.ILoadScene(null);
-		//  启动设置
-		// SinglePlayer.I.CreateCharacter();
-		ModuleUI.Jump(DataPage.None);
-		// ModuleInput.I.EnablePreview();
-		// ModuleCamera.I.EnableThirdPerson();
+	private void Start() {
+		ModuleUI.Jump(EnumPage.Menu);
+		ModuleInput.Mode(EnumInputMode.None);
+		ModuleCamera.Mode(EnumCameraMode.None);
+		// SceneManager.LoadScene("MenuScene");
+	}
+
+	private void ManagerScene_OnComplete() {
+		if (runningMode == EnumRunningMode.None) {
+
+		}
+		if (runningMode == EnumRunningMode.Standard) {
+			// ModuleUI.Jump(EnumPage.Preview);
+			// ModuleInput.Mode(EnumInputMode.ThirdPerson);
+			// ModuleCamera.Mode(EnumCameraMode.ThirdPerson);
+		}
 	}
 }

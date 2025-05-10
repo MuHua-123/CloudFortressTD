@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisualTurret : ModuleFixed, ModuleVisual<DataTurret> {
+public class VisualTurret : ModuleFixed, ModuleVisualOld<DataTurret> {
     /// <summary> 格子地图  </summary>
     public DataGridMap GridMap => HandleGridMap.Current;
 
@@ -18,7 +18,7 @@ public class VisualTurret : ModuleFixed, ModuleVisual<DataTurret> {
         bool isInitBuild = turret.visual == null;
         ModuleVisualTool.Create(ref turret.visual, turret.Prefab, transform);
         turret.visual.UpdateVisual(turret);
-        
+
         if (!isInitBuild) { return; }
         //设置位置
         turret.visual.transform.position = GridMap.GetWorldPosition(turret.X, turret.Y);

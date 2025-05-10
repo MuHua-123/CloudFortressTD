@@ -8,9 +8,10 @@ using MuHua;
 /// <summary>
 /// UI模块
 /// </summary>
-public class ModuleUI : ModuleSingle<ModuleUI> {
-	public static DataPage page;
-	public static event Action<DataPage> OnJumpPage;
+public class ModuleUI : ModuleSingle<ModuleUI>
+{
+	public static EnumPage page;
+	public static event Action<EnumPage> OnJumpPage;
 
 	public UIDocument document;// 绑定文档
 
@@ -20,5 +21,5 @@ public class ModuleUI : ModuleSingle<ModuleUI> {
 	protected override void Awake() => NoReplace();
 
 	/// <summary> 跳转页面 </summary>
-	public static void Jump(DataPage pageType) => OnJumpPage?.Invoke(pageType);
+	public static void Jump(EnumPage pageType) => OnJumpPage?.Invoke(pageType);
 }

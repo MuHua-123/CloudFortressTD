@@ -35,7 +35,7 @@ public class FixedMonsterSpawn : ModuleFixed {
     /// <summary> 格子地图 DataGridMap 数据处理器 </summary>
     public ModuleHandle<DataGridMap> HandleGridMap => ModuleCore.HandleGridMap;
     /// <summary> 怪物生产 可视化内容生成模块 </summary>
-    public ModuleVisual<FixedMonsterSpawn> VisualMonsterSpawn => ModuleCore.VisualMonsterSpawn;
+    public ModuleVisualOld<FixedMonsterSpawn> VisualMonsterSpawn => ModuleCore.VisualMonsterSpawn;
     /// <summary> 路径查询 执行模块 </summary>
     public ModuleExecute<DataGridMapPathFind> ExecutePathFind => ModuleCore.ExecutePathFind;
 

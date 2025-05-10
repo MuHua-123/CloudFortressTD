@@ -25,7 +25,7 @@ public class FixedTurretPanel : ModuleFixed {
 	/// <summary> 炮塔 DataTurret 数据处理器 </summary>
 	public ModuleHandle<DataTurret> HandleTurret => ModuleCore.HandleTurret;
 	/// <summary> 炮塔 可视化内容生成模块 </summary>
-	public ModuleVisual<DataTurret> VisualTurret => ModuleCore.VisualTurret;
+	public ModuleVisualOld<DataTurret> VisualTurret => ModuleCore.VisualTurret;
 	/// <summary> 连接墙 执行模块 </summary>
 	public ModuleExecute<DataGridMapUnit> ExecuteConnectWall => ModuleCore.ExecuteConnectWall;
 
