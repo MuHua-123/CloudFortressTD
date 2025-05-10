@@ -11,16 +11,22 @@ using MuHua;
 /// </summary>
 public class ManagerScene : ModuleSingle<ManagerScene> {
 
+	/// <summary> 场景是否有效 </summary>
+	public static bool isValid => I != null && I.sceneConfig != null && I.sceneConfig.scene != null;
 	/// <summary> 场景加载完成 </summary>
 	public static event Action OnComplete;
 
+	/// <summary> 设置场景 </summary>
+	public static void SetSceneConfig(DataSceneConfig sceneConfig) => I.sceneConfig = sceneConfig;
 	/// <summary> 加载场景 </summary>
-	public static void LoadScene(DataSceneConfig sceneConfig, Action<float> progress) => I.StartCoroutine(I.ILoadScene(sceneConfig, progress));
+	public static void LoadScene(Action<float> progress) => I.StartCoroutine(I.ILoadScene(progress));
+
+	private DataSceneConfig sceneConfig;// 场景配置
 
 	protected override void Awake() => NoReplace(false);
 
 	/// <summary> 加载场景 </summary>
-	public IEnumerator ILoadScene(DataSceneConfig sceneConfig, Action<float> progress) {
+	private IEnumerator ILoadScene(Action<float> progress) {
 		// 检查场景数据
 		if (sceneConfig == null || sceneConfig.scene == null) { Debug.LogError("无效场景!"); yield break; }
 		// 创建加载句柄
@@ -31,7 +37,7 @@ public class ManagerScene : ModuleSingle<ManagerScene> {
 		OnComplete?.Invoke();
 	}
 	/// <summary> 处理进度 </summary>
-	public IEnumerator IHandleProgress(AsyncOperationHandle<SceneInstance> handle, Action<float> progress) {
+	private IEnumerator IHandleProgress(AsyncOperationHandle<SceneInstance> handle, Action<float> progress) {
 		float downloadProgress = handle.GetDownloadStatus().Percent;
 		float loadProgress = handle.PercentComplete;
 		float totalProgress = (downloadProgress + loadProgress) / 2.0f;

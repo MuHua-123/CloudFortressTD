@@ -8,8 +8,7 @@ using MuHua;
 /// <summary>
 /// 菜单页面
 /// </summary>
-public class UIMenuPage : ModuleUIPage
-{
+public class UIMenuPage : ModuleUIPage {
 	public override VisualElement Element => root.Q<VisualElement>("MenuPage");
 
 	public VisualElement Background => Q<VisualElement>("Background");
@@ -19,8 +18,7 @@ public class UIMenuPage : ModuleUIPage
 	public Button Button3 => Menu.Q<Button>("Button3");// 游戏设置
 	public Button Button4 => Menu.Q<Button>("Button4");// 退出游戏
 
-	private void Awake()
-	{
+	private void Awake() {
 		Button1.clicked += () => ModuleUI.Jump(EnumPage.Scene);
 		Button2.clicked += () => { };
 		Button3.clicked += () => ModuleUI.Jump(EnumPage.Settings);
@@ -29,8 +27,7 @@ public class UIMenuPage : ModuleUIPage
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
 	}
 
-	private void ModuleUI_OnJumpPage(EnumPage page)
-	{
+	private void ModuleUI_OnJumpPage(EnumPage page) {
 		Element.EnableInClassList("document-page-hide", page != EnumPage.Menu);
 	}
 }

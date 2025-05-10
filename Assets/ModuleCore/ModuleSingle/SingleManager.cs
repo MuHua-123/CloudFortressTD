@@ -29,10 +29,12 @@ public class SingleManager : ModuleSingle<SingleManager> {
 
 	private void ManagerScene_OnComplete() {
 		if (runningMode == EnumRunningMode.None) {
-
+			ModuleUI.Jump(EnumPage.Menu);
+			ModuleInput.Mode(EnumInputMode.None);
+			ModuleCamera.Mode(EnumCameraMode.None);
 		}
 		if (runningMode == EnumRunningMode.Standard) {
-			// ModuleUI.Jump(EnumPage.Preview);
+			ModuleUI.Jump(EnumPage.Battle);
 			// ModuleInput.Mode(EnumInputMode.ThirdPerson);
 			// ModuleCamera.Mode(EnumCameraMode.ThirdPerson);
 		}
