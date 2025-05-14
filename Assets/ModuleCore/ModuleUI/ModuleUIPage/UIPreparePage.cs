@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 using MuHua;
 
 /// <summary>
-/// 游戏准备页面
+/// 游戏准备 - 页面
 /// </summary>
 public class UIPreparePage : ModuleUIPage {
 
@@ -15,8 +15,6 @@ public class UIPreparePage : ModuleUIPage {
 	public VisualTreeAsset TurretCardTemplate;
 
 	public UIScrollList<UITurretItem, ModuleTurret> turretPresets;
-
-	private List<ModuleTurret> turrets = new List<ModuleTurret>();// 炮塔列表
 
 	public override VisualElement Element => root.Q<VisualElement>("PreparePage");
 
@@ -35,14 +33,13 @@ public class UIPreparePage : ModuleUIPage {
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
 		AssetsTurretConfig.OnChange += AssetsTurretConfig_OnChange;
 	}
-
 	private void OnDestroy() => turretPresets.Release();
 	private void Update() => turretPresets.Update();
 
 	private void ModuleUI_OnJumpPage(EnumPage page) {
 		Element.EnableInClassList("document-page-hide", page != EnumPage.Prepare);
 		if (page != EnumPage.Prepare) { return; }
-		turrets.Clear();
+		ManagerTurret.I.turretList.Clear();
 		AssetsSceneConfig.I.UpdateConfig();
 	}
 	private void AssetsTurretConfig_OnChange() {
@@ -52,8 +49,14 @@ public class UIPreparePage : ModuleUIPage {
 	/// <summary> 选中炮塔 </summary>
 	public void SetModuleTurret(ModuleTurret turret) {
 		bool isSelected = false;
-		if (turrets.Contains(turret)) { turrets.Remove(turret); isSelected = false; }
-		else if (turrets.Count < 6) { turrets.Add(turret); isSelected = true; }
+		if (ManagerTurret.I.turretList.Contains(turret)) {
+			ManagerTurret.I.turretList.Remove(turret);
+			isSelected = false;
+		}
+		else if (ManagerTurret.I.turretList.Count < 6) {
+			ManagerTurret.I.turretList.Add(turret);
+			isSelected = true;
+		}
 		else { return; }
 
 		OnTurretSelect?.Invoke(turret, isSelected);

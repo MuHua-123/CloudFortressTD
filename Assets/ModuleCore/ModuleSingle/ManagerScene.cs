@@ -7,7 +7,7 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 using MuHua;
 
 /// <summary>
-/// 场景管理器
+/// 场景 - 管理器
 /// </summary>
 public class ManagerScene : ModuleSingle<ManagerScene> {
 
