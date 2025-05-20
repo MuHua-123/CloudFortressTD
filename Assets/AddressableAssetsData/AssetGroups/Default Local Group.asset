@@ -16,13 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: e68d23efca706b34084ded8bf780cc4c
-  m_SerializeEntries:
-  - m_GUID: db4828f4693d6194d8dbfa24f4dfc253
-    m_Address: Assets/AssetsPackage/ScriptableObject/SceneConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: b3c7c052f4ccde94697aa1fdc4c7dc7c, type: 2}
   m_SchemaSet:

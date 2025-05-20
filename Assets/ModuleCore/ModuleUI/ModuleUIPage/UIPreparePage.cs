@@ -40,7 +40,7 @@ public class UIPreparePage : ModuleUIPage {
 		Element.EnableInClassList("document-page-hide", page != EnumPage.Prepare);
 		if (page != EnumPage.Prepare) { return; }
 		ManagerTurret.I.turretList.Clear();
-		AssetsSceneConfig.I.UpdateConfig();
+		AssetsTurretConfig.I.UpdateConfig();
 	}
 	private void AssetsTurretConfig_OnChange() {
 		turretPresets.Create(AssetsTurretConfig.Datas);
@@ -48,19 +48,18 @@ public class UIPreparePage : ModuleUIPage {
 
 	/// <summary> 选中炮塔 </summary>
 	public void SetModuleTurret(ModuleTurret turret) {
-		bool isSelected = false;
 		if (ManagerTurret.I.turretList.Contains(turret)) {
 			ManagerTurret.I.turretList.Remove(turret);
-			isSelected = false;
+			OnTurretSelect?.Invoke(turret, false);
+			SceneLabel.text = $"已选({ManagerTurret.I.turretList.Count}/6)";
+			return;
 		}
-		else if (ManagerTurret.I.turretList.Count < 6) {
+		if (ManagerTurret.I.turretList.Count < 6) {
 			ManagerTurret.I.turretList.Add(turret);
-			isSelected = true;
+			OnTurretSelect?.Invoke(turret, true);
+			SceneLabel.text = $"已选({ManagerTurret.I.turretList.Count}/6)";
+			return;
 		}
-		else { return; }
-
-		OnTurretSelect?.Invoke(turret, isSelected);
-		// SceneLabel.text = sceneConfig != null ? sceneConfig.name : "???";
 	}
 
 	#region UI项定义
@@ -72,12 +71,14 @@ public class UIPreparePage : ModuleUIPage {
 
 		public Label Title => Q<Label>("Title");
 		public VisualElement Image => Q<VisualElement>("Image");
+		public VisualElement Background => Q<VisualElement>("Background");
 
 		public UITurretItem(ModuleTurret value, VisualElement element, UIPreparePage parent) : base(value, element) {
 			this.parent = parent;
 			Title.text = value.name;
-			Image.RegisterCallback<ClickEvent>(evt => Select());
+			Image.style.backgroundImage = new StyleBackground(value.icon);
 
+			element.RegisterCallback<ClickEvent>(evt => Select());
 			parent.OnTurretSelect += UIPreparePage_OnTurretSelect;
 		}
 		public override void Select() {
@@ -85,7 +86,7 @@ public class UIPreparePage : ModuleUIPage {
 		}
 		private void UIPreparePage_OnTurretSelect(ModuleTurret turret, bool arg2) {
 			if (turret != value) { return; }
-			Image.EnableInClassList("template-scenecard-s", !arg2);
+			Background.EnableInClassList("turret-card-bg-s", arg2);
 		}
 	}
 	#endregion

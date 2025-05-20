@@ -1,5 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="width: 200px; height: 200px; align-items: center; justify-content: center;">
-        <ui:VisualElement style="width: 160px; height: 160px; background-color: rgb(204, 204, 204); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" />
+    <Style src="project://database/Assets/UI%20Toolkit/Template/Template.uss?fileID=7433441132597879392&amp;guid=3ade926c55aa56d40ba9d3fa1b6b6d64&amp;type=3#Template" />
+    <ui:VisualElement style="width: 180px; height: 200px; align-items: center; justify-content: center;">
+        <ui:VisualElement name="Background" class="turret-card-bg" style="width: 140px; align-items: center; background-color: rgba(26, 26, 26, 0.8);">
+            <ui:VisualElement name="Image" style="flex-grow: 0; flex-shrink: 0; width: 160px; height: 160px; background-image: url(&quot;project://database/Assets/AssetsPackage/%E7%82%AE%E5%A1%94%E6%A8%A1%E5%9E%8B/%E5%8A%A0%E5%86%9C%E7%82%AE/Texture/%E5%8A%A0%E5%86%9C%E7%82%AE-%E5%AF%92%E5%86%B0%201.png?fileID=2800000&amp;guid=e7a46c325ea7b9e4ebbcc2dbbc35b71c&amp;type=3#加农炮-寒冰 1&quot;);" />
+            <ui:Label tabindex="-1" text="加农炮" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" style="color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 24px; -unity-font-style: bold; height: 30px; margin-top: 0; margin-right: 0; margin-bottom: 5px; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; position: absolute; left: 0; right: 0; bottom: 0; display: none;" />
+            <ui:Label tabindex="-1" text="￥999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Price" style="color: rgb(255, 188, 18); -unity-text-align: middle-center; font-size: 24px; -unity-font-style: bold; height: 30px; margin-top: 0; margin-right: 0; margin-bottom: 5px; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; position: absolute; left: 0; right: 0; bottom: 0;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

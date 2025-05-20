@@ -36,10 +36,6 @@
     transition-duration: 0.2s;
 }
 
-.template-scenecard:hover {
-    scale: 1.05 1.05;
-}
-
 .template-scenecard-s {
     border-top-width: 2px;
     border-right-width: 2px;
@@ -49,6 +45,10 @@
     border-right-color: rgb(0, 180, 255);
     border-top-color: rgb(0, 180, 255);
     border-bottom-color: rgb(0, 180, 255);
+}
+
+.template-scenecard:hover {
+    scale: 1.05 1.05;
 }
 
 .template-title {
@@ -66,10 +66,40 @@
     transition-duration: 0.2s;
 }
 
+.template-title-s {
+    color: rgb(0, 220, 255);
+}
+
 .template-title:hover {
     scale: 1.1 1.1;
 }
 
-.template-title-s {
-    color: rgb(0, 220, 255);
+.turret-card-bg {
+    width: 160px;
+    height: 160px;
+    background-color: rgb(26, 26, 26);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transition-duration: 0.2s;
+}
+
+.turret-card-bg-s {
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-left-color: rgb(75, 207, 255);
+    border-right-color: rgb(75, 207, 255);
+    border-top-color: rgb(75, 207, 255);
+    border-bottom-color: rgb(75, 207, 255);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.turret-card-bg:hover {
+    scale: 1.1 1.1;
 }

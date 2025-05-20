@@ -1,0 +1,42 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="TurretCardTemplate" src="project://database/Assets/UI%20Toolkit/Template/TurretCardTemplate.uxml?fileID=9197481963319205126&amp;guid=6c6863bd42b956b41ab27931bf35d4df&amp;type=3#TurretCardTemplate" />
+    <Style src="project://database/Assets/UI%20Toolkit/GamePage/BattlePage/BattlePage.uss?fileID=7433441132597879392&amp;guid=6682efef89409d84bbd1eb483ccf1126&amp;type=3#BattlePage" />
+    <Style src="project://database/Assets/UI%20Toolkit/GamePage/GamePage.uss?fileID=7433441132597879392&amp;guid=b50610cb5b8fd9e45a739191112bfebe&amp;type=3#GamePage" />
+    <ui:VisualElement style="flex-grow: 1; padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px;">
+        <ui:VisualElement name="Top" style="height: 50px;">
+            <ui:VisualElement name="Value" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; flex-direction: row; align-items: center;">
+                <ui:VisualElement name="Health" style="flex-direction: row; height: 50px; flex-shrink: 1; width: 200px; align-items: center;">
+                    <ui:VisualElement style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E7%94%9F%E5%91%BD.png?fileID=2800000&amp;guid=1544e6b44229983428472219a7ae59a3&amp;type=3#生命&quot;); width: 50px; height: 42px;" />
+                    <ui:Label tabindex="-1" text="999" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 10px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 32px; color: rgb(255, 82, 102); -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Money" style="flex-direction: row; height: 50px; flex-shrink: 1; width: 200px; align-items: center;">
+                    <ui:VisualElement style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E9%87%91%E5%B8%81.png?fileID=2800000&amp;guid=81f52da0d11a8ef4aaafaa42ea8b0183&amp;type=3#金币&quot;); width: 50px; height: 48px;" />
+                    <ui:Label tabindex="-1" text="99999" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 10px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 32px; color: rgb(255, 188, 18); -unity-font-style: bold;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Button" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; flex-direction: row-reverse; align-items: center;">
+                <ui:VisualElement name="Button1" class="battle-button">
+                    <ui:VisualElement name="Iamge" picking-mode="Ignore" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E6%92%AD%E6%94%BE/%E8%AE%BE%E7%BD%AE.png?fileID=2800000&amp;guid=ed0223a85af1f7f419e64839727d54a8&amp;type=3#设置&quot;); width: 82px; height: 82px; flex-shrink: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Button2" class="battle-button">
+                    <ui:VisualElement name="Iamge" picking-mode="Ignore" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E6%92%AD%E6%94%BE/%E5%BF%AB%E8%BF%9B.png?fileID=2800000&amp;guid=46f910f60b4732e48b5ddd309786a927&amp;type=3#快进&quot;); width: 76px; height: 100px; flex-shrink: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Button3" class="battle-button">
+                    <ui:VisualElement name="Iamge" picking-mode="Ignore" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E6%92%AD%E6%94%BE/%E5%BC%80%E5%A7%8B.png?fileID=2800000&amp;guid=d162d009abdd9174a9bfdedd0b16a9b6&amp;type=3#开始&quot;); width: 82px; height: 82px; flex-shrink: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Button4" class="battle-button">
+                    <ui:VisualElement name="Iamge" picking-mode="Ignore" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E6%92%AD%E6%94%BE/%E6%9A%82%E5%81%9C.png?fileID=2800000&amp;guid=0bd6aa474dffbc8498b1dcd1542846aa&amp;type=3#暂停&quot;); width: 82px; height: 82px; flex-shrink: 0;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Middle" style="flex-grow: 1;" />
+        <ui:VisualElement name="Bottom" style="height: 150px; flex-direction: row; align-items: center; justify-content: center;">
+            <ui:Instance template="TurretCardTemplate" name="TurretCardTemplate" />
+            <ui:Instance template="TurretCardTemplate" name="TurretCardTemplate" />
+            <ui:Instance template="TurretCardTemplate" name="TurretCardTemplate" />
+            <ui:Instance template="TurretCardTemplate" name="TurretCardTemplate" />
+            <ui:Instance template="TurretCardTemplate" name="TurretCardTemplate" />
+            <ui:Instance template="TurretCardTemplate" name="TurretCardTemplate" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
