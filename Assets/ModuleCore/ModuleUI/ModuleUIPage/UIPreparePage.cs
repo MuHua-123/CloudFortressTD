@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using MuHua;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// 游戏准备 - 页面
@@ -28,7 +29,7 @@ public class UIPreparePage : ModuleUIPage {
 			(data, element) => new UITurretItem(data, element, this), UIDirection.Vertical);
 
 		Button1.clicked += () => ModuleUI.Jump(EnumPage.Scene);
-		Button2.clicked += () => ManagerScene.LoadScene(null);
+		Button2.clicked += () => SingleManager.I.StartGame();
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
 		AssetsTurretConfig.OnChange += AssetsTurretConfig_OnChange;

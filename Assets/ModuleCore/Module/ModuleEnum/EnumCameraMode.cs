@@ -12,5 +12,5 @@ public enum EnumCameraMode {
 
 	// FreeEdit,// 自由编辑
 
-	ThirdPerson,// 第三人称
+	MoveAxis,// 移轴
 }

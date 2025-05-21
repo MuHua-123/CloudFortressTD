@@ -39,4 +39,11 @@ public class SingleManager : ModuleSingle<SingleManager> {
 			// ModuleCamera.Mode(EnumCameraMode.ThirdPerson);
 		}
 	}
+
+	public void StartGame() {
+		ManagerScene.LoadScene(null);
+		ModuleUI.Jump(EnumPage.Battle);
+		ModuleInput.Mode(EnumInputMode.Standard);
+		ModuleCamera.Mode(EnumCameraMode.MoveAxis);
+	}
 }

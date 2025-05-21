@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using MuHua;
 
-public class UIBattlePage : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+/// <summary>
+/// 战斗页面
+/// </summary>
+public class UIBattlePage : ModuleUIPage {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public override VisualElement Element => root.Q<VisualElement>("BattlePage");
+
+	private void Awake() {
+		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
+	}
+
+	private void ModuleUI_OnJumpPage(EnumPage page) {
+		Element.EnableInClassList("document-page-hide", page != EnumPage.Battle);
+	}
 }

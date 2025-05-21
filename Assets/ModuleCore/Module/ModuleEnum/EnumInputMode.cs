@@ -14,5 +14,5 @@ public enum EnumInputMode {
 
 	// FreeEdit,// 自由编辑
 
-	ThirdPerson,// 第三人称
+	Standard,// 第三人称
 }
