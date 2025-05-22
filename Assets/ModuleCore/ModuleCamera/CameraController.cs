@@ -21,4 +21,9 @@ public abstract class CameraController : MonoBehaviour {
 	public abstract void Initialize();
 	/// <summary> 重置相机 </summary>
 	public abstract void ResetCamera();
+
+	/// <summary> 屏幕坐标转换世界坐标 </summary>
+	public virtual Vector3 ScreenToWorldPosition(Vector3 screenPosition) {
+		throw new System.NotImplementedException();
+	}
 }

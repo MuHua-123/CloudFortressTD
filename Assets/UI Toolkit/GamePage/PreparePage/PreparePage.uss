@@ -1,20 +1,4 @@
-.battle-button {
-    width: 50px;
-    height: 50px;
-    align-items: center;
-    justify-content: center;
-    align-self: auto;
-    margin-left: 10px;
-    transition-duration: 0.2s;
-}
-
-.battle-button-s {
-}
-
-.battle-button:hover {
-    scale: 1.1 1.1;
-}
-.battlepage-card-bg {
+.preparepage-card-bg {
     width: 160px;
     height: 160px;
     background-color: rgb(26, 26, 26);
@@ -25,7 +9,7 @@
     transition-duration: 0.2s;
 }
 
-.battlepage-card-bg-s {
+.preparepage-card-bg-s {
     border-top-width: 2px;
     border-right-width: 2px;
     border-bottom-width: 2px;
@@ -40,6 +24,6 @@
     border-bottom-left-radius: 5px;
 }
 
-.battlepage-card-bg:hover {
+.preparepage-card-bg:hover {
     scale: 1.1 1.1;
 }

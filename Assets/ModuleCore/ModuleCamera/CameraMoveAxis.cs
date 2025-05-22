@@ -8,6 +8,9 @@ using UnityEngine;
 public class CameraMoveAxis : CameraController {
 
 	public Camera mainCamera;
+	public LayerMask layerMask;
+
+	private RaycastHit hitInfo;
 
 	public override Vector3 Position {
 		get => transform.position;
@@ -53,5 +56,13 @@ public class CameraMoveAxis : CameraController {
 	public override void ResetCamera() {
 		// transform.position = HotUpdateScene.I.StartPoint.position;
 		// transform.eulerAngles = HotUpdateScene.I.StartPoint.eulerAngles;
+	}
+
+	public override Vector3 ScreenToWorldPosition(Vector3 screenPosition) {
+		Ray ray = mainCamera.ScreenPointToRay(screenPosition);
+		Physics.Raycast(ray, out hitInfo, 200f, layerMask);
+		Vector3 position = Vector3.zero;
+		if (hitInfo.transform != null) { position = hitInfo.point; }
+		return position;
 	}
 }

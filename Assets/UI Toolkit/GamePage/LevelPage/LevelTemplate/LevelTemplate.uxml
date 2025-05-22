@@ -1,4 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/UIDocument/GameHome/Level/LevelTemplate/LevelTemplate.uss?fileID=7433441132597879392&amp;guid=bec577a4b9c9047488c80d2eaa9b7019&amp;type=3#LevelTemplate" />
-    <ui:Button text="1-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelTemplate" class="lt-button" />
-</ui:UXML>

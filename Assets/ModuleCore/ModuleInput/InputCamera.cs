@@ -3,48 +3,64 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputCamera : OldModuleInput {
+/// <summary>
+/// 相机 - 输入
+/// </summary>
+public class InputCamera : MonoBehaviour {
 
-    /// <summary> 当前相机模块 </summary>
-    public OldModuleCamera CurrentCamera => ModuleCore.CurrentCamera;
+	public bool isMovement = false;
+	public bool isRotating = false;
+	public Vector2 delta;
 
-    private void Start() {
-        eulerAngles = originalEulerAngles = CurrentCamera.EulerAngles;
-    }
+	private bool isEnable;
+	private Vector3 mousePosition1;
+	private Vector3 mousePosition2;
+	private Vector3 originalPosition;
+	private Vector3 eulerAngles;
+	private Vector3 originalEulerAngles;
 
-    #region 移动
-    private void Update() {
-        originalEulerAngles = Vector3.Lerp(originalEulerAngles, eulerAngles, Time.deltaTime * 20);
-        CurrentCamera.EulerAngles = originalEulerAngles;
-        if (!isMouseRight) { return; }
-        Vector3 original = CurrentCamera.ScreenToWorldPosition(originalMousePosition);
-        Vector3 current = CurrentCamera.ScreenToWorldPosition(mousePosition);
-        Vector3 offset = current - original;
-        CurrentCamera.Position = originalPosition - offset;
-    }
-    #endregion
+	private CameraController Controller => ModuleCamera.CurrentCamera;
 
-    #region 输入
-    private bool isMouseRight;
-    private Vector3 eulerAngles;
-    private Vector2 mousePosition;
-    private Vector3 originalPosition;
-    private Vector3 originalEulerAngles;
-    private Vector3 originalMousePosition;
-    public void OnMouseRight(InputValue value) {
-        isMouseRight = value.isPressed;
-        originalPosition = CurrentCamera.Position;
-        originalMousePosition = mousePosition;
-    }
-    public void OnMouseScroll(InputValue value) {
-        CurrentCamera.VisualField += value.Get<Vector2>().y;
-    }
-    public void OnMousePosition(InputValue value) {
-        mousePosition = value.Get<Vector2>();
-    }
-    public void OnRotate(InputValue value) {
-        float angle = value.Get<float>() * 45;
-        eulerAngles += new Vector3(0, angle, 0);
-    }
-    #endregion
+	private void Awake() {
+		ModuleInput.OnInputMode += ModuleInput_OnInputMode;
+	}
+
+	private void ModuleInput_OnInputMode(EnumInputMode mode) {
+		isEnable = mode == EnumInputMode.Standard;
+	}
+
+	private void Update() {
+		MovementCamera();
+		RotatingCamera();
+	}
+
+	#region 输入
+	public void OnEnableMovement(InputValue inputValue) {
+		if (!isEnable) { return; }
+		isMovement = inputValue.isPressed;
+		mousePosition1 = ModuleInput.mousePosition;
+		originalPosition = Controller.Position;
+	}
+	public void OnEnableRotating(InputValue inputValue) {
+		if (!isEnable) { return; }
+		isRotating = inputValue.isPressed;
+		mousePosition2 = ModuleInput.mousePosition;
+		eulerAngles = originalEulerAngles = Controller.EulerAngles;
+	}
+	#endregion
+
+	private void MovementCamera() {
+		if (!isEnable || !isMovement) { return; }
+		Vector3 original = Controller.ScreenToWorldPosition(mousePosition1);
+		Vector3 current = Controller.ScreenToWorldPosition(ModuleInput.mousePosition);
+		Vector3 offset = current - original;
+		Controller.Position = originalPosition - offset;
+	}
+	private void RotatingCamera() {
+		if (!isEnable || !isRotating) { return; }
+		float differ = (ModuleInput.mousePosition.x - mousePosition2.x) / Screen.width;
+		Vector3 current = originalEulerAngles + new Vector3(0, differ * 360, 0);
+		eulerAngles = Vector3.Lerp(eulerAngles, current, Time.deltaTime * 10);
+		Controller.EulerAngles = eulerAngles;
+	}
 }

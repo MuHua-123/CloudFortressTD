@@ -34,8 +34,12 @@ public class UIPreparePage : ModuleUIPage {
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
 		AssetsTurretConfig.OnChange += AssetsTurretConfig_OnChange;
 	}
-	private void OnDestroy() => turretPresets.Release();
-	private void Update() => turretPresets.Update();
+	private void OnDestroy() {
+		turretPresets.Release();
+	}
+	private void Update() {
+		turretPresets.Update();
+	}
 
 	private void ModuleUI_OnJumpPage(EnumPage page) {
 		Element.EnableInClassList("document-page-hide", page != EnumPage.Prepare);
@@ -87,7 +91,7 @@ public class UIPreparePage : ModuleUIPage {
 		}
 		private void UIPreparePage_OnTurretSelect(TurretBasic turret, bool arg2) {
 			if (turret != value) { return; }
-			Background.EnableInClassList("turret-card-bg-s", arg2);
+			Background.EnableInClassList("preparepage-card-bg-s", arg2);
 		}
 	}
 	#endregion

@@ -8,7 +8,7 @@ using MuHua;
 /// 场景选择页面
 /// </summary>
 public class UIScenePage : ModuleUIPage {
-	public VisualTreeAsset SceneCardTemplate;
+	public VisualTreeAsset SceneTemplate;
 
 	public UIScrollList<UISceneConfigItem, DataSceneConfig> scrollList;
 
@@ -20,7 +20,7 @@ public class UIScenePage : ModuleUIPage {
 	public Label SceneLabel => Q<Label>("SceneLabel");// 场景标签
 
 	private void Awake() {
-		scrollList = new UIScrollList<UISceneConfigItem, DataSceneConfig>(ScrollView, root, SceneCardTemplate,
+		scrollList = new UIScrollList<UISceneConfigItem, DataSceneConfig>(ScrollView, root, SceneTemplate,
 			(data, element) => new UISceneConfigItem(data, element, this), UIDirection.Horizontal);
 
 		Button1.clicked += () => ModuleUI.Jump(EnumPage.Menu);
@@ -69,11 +69,11 @@ public class UIScenePage : ModuleUIPage {
 			Image.RegisterCallback<ClickEvent>(evt => Select());
 		}
 		public override void DefaultState() {
-			Image.EnableInClassList("template-scenecard-s", false);
+			Image.EnableInClassList("scenepage-card-s", false);
 		}
 		public override void SelectState() {
 			parent.SetSceneConfig(value);
-			Image.EnableInClassList("template-scenecard-s", true);
+			Image.EnableInClassList("scenepage-card-s", true);
 		}
 	}
 	#endregion
