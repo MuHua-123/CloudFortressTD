@@ -11,11 +11,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class UIPreparePage : ModuleUIPage {
 
-	public event Action<ModuleTurret, bool> OnTurretSelect;
+	public event Action<TurretBasic, bool> OnTurretSelect;
 
 	public VisualTreeAsset TurretCardTemplate;
 
-	public UIScrollList<UITurretItem, ModuleTurret> turretPresets;
+	public UIScrollList<UITurretItem, TurretBasic> turretPresets;
 
 	public override VisualElement Element => root.Q<VisualElement>("PreparePage");
 
@@ -25,7 +25,7 @@ public class UIPreparePage : ModuleUIPage {
 	public Label SceneLabel => Q<Label>("SceneLabel");// 场景标签
 
 	private void Awake() {
-		turretPresets = new UIScrollList<UITurretItem, ModuleTurret>(ScrollView, root, TurretCardTemplate,
+		turretPresets = new UIScrollList<UITurretItem, TurretBasic>(ScrollView, root, TurretCardTemplate,
 			(data, element) => new UITurretItem(data, element, this), UIDirection.Vertical);
 
 		Button1.clicked += () => ModuleUI.Jump(EnumPage.Scene);
@@ -48,7 +48,7 @@ public class UIPreparePage : ModuleUIPage {
 	}
 
 	/// <summary> 选中炮塔 </summary>
-	public void SetModuleTurret(ModuleTurret turret) {
+	public void SetModuleTurret(TurretBasic turret) {
 		if (ManagerTurret.I.turretList.Contains(turret)) {
 			ManagerTurret.I.turretList.Remove(turret);
 			OnTurretSelect?.Invoke(turret, false);
@@ -67,14 +67,14 @@ public class UIPreparePage : ModuleUIPage {
 	/// <summary>
 	/// 预选炮塔 UI项
 	/// </summary>
-	public class UITurretItem : ModuleUIItem<ModuleTurret> {
+	public class UITurretItem : ModuleUIItem<TurretBasic> {
 		public readonly UIPreparePage parent;
 
 		public Label Title => Q<Label>("Title");
 		public VisualElement Image => Q<VisualElement>("Image");
 		public VisualElement Background => Q<VisualElement>("Background");
 
-		public UITurretItem(ModuleTurret value, VisualElement element, UIPreparePage parent) : base(value, element) {
+		public UITurretItem(TurretBasic value, VisualElement element, UIPreparePage parent) : base(value, element) {
 			this.parent = parent;
 			Title.text = value.name;
 			Image.style.backgroundImage = new StyleBackground(value.icon);
@@ -85,7 +85,7 @@ public class UIPreparePage : ModuleUIPage {
 		public override void Select() {
 			parent.SetModuleTurret(value);
 		}
-		private void UIPreparePage_OnTurretSelect(ModuleTurret turret, bool arg2) {
+		private void UIPreparePage_OnTurretSelect(TurretBasic turret, bool arg2) {
 			if (turret != value) { return; }
 			Background.EnableInClassList("turret-card-bg-s", arg2);
 		}

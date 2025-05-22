@@ -6,11 +6,10 @@ using UnityEngine;
 /// 炮塔基类
 /// </summary>
 [RequireComponent(typeof(Animator))]
-public abstract class ModuleTurret : MonoBehaviour {
+public abstract class TurretBasic : MonoBehaviour {
 
 	[Header("基本属性")]
 	public Sprite icon;// 缩略图
 	public int buildValue;// 建造价格
-
-	public Animator animator => GetComponent<Animator>();
+	public Animator animator;// 动画器
 }

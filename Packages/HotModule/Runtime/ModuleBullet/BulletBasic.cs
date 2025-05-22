@@ -5,6 +5,6 @@ using UnityEngine;
 /// <summary>
 /// 子弹基类
 /// </summary>
-public abstract class ModuleBullet : MonoBehaviour {
+public abstract class BulletBasic : MonoBehaviour {
 
 }

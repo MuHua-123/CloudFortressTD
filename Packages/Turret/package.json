@@ -1,0 +1,11 @@
+{
+  "name": "muhua-turret",
+  "version": "1.0.0",
+  "displayName": "MuHua Turret",
+  "description": "\u70ae\u5854\u6a21\u5757\u5305",
+  "author": {
+    "name": "MuHua",
+    "email": "muhua233@qq.com"
+  },
+  "type": "tool"
+}

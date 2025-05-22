@@ -425,6 +425,12 @@
       "dependencies": {},
       "hash": "d3b75a4e58436a0346973d4bc0180605947ace3a"
     },
+    "muhua-turret": {
+      "version": "file:Turret",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "muhua-ui-tool": {
       "version": "https://github.com/MuHua-123/MuHua-Core.git?path=Packages/UITool",
       "depth": 0,

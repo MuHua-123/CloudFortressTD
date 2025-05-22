@@ -8,7 +8,7 @@ using MuHua;
 /// </summary>
 public class ManagerTurret : ModuleSingle<ManagerTurret> {
 
-	public List<ModuleTurret> turretList = new List<ModuleTurret>();// 炮塔列表
+	public List<TurretBasic> turretList = new List<TurretBasic>();// 炮塔列表
 
 	protected override void Awake() => NoReplace(false);
 }

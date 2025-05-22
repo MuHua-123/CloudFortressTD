@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 标准炮塔(双重发射器)
 /// </summary>
-public class TurretStandardDual : ModuleTurret {
+public class TurretStandardDual : TurretBasic {
 	[Header("炮塔组件")]
 	public Transform headY;// 头部Y轴
 	public Transform headX;// 头部X轴

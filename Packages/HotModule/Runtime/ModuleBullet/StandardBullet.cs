@@ -5,6 +5,6 @@ using UnityEngine;
 /// <summary>
 /// 标准子弹
 /// </summary>
-public class BulletStandard : ModuleBullet {
-	public Transform hitEffect;// 子弹命中效果
+public class StandardBullet : BulletBasic {
+	public Transform hitEffect;
 }
