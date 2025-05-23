@@ -423,7 +423,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d3b75a4e58436a0346973d4bc0180605947ace3a"
+      "hash": "1ddf5879277adbe7d52af3236bd0ce4195240dd1"
     },
     "muhua-turret": {
       "version": "file:Turret",

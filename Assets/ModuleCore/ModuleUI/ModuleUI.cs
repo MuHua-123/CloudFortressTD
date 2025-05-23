@@ -8,8 +8,7 @@ using MuHua;
 /// <summary>
 /// UI模块
 /// </summary>
-public class ModuleUI : ModuleSingle<ModuleUI>
-{
+public class ModuleUI : ModuleSingle<ModuleUI> {
 	public static EnumPage page;
 	public static event Action<EnumPage> OnJumpPage;
 

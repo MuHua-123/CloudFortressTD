@@ -11,5 +11,5 @@ public class ModuleVisual : ModuleSingle<ModuleVisual> {
 	// public VisualController<KinesisController> KinesisController;
 
 	protected override void Awake() => NoReplace();
-
+	
 }

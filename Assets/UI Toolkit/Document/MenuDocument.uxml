@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="MenuPage" src="project://database/Assets/UI%20Toolkit/GamePage/StandardPage/MenuPage.uxml?fileID=9197481963319205126&amp;guid=da05030edbbb9af42a67b84307261797&amp;type=3#MenuPage" />
-    <ui:Template name="ScenePage" src="project://database/Assets/UI%20Toolkit/GamePage/StandardPage/ScenePage.uxml?fileID=9197481963319205126&amp;guid=9ff6a36f9baaaaa4bb5df9ff3f60471d&amp;type=3#ScenePage" />
+    <ui:Template name="MenuPage" src="project://database/Assets/UI%20Toolkit/GamePage/MenuPage/MenuPage.uxml?fileID=9197481963319205126&amp;guid=da05030edbbb9af42a67b84307261797&amp;type=3#MenuPage" />
+    <ui:Template name="ScenePage" src="project://database/Assets/UI%20Toolkit/GamePage/ScenePage/ScenePage.uxml?fileID=9197481963319205126&amp;guid=9ff6a36f9baaaaa4bb5df9ff3f60471d&amp;type=3#ScenePage" />
     <ui:Template name="SettingsPage" src="project://database/Assets/UI%20Toolkit/GamePage/SettingsPage/SettingsPage.uxml?fileID=9197481963319205126&amp;guid=2cdb779d49f4870468c24d962e0b9eb4&amp;type=3#SettingsPage" />
-    <ui:Template name="PreparePage" src="project://database/Assets/UI%20Toolkit/GamePage/StandardPage/PreparePage.uxml?fileID=9197481963319205126&amp;guid=6cfd030a69dafc2489b8e1b7efa52853&amp;type=3#PreparePage" />
+    <ui:Template name="PreparePage" src="project://database/Assets/UI%20Toolkit/GamePage/PreparePage/PreparePage.uxml?fileID=9197481963319205126&amp;guid=6cfd030a69dafc2489b8e1b7efa52853&amp;type=3#PreparePage" />
     <ui:Template name="BattlePage" src="project://database/Assets/UI%20Toolkit/GamePage/BattlePage/BattlePage.uxml?fileID=9197481963319205126&amp;guid=925a10b8fc452f54c92dddd9a97ec5b7&amp;type=3#BattlePage" />
     <Style src="project://database/Assets/UI%20Toolkit/Document/Document.uss?fileID=7433441132597879392&amp;guid=6c5dcc10b66adf345b00f2d3a1b43c22&amp;type=3#Document" />
     <ui:Instance template="MenuPage" name="MenuPage" class="document-page document-page-hide" />
@@ -10,4 +10,7 @@
     <ui:Instance template="SettingsPage" name="SettingsPage" class="document-page document-page-hide" />
     <ui:Instance template="PreparePage" name="PreparePage" class="document-page document-page-hide" />
     <ui:Instance template="BattlePage" name="BattlePage" class="document-page document-page-hide" />
+    <ui:VisualElement name="Window" picking-mode="Ignore" class="document-page" style="flex-grow: 1;" />
+    <ui:VisualElement name="Loading" picking-mode="Ignore" class="document-page" style="flex-grow: 1;" />
+    <ui:VisualElement name="Popup" picking-mode="Ignore" class="document-page" style="flex-grow: 1;" />
 </ui:UXML>
