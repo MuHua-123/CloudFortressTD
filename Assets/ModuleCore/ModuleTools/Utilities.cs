@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/// <summary>
+/// 实用工具
+/// </summary>
+public static class Utilities {
+
+	/// <summary> 查询场景中的第一个类型 </summary> 
+	public static bool FindObject<T>(out T type) where T : Object {
+		T[] types = GameObject.FindObjectsOfType<T>();
+		type = types.Length > 0 ? types[0] : null;
+		return type != null;
+	}
+
+	/// <summary> 输入方向 转换成 目标的相对方向  </summary>
+	public static Vector3 TransferDirection(Vector3 forward, Vector3 right, Vector2 inputDirection) {
+		// 确保前方和右方方向在水平面上
+		forward.y = 0;
+		right.y = 0;
+
+		// 归一化方向向量
+		forward.Normalize();
+		right.Normalize();
+
+		// 计算移动方向
+		return (forward * inputDirection.y + right * inputDirection.x).normalized;
+	}
+}

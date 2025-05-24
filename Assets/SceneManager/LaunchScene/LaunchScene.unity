@@ -509,7 +509,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 732729849}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &478760212
@@ -524,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17216a36e0d48b48a4ca313432fe8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GeneratorTurretBasic: {fileID: 732729850}
 --- !u!1 &483773598
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +955,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneConfigs: []
+--- !u!1 &732729848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 732729849}
+  - component: {fileID: 732729850}
+  m_Layer: 0
+  m_Name: GeneratorTurretBasic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &732729849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732729848}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 478760211}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &732729850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732729848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851487a7bd025bb419d582b24abffa47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  space: {fileID: 732729849}
 --- !u!1 &761549254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 945e8cbccfdee7542aedbfdec627c145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  preview: {fileID: 0}
   turretList: []
 --- !u!1 &983419243
 GameObject:

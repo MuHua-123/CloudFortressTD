@@ -35,15 +35,16 @@ public class SingleManager : ModuleSingle<SingleManager> {
 		}
 		if (runningMode == EnumRunningMode.Standard) {
 			ModuleUI.Jump(EnumPage.Battle);
-			// ModuleInput.Mode(EnumInputMode.ThirdPerson);
-			// ModuleCamera.Mode(EnumCameraMode.ThirdPerson);
+			ModuleInput.Mode(EnumInputMode.Standard);
+			ModuleCamera.Mode(EnumCameraMode.MoveAxis);
+			ManagerMap.I.Initialize();
 		}
 	}
 
 	public void StartGame() {
 		ManagerScene.LoadScene(null);
-		ModuleUI.Jump(EnumPage.Battle);
-		ModuleInput.Mode(EnumInputMode.Standard);
-		ModuleCamera.Mode(EnumCameraMode.MoveAxis);
+		// ModuleUI.Jump(EnumPage.Battle);
+		// ModuleInput.Mode(EnumInputMode.Standard);
+		// ModuleCamera.Mode(EnumCameraMode.MoveAxis);
 	}
 }

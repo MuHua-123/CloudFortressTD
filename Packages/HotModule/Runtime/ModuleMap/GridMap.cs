@@ -5,10 +5,15 @@ using UnityEngine;
 /// <summary>
 /// 格子地图
 /// </summary>
-public class MapGrid : MonoBehaviour {
+public class GridMap : MonoBehaviour {
+
+	/// <summary> 地图大小 </summary>
 	public Vector2Int mapSize;
+	/// <summary> 地图空间 </summary>
 	public Transform mapSpace;
+	/// <summary> 单元预制 </summary>
 	public GameObject mapPrefab;
+	/// <summary> 地图单元 </summary>
 	public List<Transform> mapUnit;
 
 	public Vector3 OriginPosition => new Vector3(mapSize.x, 0, mapSize.y) * -0.5f;

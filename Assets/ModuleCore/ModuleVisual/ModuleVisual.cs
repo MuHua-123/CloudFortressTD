@@ -8,8 +8,8 @@ using MuHua;
 /// </summary>
 public class ModuleVisual : ModuleSingle<ModuleVisual> {
 
-	// public VisualController<KinesisController> KinesisController;
+	public VisualGenerator<TurretBasic> GeneratorTurretBasic;
 
 	protected override void Awake() => NoReplace();
-	
+
 }

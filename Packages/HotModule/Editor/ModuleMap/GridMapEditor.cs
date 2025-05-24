@@ -6,11 +6,11 @@ using UnityEditor;
 /// <summary>
 /// 格子地图编辑器
 /// </summary>
-[CustomEditor(typeof(MapGrid))]
-public class MapGridEditor : Editor {
-	private MapGrid value;
+[CustomEditor(typeof(GridMap))]
+public class GridMapEditor : Editor {
+	private GridMap value;
 
-	private void Awake() => value = target as MapGrid;
+	private void Awake() => value = target as GridMap;
 
 	public override void OnInspectorGUI() {
 		base.OnInspectorGUI();

@@ -19,7 +19,7 @@ public class InputCamera : MonoBehaviour {
 	private Vector3 eulerAngles;
 	private Vector3 originalEulerAngles;
 
-	private CameraController Controller => ModuleCamera.CurrentCamera;
+	private CameraController CameraController => ModuleCamera.CurrentCamera;
 
 	private void Awake() {
 		ModuleInput.OnInputMode += ModuleInput_OnInputMode;
@@ -39,28 +39,28 @@ public class InputCamera : MonoBehaviour {
 		if (!isEnable) { return; }
 		isMovement = inputValue.isPressed;
 		mousePosition1 = ModuleInput.mousePosition;
-		originalPosition = Controller.Position;
+		originalPosition = CameraController.Position;
 	}
 	public void OnEnableRotating(InputValue inputValue) {
 		if (!isEnable) { return; }
 		isRotating = inputValue.isPressed;
 		mousePosition2 = ModuleInput.mousePosition;
-		eulerAngles = originalEulerAngles = Controller.EulerAngles;
+		eulerAngles = originalEulerAngles = CameraController.EulerAngles;
 	}
 	#endregion
 
 	private void MovementCamera() {
 		if (!isEnable || !isMovement) { return; }
-		Vector3 original = Controller.ScreenToWorldPosition(mousePosition1);
-		Vector3 current = Controller.ScreenToWorldPosition(ModuleInput.mousePosition);
+		Vector3 original = CameraController.ScreenToWorldPosition(mousePosition1);
+		Vector3 current = CameraController.ScreenToWorldPosition(ModuleInput.mousePosition);
 		Vector3 offset = current - original;
-		Controller.Position = originalPosition - offset;
+		CameraController.Position = originalPosition - offset;
 	}
 	private void RotatingCamera() {
 		if (!isEnable || !isRotating) { return; }
 		float differ = (ModuleInput.mousePosition.x - mousePosition2.x) / Screen.width;
 		Vector3 current = originalEulerAngles + new Vector3(0, differ * 360, 0);
 		eulerAngles = Vector3.Lerp(eulerAngles, current, Time.deltaTime * 10);
-		Controller.EulerAngles = eulerAngles;
+		CameraController.EulerAngles = eulerAngles;
 	}
 }
