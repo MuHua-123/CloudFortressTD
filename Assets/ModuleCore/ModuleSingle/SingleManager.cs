@@ -40,11 +40,4 @@ public class SingleManager : ModuleSingle<SingleManager> {
 			ManagerMap.I.Initialize();
 		}
 	}
-
-	public void StartGame() {
-		ManagerScene.LoadScene(null);
-		// ModuleUI.Jump(EnumPage.Battle);
-		// ModuleInput.Mode(EnumInputMode.Standard);
-		// ModuleCamera.Mode(EnumCameraMode.MoveAxis);
-	}
 }

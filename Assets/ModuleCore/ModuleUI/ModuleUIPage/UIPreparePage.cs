@@ -29,7 +29,7 @@ public class UIPreparePage : ModuleUIPage {
 			(data, element) => new UITurretItem(data, element, this), UIDirection.Vertical);
 
 		Button1.clicked += () => ModuleUI.Jump(EnumPage.Scene);
-		Button2.clicked += () => SingleManager.I.StartGame();
+		Button2.clicked += () => ManagerScene.LoadScene(null);
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
 		AssetsTurretConfig.OnChange += AssetsTurretConfig_OnChange;

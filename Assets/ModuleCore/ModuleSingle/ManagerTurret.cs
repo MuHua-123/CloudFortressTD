@@ -18,9 +18,10 @@ public class ManagerTurret : ModuleSingle<ManagerTurret> {
 	protected override void Awake() => NoReplace(false);
 
 	private void Update() {
+		if (preview == null || CameraController == null) { return; }
 		Vector3 worldPosition = CameraController.ScreenToWorldPosition(ModuleInput.mousePosition);
 		if (!ManagerMap.TryWorldPosition(worldPosition, out Vector3 position)) { return; }
-		transform.position = Vector3.Lerp(transform.position, position, Time.deltaTime * 20);
+		preview.transform.position = Vector3.Lerp(preview.transform.position, position, Time.deltaTime * 20);
 	}
 
 	public void EnablePreview(TurretBasic turretBasic) {

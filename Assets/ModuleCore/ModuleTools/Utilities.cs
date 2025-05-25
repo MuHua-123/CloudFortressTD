@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 /// <summary>
 /// 实用工具
@@ -8,10 +10,15 @@ using UnityEngine;
 public static class Utilities {
 
 	/// <summary> 查询场景中的第一个类型 </summary> 
-	public static bool FindObject<T>(out T type) where T : Object {
+	public static bool FindObject<T>(out T type) where T : UnityEngine.Object {
 		T[] types = GameObject.FindObjectsOfType<T>();
 		type = types.Length > 0 ? types[0] : null;
 		return type != null;
+	}
+	/// <summary> 查询场景中的第一个类型 </summary> 
+	public static void FindObjects<T>(Action<T> action) where T : UnityEngine.Object {
+		T[] types = GameObject.FindObjectsOfType<T>();
+		for (int i = 0; i < types.Length; i++) { action?.Invoke(types[0]); }
 	}
 
 	/// <summary> 输入方向 转换成 目标的相对方向  </summary>

@@ -19,10 +19,16 @@ public class ManagerMap : ModuleSingle<ManagerMap> {
 	}
 	/// <summary> 创建格子地图 </summary>
 	public bool CreateMapGrid() {
+		// 初始化地图数据
 		if (!Utilities.FindObject(out GridMap gridMap)) { return false; }
-		moduleMap = new MapGrid(gridMap.mapSize.x, gridMap.mapSize.y, gridMap.OriginPosition);
-		//创建空间
+		MapGrid mapGrid = new MapGrid(gridMap.mapSize.x, gridMap.mapSize.y, gridMap.OriginPosition);
+		// 创建地图空间
+		Utilities.FindObjects<MapUnit>((obj) => {
+			mapGrid.TryGetMapUnit(obj.transform.position, out DataMapUnit mapUnit);
+			mapUnit.mapSpace = new DataMapSpace();
+		});
 		//填充建筑
+		moduleMap = mapGrid;
 		return true;
 	}
 
