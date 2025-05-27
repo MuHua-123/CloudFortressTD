@@ -19,17 +19,26 @@ public class ManagerMap : ModuleSingle<ManagerMap> {
 	}
 	/// <summary> 创建格子地图 </summary>
 	public bool CreateMapGrid() {
-		// 初始化地图数据
+		// 查找地图对象
 		if (!Utilities.FindObject(out GridMap gridMap)) { return false; }
-		MapGrid mapGrid = new MapGrid(gridMap.mapSize.x, gridMap.mapSize.y, gridMap.OriginPosition);
+		// 初始化地图数据
+		moduleMap = new MapGrid(gridMap.mapSize.x, gridMap.mapSize.y, gridMap.OriginPosition);
 		// 创建地图空间
-		Utilities.FindObjects<MapUnit>((obj) => {
-			mapGrid.TryGetMapUnit(obj.transform.position, out DataMapUnit mapUnit);
-			mapUnit.mapSpace = new DataMapSpace();
-		});
-		//填充建筑
-		moduleMap = mapGrid;
+		Utilities.FindObjects<MapUnit>(CreateMapSpace);
+		// 填充建筑
+		Utilities.FindObjects<MapBuilding>(InitialBuilding);
 		return true;
+	}
+
+	/// <summary> 创建地图空间 </summary>
+	public void CreateMapSpace(MapUnit obj) {
+		if (!moduleMap.TryGetMapUnit(obj.transform.position, out DataMapUnit mapUnit)) { return; }
+		mapUnit.mapSpace = new DataMapSpace();
+	}
+	/// <summary> 创建初始建筑 </summary>
+	public void InitialBuilding(MapBuilding obj) {
+		if (!moduleMap.TryGetMapUnit(obj.transform.position, out DataMapUnit mapUnit)) { return; }
+		if (mapUnit.mapSpace is DataMapSpace space) { space.building = obj.transform; }
 	}
 
 	/// <summary> 世界坐标转换地图坐标 </summary>
