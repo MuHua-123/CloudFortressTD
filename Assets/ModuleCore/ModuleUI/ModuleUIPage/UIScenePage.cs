@@ -49,7 +49,7 @@ public class UIScenePage : ModuleUIPage {
 
 	/// <summary> 选中的场景配置 </summary>
 	public void SetSceneConfig(DataSceneConfig sceneConfig) {
-		ManagerScene.SetSceneConfig(sceneConfig);
+		ManagerScene.Settings(sceneConfig);
 		SceneLabel.text = sceneConfig != null ? sceneConfig.name : "???";
 	}
 

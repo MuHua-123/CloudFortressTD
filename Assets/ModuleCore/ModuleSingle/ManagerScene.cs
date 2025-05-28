@@ -17,7 +17,7 @@ public class ManagerScene : ModuleSingle<ManagerScene> {
 	public static event Action OnComplete;
 
 	/// <summary> 设置场景 </summary>
-	public static void SetSceneConfig(DataSceneConfig sceneConfig) => I.sceneConfig = sceneConfig;
+	public static void Settings(DataSceneConfig sceneConfig) => I.sceneConfig = sceneConfig;
 	/// <summary> 加载场景 </summary>
 	public static void LoadScene(Action<float> progress) => I.StartCoroutine(I.ILoadScene(progress));
 
