@@ -20,11 +20,11 @@ public class ModuleCore : Module<ModuleCore> {
     public ModuleAssets<FixedMonsterSpawn> AssetsMonsterSpawn = new ModuleAssets<FixedMonsterSpawn>();
 
     /// <summary> 炮塔 资产 </summary>
-    public ModuleAssets<DataTurret> AssetsTurret = new AssetsTurret();
+    public ModuleAssets<DataTurretOld> AssetsTurret = new AssetsTurretOld();
     /// <summary> 炮塔预设库 </summary>
-    public ModuleAssets<ConstTurret> TurretLibrary = new ModuleAssets<ConstTurret>();
+    public ModuleAssets<ConstTurretOld> TurretLibrary = new ModuleAssets<ConstTurretOld>();
     /// <summary> 炮塔建造列表 </summary>
-    public ModuleAssets<ConstTurret> TurretBuildList = new ModuleAssets<ConstTurret>();
+    public ModuleAssets<ConstTurretOld> TurretBuildList = new ModuleAssets<ConstTurretOld>();
     #endregion
 
     #region 数据模块
@@ -35,9 +35,9 @@ public class ModuleCore : Module<ModuleCore> {
     /// <summary> 格子地图 DataGridMap 数据处理器 </summary>
     public ModuleHandle<DataGridMap> HandleGridMap = new ModuleHandle<DataGridMap>();
     /// <summary> 炮塔建造 ConstTurret 数据处理器 </summary>
-    public ModuleHandle<ConstTurret> HandleTurretBuild = new ModuleHandle<ConstTurret>();
+    public ModuleHandle<ConstTurretOld> HandleTurretBuild = new ModuleHandle<ConstTurretOld>();
     /// <summary> 炮塔 DataTurret 数据处理器 </summary>
-    public ModuleHandle<DataTurret> HandleTurret = new ModuleHandle<DataTurret>();
+    public ModuleHandle<DataTurretOld> HandleTurret = new ModuleHandle<DataTurretOld>();
     #endregion
 
     #region 相机模块
@@ -69,7 +69,7 @@ public class ModuleCore : Module<ModuleCore> {
 
     #region 可视模块
     /// <summary> 炮塔 可视化内容生成模块 </summary>
-    public ModuleVisualOld<DataTurret> VisualTurret;
+    public ModuleVisualOld<DataTurretOld> VisualTurret;
     /// <summary> 炮弹 DataBullet 可视化内容生成模块 </summary>
     public ModuleVisualOld<DataBullet> VisualBullet;
     /// <summary> 怪物 可视化内容生成模块 </summary>

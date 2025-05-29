@@ -22,7 +22,7 @@ public class UIInspectorTurret : ModuleUIPanel {
     public VisualElement SkillContainer => element.Q<VisualElement>("SkillContainer");
 
     /// <summary> 炮塔 DataTurret 数据处理器 </summary>
-    public ModuleHandle<DataTurret> HandleTurret => ModuleCore.HandleTurret;
+    public ModuleHandle<DataTurretOld> HandleTurret => ModuleCore.HandleTurret;
 
     public UIInspectorTurret(VisualElement element, VisualTreeAsset skillTemplate) : base(element) {
         this.skillTemplate = skillTemplate;
@@ -31,7 +31,7 @@ public class UIInspectorTurret : ModuleUIPanel {
     public void Release() {
         HandleTurret.OnChange -= HandleTurret_OnChange;
     }
-    private void HandleTurret_OnChange(DataTurret obj) {
+    private void HandleTurret_OnChange(DataTurretOld obj) {
         element.EnableInClassList("sm-inspector-open", obj != null);
         if (obj == null) { return; }
         Image.style.backgroundImage = new StyleBackground(obj.Icon);

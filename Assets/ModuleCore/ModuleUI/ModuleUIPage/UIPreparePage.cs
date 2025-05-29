@@ -11,11 +11,9 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class UIPreparePage : ModuleUIPage {
 
-	public event Action<TurretBasic, bool> OnTurretSelect;
-
 	public VisualTreeAsset TurretCardTemplate;
 
-	public UIScrollList<UITurretItem, TurretBasic> turretPresets;
+	public UITurretPanel turretPanel;
 
 	public override VisualElement Element => root.Q<VisualElement>("PreparePage");
 
@@ -25,74 +23,48 @@ public class UIPreparePage : ModuleUIPage {
 	public Label SceneLabel => Q<Label>("SceneLabel");// 场景标签
 
 	private void Awake() {
-		turretPresets = new UIScrollList<UITurretItem, TurretBasic>(ScrollView, root, TurretCardTemplate,
-			(data, element) => new UITurretItem(data, element, this), UIDirection.Vertical);
+		turretPanel = new UITurretPanel(ScrollView, root, TurretCardTemplate, SettingsTurret);
 
 		Button1.clicked += () => ModuleUI.Jump(EnumPage.Scene);
-		Button2.clicked += () => ManagerScene.LoadScene(null);
+		Button2.clicked += () => AssetsScene.I.LoadScene(() => {
+			ModuleUI.Jump(EnumPage.Battle);
+			ModuleInput.Mode(EnumInputMode.Standard);
+			ModuleCamera.Mode(EnumCameraMode.MoveAxis);
+			ManagerMap.I.Initialize();
+		});
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
-		AssetsTurretConfig.OnChange += AssetsTurretConfig_OnChange;
 	}
 	private void OnDestroy() {
-		turretPresets.Release();
+		turretPanel.Release();
 	}
 	private void Update() {
-		turretPresets.Update();
+		turretPanel.Update();
 	}
 
 	private void ModuleUI_OnJumpPage(EnumPage page) {
 		Element.EnableInClassList("document-page-hide", page != EnumPage.Prepare);
 		if (page != EnumPage.Prepare) { return; }
 		ManagerTurret.I.turretList.Clear();
-		AssetsTurretConfig.I.UpdateConfig();
-	}
-	private void AssetsTurretConfig_OnChange() {
-		turretPresets.Create(AssetsTurretConfig.Datas);
+		AssetsTurret.I.UpdateConfig();
 	}
 
 	/// <summary> 选中炮塔 </summary>
-	public void SetModuleTurret(TurretBasic turret) {
-		if (ManagerTurret.I.turretList.Contains(turret)) {
-			ManagerTurret.I.turretList.Remove(turret);
-			OnTurretSelect?.Invoke(turret, false);
-			SceneLabel.text = $"已选({ManagerTurret.I.turretList.Count}/6)";
+	public void SettingsTurret(TurretBasic turretBasic) {
+		var turretList = ManagerTurret.I.turretList;
+		bool isSelected = turretList.Contains(turretBasic);
+		if (isSelected) {
+			turretList.Remove(turretBasic);
+		}
+		else if (turretList.Count < 6) {
+			turretList.Add(turretBasic);
+		}
+		else {
+			// 超过上限不做处理
 			return;
 		}
-		if (ManagerTurret.I.turretList.Count < 6) {
-			ManagerTurret.I.turretList.Add(turret);
-			OnTurretSelect?.Invoke(turret, true);
-			SceneLabel.text = $"已选({ManagerTurret.I.turretList.Count}/6)";
-			return;
-		}
+		turretPanel.Settings(turretBasic, !isSelected);
+		SceneLabel.text = $"已选({turretList.Count}/6)";
 	}
 
-	#region UI项定义
-	/// <summary>
-	/// 预选炮塔 UI项
-	/// </summary>
-	public class UITurretItem : ModuleUIItem<TurretBasic> {
-		public readonly UIPreparePage parent;
-
-		public Label Title => Q<Label>("Title");
-		public VisualElement Image => Q<VisualElement>("Image");
-		public VisualElement Background => Q<VisualElement>("Background");
-
-		public UITurretItem(TurretBasic value, VisualElement element, UIPreparePage parent) : base(value, element) {
-			this.parent = parent;
-			Title.text = value.name;
-			Image.style.backgroundImage = new StyleBackground(value.icon);
-
-			element.RegisterCallback<ClickEvent>(evt => Select());
-			parent.OnTurretSelect += UIPreparePage_OnTurretSelect;
-		}
-		public override void Select() {
-			parent.SetModuleTurret(value);
-		}
-		private void UIPreparePage_OnTurretSelect(TurretBasic turret, bool arg2) {
-			if (turret != value) { return; }
-			Background.EnableInClassList("preparepage-card-bg-s", arg2);
-		}
-	}
-	#endregion
 }

@@ -9,7 +9,7 @@ public abstract class TurretComponentDetection : TurretComponent {
     /// <summary> 倒计时 </summary>
     protected float time;
     /// <summary> 当前炮塔 </summary>
-    protected DataTurret turret;
+    protected DataTurretOld turret;
     /// <summary> 最大侦测间隔 </summary>
     protected virtual float MaxTime => 0.5f;
     /// <summary> 游戏速度 </summary>
@@ -24,7 +24,7 @@ public abstract class TurretComponentDetection : TurretComponent {
     }
 
     /// <summary> 初始化侦测功能 </summary>
-    public virtual void Initialize(DataTurret turret) => this.turret = turret;
+    public virtual void Initialize(DataTurretOld turret) => this.turret = turret;
     /// <summary> 查询目标 </summary>
     public abstract void FindTarget();
 }

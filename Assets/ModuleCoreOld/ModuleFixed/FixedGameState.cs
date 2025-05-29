@@ -5,15 +5,15 @@ using UnityEngine;
 public class FixedGameState : ModuleFixed {
     public ConstLevel testLevel;
     public List<ConstCards> cardPool;
-    public List<ConstTurret> buildList;
-    public List<ConstTurret> turretPresets;
+    public List<ConstTurretOld> buildList;
+    public List<ConstTurretOld> turretPresets;
 
     /// <summary> 卡池 </summary>
     public ModuleAssets<ConstCards> CardPool => ModuleCore.CardPool;
     /// <summary> 炮塔预设库 </summary>
-    public ModuleAssets<ConstTurret> TurretLibrary => ModuleCore.TurretLibrary;
+    public ModuleAssets<ConstTurretOld> TurretLibrary => ModuleCore.TurretLibrary;
     /// <summary> 炮塔建造列表 </summary>
-    public ModuleAssets<ConstTurret> TurretBuildList => ModuleCore.TurretBuildList;
+    public ModuleAssets<ConstTurretOld> TurretBuildList => ModuleCore.TurretBuildList;
     /// <summary> 怪物生产管理器 资产 </summary>
     public ModuleAssets<FixedMonsterSpawn> AssetsMonsterSpawn => ModuleCore.AssetsMonsterSpawn;
     /// <summary> 游戏状态 DataGameState 数据处理器 </summary>

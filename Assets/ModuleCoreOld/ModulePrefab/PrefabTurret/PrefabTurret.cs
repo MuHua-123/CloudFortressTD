@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrefabTurret : ModulePrefab<DataTurret>, IBuilding {
+public class PrefabTurret : ModulePrefab<DataTurretOld>, IBuilding {
     public Animator animator => GetComponent<Animator>();
     public TurretComponentLaunch launch => GetComponent<TurretComponentLaunch>();
     public TurretComponentDetection detection => GetComponent<TurretComponentDetection>();

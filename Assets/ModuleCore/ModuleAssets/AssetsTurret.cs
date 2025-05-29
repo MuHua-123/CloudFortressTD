@@ -8,7 +8,7 @@ using MuHua;
 /// <summary>
 /// 炮台资源管理
 /// </summary>
-public class AssetsTurretConfig : ModuleSingle<AssetsTurretConfig> {
+public class AssetsTurret : ModuleSingle<AssetsTurret> {
 
 	public static event Action OnChange;
 
@@ -23,9 +23,9 @@ public class AssetsTurretConfig : ModuleSingle<AssetsTurretConfig> {
 	/// <summary> 更新列表 </summary>
 	public void UpdateConfig() {
 		turrets = new List<TurretBasic>();
-		Addressables.LoadAssetsAsync<ConstTurretConfig>(Tag, UpdateConfig, true);
+		Addressables.LoadAssetsAsync<ConstTurret>(Tag, UpdateConfig, true);
 	}
-	public void UpdateConfig(ConstTurretConfig sceneConfig) {
+	public void UpdateConfig(ConstTurret sceneConfig) {
 		turrets.AddRange(sceneConfig.configs);
 		OnChange?.Invoke();
 	}

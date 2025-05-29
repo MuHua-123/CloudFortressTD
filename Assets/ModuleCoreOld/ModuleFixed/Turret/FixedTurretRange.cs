@@ -8,11 +8,11 @@ using UnityEngine;
 public class FixedTurretRange : ModuleFixed {
     public Transform maxSphereRange;
     public Transform minSphereRange;
-    private DataTurret turret;
+    private DataTurretOld turret;
 
     private Transform Follower => turret.visual.transform;
     /// <summary> 炮塔 DataTurret 数据处理器 </summary>
-    public ModuleHandle<DataTurret> HandleTurret => ModuleCore.HandleTurret;
+    public ModuleHandle<DataTurretOld> HandleTurret => ModuleCore.HandleTurret;
 
     private void Start() {
         HandleTurret.OnChange += HandleTurret_OnChange;
@@ -21,7 +21,7 @@ public class FixedTurretRange : ModuleFixed {
         HandleTurret.OnChange -= HandleTurret_OnChange;
     }
 
-    private void HandleTurret_OnChange(DataTurret turret) {
+    private void HandleTurret_OnChange(DataTurretOld turret) {
         this.turret = turret;
         maxSphereRange.gameObject.SetActive(turret != null);
         minSphereRange.gameObject.SetActive(turret != null);

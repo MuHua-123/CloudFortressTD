@@ -10,8 +10,7 @@ using Unity.VisualScripting;
 public static class TurretControllerTool {
 
 	public static Turret Init(this TurretBasic turretBasic, TurretController controller) {
-		StandardTurret standardTurret = turretBasic as StandardTurret;
-		if (standardTurret != null) { return standardTurret.Init(controller); }
+		if (turretBasic is StandardTurret standardTurret) { return standardTurret.Init(controller); }
 		return null;
 	}
 

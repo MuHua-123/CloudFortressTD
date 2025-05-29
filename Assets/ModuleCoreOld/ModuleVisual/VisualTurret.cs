@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisualTurret : ModuleFixed, ModuleVisualOld<DataTurret> {
+public class VisualTurret : ModuleFixed, ModuleVisualOld<DataTurretOld> {
     /// <summary> 格子地图  </summary>
     public DataGridMap GridMap => HandleGridMap.Current;
 
@@ -13,7 +13,7 @@ public class VisualTurret : ModuleFixed, ModuleVisualOld<DataTurret> {
 
     public void Awake() => ModuleCore.VisualTurret = this;
 
-    public void UpdateVisual(DataTurret turret) {
+    public void UpdateVisual(DataTurretOld turret) {
         turret.UpdateProperty();
         bool isInitBuild = turret.visual == null;
         ModuleVisualTool.Create(ref turret.visual, turret.Prefab, transform);
@@ -31,7 +31,7 @@ public class VisualTurret : ModuleFixed, ModuleVisualOld<DataTurret> {
         //创建墙
         ExecuteConnectWall.Execute(turret.mapUnit);
     }
-    public void ReleaseVisual(DataTurret turret) {
+    public void ReleaseVisual(DataTurretOld turret) {
         if (turret.visual == null) { return; }
         //建筑释放
         IBuilding building = turret.visual.GetComponent<IBuilding>();

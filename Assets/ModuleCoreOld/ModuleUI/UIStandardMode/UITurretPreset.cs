@@ -12,7 +12,7 @@ public class UITurretPreset : ModuleUIPanel {
     private List<UITurretPresetsItem> turretPresetss = new List<UITurretPresetsItem>();
 
     /// <summary> 炮塔建造列表 </summary>
-    public ModuleAssets<ConstTurret> TurretBuildList => ModuleCore.TurretBuildList;
+    public ModuleAssets<ConstTurretOld> TurretBuildList => ModuleCore.TurretBuildList;
 
     public UITurretPreset(VisualElement element, VisualTreeAsset turretTemplate) : base(element) {
         this.turretTemplate = turretTemplate;
@@ -29,7 +29,7 @@ public class UITurretPreset : ModuleUIPanel {
         turretPresetss = new List<UITurretPresetsItem>();
         TurretBuildList.ForEach(CreateUITurretPresets);
     }
-    private void CreateUITurretPresets(ConstTurret presets) {
+    private void CreateUITurretPresets(ConstTurretOld presets) {
         VisualElement element = turretTemplate.Instantiate();
         UITurretPresetsItem item = new UITurretPresetsItem(presets, element);
         turretPresetss.Add(item);

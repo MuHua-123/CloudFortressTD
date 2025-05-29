@@ -6,10 +6,9 @@ using UnityEngine;
 /// <summary>
 /// 炮塔等级
 /// </summary>
-public class ConstTurretGrade : ScriptableObject
-{
+public class ConstTurretGrade : ScriptableObject {
     /// <summary> 关联的炮塔数据 </summary>
-    [HideInInspector] public ConstTurret turret;
+    [HideInInspector] public ConstTurretOld turret;
     /// <summary> 名称 </summary>
     public string Name;
     /// <summary> 预览图片 </summary>

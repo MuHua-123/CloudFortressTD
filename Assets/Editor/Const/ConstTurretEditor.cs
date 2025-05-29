@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(ConstTurret))]
+[CustomEditor(typeof(ConstTurretOld))]
 public class ConstTurretEditor : Editor {
-    private ConstTurret value;
+    private ConstTurretOld value;
 
-    private void Awake() => value = target as ConstTurret;
+    private void Awake() => value = target as ConstTurretOld;
 
     public override void OnInspectorGUI() {
         base.OnInspectorGUI();

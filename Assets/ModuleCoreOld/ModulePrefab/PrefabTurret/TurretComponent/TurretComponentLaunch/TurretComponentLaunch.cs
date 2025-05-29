@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public abstract class TurretComponentLaunch : TurretComponent {
     protected float prepareTime;//准备时间
-    protected DataTurret turret;
+    protected DataTurretOld turret;
 
     /// <summary> 瞄准器 </summary>
     public TurretComponentAim AimTarget => GetComponent<TurretComponentAim>();
@@ -29,7 +29,7 @@ public abstract class TurretComponentLaunch : TurretComponent {
     }
 
     /// <summary> 初始化侦测功能 </summary>
-    public virtual void Initialize(DataTurret turret) {
+    public virtual void Initialize(DataTurretOld turret) {
         this.turret = turret;
         prepareTime = MaxPrepareTime;
     }

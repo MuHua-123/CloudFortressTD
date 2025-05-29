@@ -9,8 +9,7 @@ using MuHua;
 public static class BulletControllerTool {
 
 	public static Bullet Init(this BulletBasic bulletBasic, TurretController turretController, ITurretTarget initTarget, BulletController controller) {
-		StandardBullet standardBullet = bulletBasic as StandardBullet;
-		if (standardBullet != null) { return standardBullet.Init(turretController, initTarget, controller); }
+		if (bulletBasic is StandardBullet standardBullet) { return standardBullet.Init(turretController, initTarget, controller); }
 		return null;
 	}
 

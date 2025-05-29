@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class InputBuilding : OldModuleInput {
 	private GameObject prefabTurret;
-	private ConstTurret presets;
+	private ConstTurretOld presets;
 
 	/// <summary> 格子地图  </summary>
 	public DataGridMap GridMap => HandleGridMap.Current;
@@ -22,9 +22,9 @@ public class InputBuilding : OldModuleInput {
 	/// <summary> 游戏状态 DataGameState 数据处理器 </summary>
 	public ModuleHandle<DataGameState> HandleGameState => ModuleCore.HandleGameState;
 	/// <summary> 炮塔建造 ConstTurret 数据处理器 </summary>
-	public ModuleHandle<ConstTurret> HandleTurretBuild => ModuleCore.HandleTurretBuild;
+	public ModuleHandle<ConstTurretOld> HandleTurretBuild => ModuleCore.HandleTurretBuild;
 	/// <summary> 炮塔 资产 </summary>
-	public ModuleAssets<DataTurret> AssetsTurret => ModuleCore.AssetsTurret;
+	public ModuleAssets<DataTurretOld> AssetsTurret => ModuleCore.AssetsTurret;
 	/// <summary> 怪物生产管理器 资产 </summary>
 	public ModuleAssets<FixedMonsterSpawn> AssetsMonsterSpawn => ModuleCore.AssetsMonsterSpawn;
 
@@ -41,7 +41,7 @@ public class InputBuilding : OldModuleInput {
 		transform.position = Vector3.Lerp(transform.position, position, Time.deltaTime * 20);
 	}
 
-	private void HandleTurretBuild_OnChange(ConstTurret presets) {
+	private void HandleTurretBuild_OnChange(ConstTurretOld presets) {
 		Destroy(prefabTurret);
 		this.presets = presets;
 		if (presets == null) { return; }
@@ -77,7 +77,7 @@ public class InputBuilding : OldModuleInput {
 		GameState.GoldCoin -= buildValue;
 		presets.BuildCount(1);
 		//完成建造
-		DataTurret turret = presets.To(mapUnit);
+		DataTurretOld turret = presets.To(mapUnit);
 		turret.buildValue = buildValue;
 		AssetsTurret.Add(turret);
 		//移除建筑幽灵预览

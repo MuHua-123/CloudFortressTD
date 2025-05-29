@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 /// </summary>
 public class UIReplaceTurretPage : ModuleUIPageo {
     public VisualTreeAsset TurretTemplate;
-    private ConstTurret turret;
+    private ConstTurretOld turret;
     private List<UITurretReplaceItem> replaces = new List<UITurretReplaceItem>();
 
     public override VisualElement Element => document.Q<VisualElement>("ReplaceTurret");
@@ -30,7 +30,7 @@ public class UIReplaceTurretPage : ModuleUIPageo {
     }
 
     /// <summary> 替换炮塔列表 </summary>
-    public void ReplaceTurretList(ConstTurret turret) {
+    public void ReplaceTurretList(ConstTurretOld turret) {
         this.turret = turret;
         Preview.Clear();
         VisualElement element = TurretTemplate.Instantiate();
@@ -42,13 +42,13 @@ public class UIReplaceTurretPage : ModuleUIPageo {
         replaces = new List<UITurretReplaceItem>();
         ModuleCore.TurretBuildList.ForEach(CreateUITurretPresets);
     }
-    private void CreateUITurretPresets(ConstTurret value) {
+    private void CreateUITurretPresets(ConstTurretOld value) {
         VisualElement element = TurretTemplate.Instantiate();
         UITurretReplaceItem item = new UITurretReplaceItem(value, element, ReplaceTurret);
         replaces.Add(item);
         BuildList.Add(item.element);
     }
-    private void ReplaceTurret(ConstTurret replace) {
+    private void ReplaceTurret(ConstTurretOld replace) {
         ModuleCore.TurretBuildList.Remove(replace);
         ModuleCore.TurretBuildList.Add(turret);
         ModuleCore.HandleGamePage.Change(DataGamePage.StandardMode);

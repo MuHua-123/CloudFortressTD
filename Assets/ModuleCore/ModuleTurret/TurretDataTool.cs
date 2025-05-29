@@ -8,8 +8,7 @@ using UnityEngine;
 public static class TurretDataTool {
 
 	public static TurretData Data(this TurretBasic turretBasic) {
-		StandardTurret standardTurret = turretBasic as StandardTurret;
-		if (standardTurret != null) { return standardTurret.Data(); }
+		if (turretBasic is StandardTurret standardTurret) { return standardTurret.Data(); }
 		return null;
 	}
 

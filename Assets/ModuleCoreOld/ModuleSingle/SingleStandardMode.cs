@@ -15,7 +15,7 @@ public class SingleStandardMode : ModuleSingle<SingleStandardMode> {
 		drawCards.RandomDrawCards();
 	}
 	/// <summary> 替换炮塔列表 </summary>
-	public void ReplaceTurretList(ConstTurret turret) {
+	public void ReplaceTurretList(ConstTurretOld turret) {
 		ModuleCore.I.HandleGamePage.Change(DataGamePage.ReplaceTurret);
 		replaceTurret.ReplaceTurretList(turret);
 	}

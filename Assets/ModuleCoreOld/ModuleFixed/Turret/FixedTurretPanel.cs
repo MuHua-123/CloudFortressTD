@@ -12,20 +12,20 @@ public class FixedTurretPanel : ModuleFixed {
 	public TMP_Text upgradeT;//升级
 	public TMP_Text aimTypeT;//瞄准
 	public TMP_Text recycleT;//回收
-	private DataTurret turret;
+	private DataTurretOld turret;
 
 	private Transform Follower => turret.visual.transform;
 	/// <summary> 当前游戏状态 </summary>
 	public DataGameState GameState => HandleGameState.Current;
 
 	/// <summary> 炮塔 资产 </summary>
-	public ModuleAssets<DataTurret> AssetsTurret => ModuleCore.AssetsTurret;
+	public ModuleAssets<DataTurretOld> AssetsTurret => ModuleCore.AssetsTurret;
 	/// <summary> 游戏状态 DataGameState 数据处理器 </summary>
 	public ModuleHandle<DataGameState> HandleGameState => ModuleCore.HandleGameState;
 	/// <summary> 炮塔 DataTurret 数据处理器 </summary>
-	public ModuleHandle<DataTurret> HandleTurret => ModuleCore.HandleTurret;
+	public ModuleHandle<DataTurretOld> HandleTurret => ModuleCore.HandleTurret;
 	/// <summary> 炮塔 可视化内容生成模块 </summary>
-	public ModuleVisualOld<DataTurret> VisualTurret => ModuleCore.VisualTurret;
+	public ModuleVisualOld<DataTurretOld> VisualTurret => ModuleCore.VisualTurret;
 	/// <summary> 连接墙 执行模块 </summary>
 	public ModuleExecute<DataGridMapUnit> ExecuteConnectWall => ModuleCore.ExecuteConnectWall;
 
@@ -43,7 +43,7 @@ public class FixedTurretPanel : ModuleFixed {
 		transform.position = transform.position + new Vector3(0, 0.1f, 0) + direction * 5;
 	}
 
-	private void HandleTurret_OnChange(DataTurret turret) {
+	private void HandleTurret_OnChange(DataTurretOld turret) {
 		this.turret = turret;
 		foreach (Transform item in transform) {
 			item.gameObject.SetActive(turret != null);
@@ -65,7 +65,7 @@ public class FixedTurretPanel : ModuleFixed {
 		GameState.GoldCoin -= turret.UpgradeValue;
 		turret.grade++;
 
-		DataTurret temp = turret;
+		DataTurretOld temp = turret;
 		VisualTurret.ReleaseVisual(temp);
 		HandleTurret.Change(null);
 		await Task.Delay(500);

@@ -7,12 +7,12 @@ using UnityEngine.UIElements;
 /// <summary> 
 /// 炮塔替换
 /// </summary>
-public class UITurretReplaceItem : OldModuleUIItem<ConstTurret> {
+public class UITurretReplaceItem : OldModuleUIItem<ConstTurretOld> {
     public Label Label => element.Q<Label>("Label");
     public Button Button => element.Q<Button>();
     public VisualElement Image => element.Q<VisualElement>("Image");
 
-    public UITurretReplaceItem(ConstTurret value, VisualElement element, Action<ConstTurret> callback) : base(value, element) {
+    public UITurretReplaceItem(ConstTurretOld value, VisualElement element, Action<ConstTurretOld> callback) : base(value, element) {
         Label.text = $"{value.BuildValue()}￥";
         Image.style.backgroundImage = new StyleBackground(value.icon);
 

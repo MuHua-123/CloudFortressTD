@@ -18,7 +18,7 @@ public class SingleManager : ModuleSingle<SingleManager> {
 
 	protected override void Awake() {
 		NoReplace();
-		ManagerScene.OnComplete += ManagerScene_OnComplete;
+		// ManagerScene.OnComplete += ManagerScene_OnComplete;
 	}
 	private void Start() {
 		ModuleUI.Jump(EnumPage.Menu);
