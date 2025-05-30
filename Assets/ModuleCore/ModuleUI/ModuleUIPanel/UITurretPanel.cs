@@ -32,7 +32,7 @@ public class UITurretPanel : ModuleUIPanel {
 	}
 
 	private void AssetsTurretConfig_OnChange() {
-		ScrollList.Create(AssetsTurret.Datas);
+		ScrollList.Create(AssetsTurret.I.turrets);
 	}
 
 	/// <summary> 设置 </summary>

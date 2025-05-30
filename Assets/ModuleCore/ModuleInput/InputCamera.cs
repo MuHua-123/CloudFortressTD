@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// 相机 - 输入
+/// 输入 - 相机
 /// </summary>
 public class InputCamera : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class InputCamera : MonoBehaviour {
 	public Vector2 delta;
 
 	private bool isEnable;
+	private bool isTemporarilyDisable;
 	private Vector3 mousePosition1;
 	private Vector3 mousePosition2;
 	private Vector3 originalPosition;
@@ -23,10 +25,16 @@ public class InputCamera : MonoBehaviour {
 
 	private void Awake() {
 		ModuleInput.OnInputMode += ModuleInput_OnInputMode;
+		ModuleInput.OnTemporarilyDisable += ModuleInput_OnTemporarilyDisable;
 	}
 
 	private void ModuleInput_OnInputMode(EnumInputMode mode) {
 		isEnable = mode == EnumInputMode.Standard;
+	}
+	private void ModuleInput_OnTemporarilyDisable(bool obj) {
+		isTemporarilyDisable = obj;
+		isMovement = false;
+		isRotating = false;
 	}
 
 	private void Update() {
@@ -36,13 +44,13 @@ public class InputCamera : MonoBehaviour {
 
 	#region 输入
 	public void OnEnableMovement(InputValue inputValue) {
-		if (!isEnable) { return; }
+		if (!isEnable || isTemporarilyDisable) { return; }
 		isMovement = inputValue.isPressed;
 		mousePosition1 = ModuleInput.mousePosition;
 		originalPosition = CameraController.Position;
 	}
 	public void OnEnableRotating(InputValue inputValue) {
-		if (!isEnable) { return; }
+		if (!isEnable || isTemporarilyDisable) { return; }
 		isRotating = inputValue.isPressed;
 		mousePosition2 = ModuleInput.mousePosition;
 		eulerAngles = originalEulerAngles = CameraController.EulerAngles;

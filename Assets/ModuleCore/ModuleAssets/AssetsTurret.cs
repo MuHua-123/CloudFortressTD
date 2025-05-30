@@ -16,8 +16,6 @@ public class AssetsTurret : ModuleSingle<AssetsTurret> {
 
 	public List<TurretBasic> turrets;
 
-	public static List<TurretBasic> Datas => I.turrets;
-
 	protected override void Awake() => Replace(false);
 
 	/// <summary> 更新列表 </summary>
