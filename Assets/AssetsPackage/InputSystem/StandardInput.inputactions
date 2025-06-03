@@ -30,6 +30,54 @@
             ]
         },
         {
+            "name": "InputBuild",
+            "id": "8706504a-90a7-4ea8-ab98-ab490d14c3a5",
+            "actions": [
+                {
+                    "name": "Build",
+                    "type": "Button",
+                    "id": "d904953d-b649-4036-82d4-be80c6f6f962",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "21323baf-a9df-43ab-afec-d84ad41f1294",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "751ef2d2-bd4e-4290-af66-9644da01c3b5",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c68ff1e5-9d27-4865-aef8-375d730cfe9c",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Build",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "InputCamera",
             "id": "4213d4a4-4a60-4169-960f-920664dd4f0a",
             "actions": [
@@ -142,74 +190,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Playing",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "InputBuilding",
-            "id": "8706504a-90a7-4ea8-ab98-ab490d14c3a5",
-            "actions": [
-                {
-                    "name": "Build",
-                    "type": "Button",
-                    "id": "d904953d-b649-4036-82d4-be80c6f6f962",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "CancelBuild",
-                    "type": "Button",
-                    "id": "21323baf-a9df-43ab-afec-d84ad41f1294",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Position",
-                    "type": "Value",
-                    "id": "163df552-04b0-43b5-90dd-b815229cef8d",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "751ef2d2-bd4e-4290-af66-9644da01c3b5",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CancelBuild",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "75dc9ef9-6b6e-44ad-9432-511c5a3a62b0",
-                    "path": "<Pointer>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c68ff1e5-9d27-4865-aef8-375d730cfe9c",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Build",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

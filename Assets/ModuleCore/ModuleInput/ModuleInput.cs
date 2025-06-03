@@ -32,6 +32,8 @@ public class ModuleInput : ModuleSingle<ModuleInput> {
 	/// <summary> 临时禁用输入 </summary>
 	public static void TemporarilyDisable(bool value) => OnTemporarilyDisable?.Invoke(value);
 
+	public InputBuild inputBuild;
+
 	protected override void Awake() => NoReplace();
 
 	private void Update() {
@@ -48,5 +50,10 @@ public class ModuleInput : ModuleSingle<ModuleInput> {
         //苹果平台
         isPointerOverUIObject = EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId);
 #endif
+	}
+
+	/// <summary> 启用预览 </summary>
+	public void EnablePreview(TurretBasic turretBasic) {
+		inputBuild.EnablePreview(turretBasic);
 	}
 }

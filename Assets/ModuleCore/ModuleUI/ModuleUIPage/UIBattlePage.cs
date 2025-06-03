@@ -54,7 +54,7 @@ public class UIBattlePage : ModuleUIPage {
 			Background.EnableInClassList("battlepage-card-bg-s", false);
 		}
 		public override void SelectState() {
-			ManagerTurret.I.EnablePreview(value);
+			ModuleInput.I.EnablePreview(value);
 			Background.EnableInClassList("battlepage-card-bg-s", true);
 		}
 	}

@@ -14,8 +14,7 @@ public class InputBuild : MonoBehaviour {
 
 	private void Update() {
 		if (preview == null || CameraController == null) { return; }
-		Vector3 worldPosition = CameraController.ScreenToWorldPosition(ModuleInput.mousePosition);
-		if (!ManagerMap.TryWorldPosition(worldPosition, out Vector3 position)) { return; }
+		Vector3 position = GetMousePosition();
 		preview.transform.position = Vector3.Lerp(preview.transform.position, position, Time.deltaTime * 20);
 	}
 
@@ -23,15 +22,30 @@ public class InputBuild : MonoBehaviour {
 	public void EnablePreview(TurretBasic turretBasic) {
 		ModuleInput.TemporarilyDisable(true);
 		ModuleVisual.I.GeneratorTurretBasic.CreateVisual(ref preview, turretBasic.transform);
+
+		if (preview == null || CameraController == null) { return; }
+		preview.transform.position = GetMousePosition();
 	}
 
 	#region 输入
 	public void OnBuild(InputValue value) {
+		if (preview == null) { return; }
 		ModuleInput.TemporarilyDisable(false);
+		TurretController controller = preview.gameObject.AddComponent(typeof(TurretController)) as TurretController;
+		controller.Init();
+		preview = null;
 	}
 	public void OnCancel(InputValue value) {
+		if (preview == null) { return; }
 		ModuleInput.TemporarilyDisable(false);
 		ModuleVisual.I.GeneratorTurretBasic.ReleaseVisual(preview);
 	}
 	#endregion
+
+	/// <summary> 获取鼠标位置 </summary>
+	private Vector3 GetMousePosition() {
+		Vector3 worldPosition = CameraController.ScreenToWorldPosition(ModuleInput.mousePosition);
+		if (!ManagerMap.TryWorldPosition(worldPosition, out Vector3 position)) { return worldPosition; }
+		return position;
+	}
 }

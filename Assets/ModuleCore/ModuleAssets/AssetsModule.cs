@@ -51,6 +51,8 @@ public class AssetsModule : ModuleSingle<AssetsModule> {
 		string[] defaultDirectories = Directory.GetDirectories(DefaultPath);
 		// 遍历文件夹
 		foreach (string directory in defaultDirectories) { ReadDefault(directory); }
+		// 如果模组路径不存在则创建
+		if (!Directory.Exists(ModulePath)) { Directory.CreateDirectory(ModulePath); }
 		// 获取模组路径下的所有文件夹
 		string[] moduleDirectories = Directory.GetDirectories(ModulePath);
 		// 遍历模组文件夹
