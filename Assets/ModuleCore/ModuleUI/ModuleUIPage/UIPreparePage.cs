@@ -30,7 +30,7 @@ public class UIPreparePage : ModuleUIPage {
 			ModuleUI.Jump(EnumPage.Battle);
 			ModuleInput.Mode(EnumInputMode.Standard);
 			ModuleCamera.Mode(EnumCameraMode.MoveAxis);
-			ManagerMap.I.Initialize();
+			ManagerMap.I.Initial();
 		});
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
@@ -50,7 +50,7 @@ public class UIPreparePage : ModuleUIPage {
 	}
 
 	/// <summary> 选中炮塔 </summary>
-	public void SettingsTurret(TurretBasic turretBasic) {
+	public void SettingsTurret(HTurret turretBasic) {
 		var turretList = ManagerTurret.I.turretList;
 		bool isSelected = turretList.Contains(turretBasic);
 		if (isSelected) {

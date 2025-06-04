@@ -14,13 +14,13 @@ public class AssetsTurret : ModuleSingle<AssetsTurret> {
 
 	public const string Tag = "default";// aa查找的标签
 
-	public List<TurretBasic> turrets;
+	public List<HTurret> turrets;
 
 	protected override void Awake() => Replace(false);
 
 	/// <summary> 更新列表 </summary>
 	public void UpdateConfig() {
-		turrets = new List<TurretBasic>();
+		turrets = new List<HTurret>();
 		Addressables.LoadAssetsAsync<ConstTurret>(Tag, UpdateConfig, true);
 	}
 	public void UpdateConfig(ConstTurret sceneConfig) {

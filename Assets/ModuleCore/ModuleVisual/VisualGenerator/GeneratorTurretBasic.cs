@@ -5,16 +5,16 @@ using UnityEngine;
 /// <summary>
 /// 基础炮塔 - 生成器
 /// </summary>
-public class GeneratorTurretBasic : VisualGenerator<TurretBasic> {
+public class GeneratorTurretBasic : VisualGenerator<HTurret> {
 
 	public Transform space;
 
-	public override void CreateVisual(ref TurretBasic visual, Transform original) {
+	public override void CreateVisual(ref HTurret visual, Transform original) {
 		ReleaseVisual(visual);
-		visual = Create<TurretBasic>(original, space);
+		visual = Create<HTurret>(original, space);
 	}
 
-	public override void ReleaseVisual(TurretBasic visual) {
+	public override void ReleaseVisual(HTurret visual) {
 		if (visual != null) { Destroy(visual.gameObject); }
 	}
 }

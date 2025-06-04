@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class InputBuild : MonoBehaviour {
 
-	private TurretBasic preview;
+	private HTurret preview;
 
 	private CameraController CameraController => ModuleCamera.CurrentCamera;
 
@@ -19,7 +19,7 @@ public class InputBuild : MonoBehaviour {
 	}
 
 	/// <summary> 启用预览 </summary>
-	public void EnablePreview(TurretBasic turretBasic) {
+	public void EnablePreview(HTurret turretBasic) {
 		ModuleInput.TemporarilyDisable(true);
 		ModuleVisual.I.GeneratorTurretBasic.CreateVisual(ref preview, turretBasic.transform);
 
@@ -31,7 +31,7 @@ public class InputBuild : MonoBehaviour {
 	public void OnBuild(InputValue value) {
 		if (preview == null) { return; }
 		ModuleInput.TemporarilyDisable(false);
-		TurretController controller = preview.gameObject.AddComponent(typeof(TurretController)) as TurretController;
+		CTurret controller = preview.gameObject.AddComponent(typeof(CTurret)) as CTurret;
 		controller.Init();
 		preview = null;
 	}

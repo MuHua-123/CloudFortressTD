@@ -7,5 +7,5 @@ using UnityEngine;
 /// </summary>
 [CreateAssetMenu(fileName = "TurretConfig", menuName = "数据模块/炮台配置")]
 public class ConstTurret : ScriptableObject {
-	public List<TurretBasic> configs;
+	public List<HTurret> configs;
 }

@@ -409,6 +409,14 @@
       },
       "url": "https://packages.unity.cn"
     },
+    "muhua-character": {
+      "version": "file:Character",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.inputsystem": "1.7.0"
+      }
+    },
     "muhua-hot-module": {
       "version": "file:HotModule",
       "depth": 0,

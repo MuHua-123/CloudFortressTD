@@ -8,41 +8,39 @@ using MuHua;
 /// </summary>
 public class ManagerMap : ModuleSingle<ManagerMap> {
 
-	public ModuleMap moduleMap;// 地图模块
+	public MMap mMap;// 地图模块
 
 	protected override void Awake() => NoReplace(false);
 
 	/// <summary> 初始化 </summary>
-	public void Initialize() {
-		if (CreateMapGrid()) { Debug.Log("成功创建格子地图!"); return; }
-		Debug.LogWarning("场景中未找到任何Map对象");
-	}
-	/// <summary> 创建格子地图 </summary>
-	public bool CreateMapGrid() {
+	public void Initial() {
 		// 查找地图对象
-		if (!Utilities.FindObject(out GridMap gridMap)) { return false; }
+		if (!Utilities.FindObject(out HMap hMap)) { return; }
+		// 判断类型
+		if (hMap is HMapGrid mapGrid) { Initial(mapGrid); }
+	}
+	public void Initial(HMapGrid hMap) {
 		// 初始化地图数据
-		moduleMap = new MapGrid(gridMap.mapSize.x, gridMap.mapSize.y, gridMap.OriginPosition);
+		mMap = new MMapGrid(hMap.mapSize.x, hMap.mapSize.y, hMap.OriginPosition);
 		// 创建地图空间
-		Utilities.FindObjects<MapUnit>(CreateMapSpace);
+		Utilities.FindObjects<HMapUnit>(Initial);
 		// 填充建筑
-		Utilities.FindObjects<MapBuilding>(InitialBuilding);
-		return true;
+		Utilities.FindObjects<MapBuilding>(Initial);
 	}
 
 	/// <summary> 创建地图空间 </summary>
-	public void CreateMapSpace(MapUnit obj) {
-		if (!moduleMap.TryGetMapUnit(obj.transform.position, out DataMapUnit mapUnit)) { return; }
+	public void Initial(HMapUnit obj) {
+		if (!mMap.TryGetMapUnit(obj.transform.position, out MMapUnit mapUnit)) { return; }
 		mapUnit.mapSpace = new DataMapSpace();
 	}
 	/// <summary> 创建初始建筑 </summary>
-	public void InitialBuilding(MapBuilding obj) {
-		if (!moduleMap.TryGetMapUnit(obj.transform.position, out DataMapUnit mapUnit)) { return; }
+	public void Initial(MapBuilding obj) {
+		if (!mMap.TryGetMapUnit(obj.transform.position, out MMapUnit mapUnit)) { return; }
 		if (mapUnit.mapSpace is DataMapSpace space) { space.building = obj.transform; }
 	}
 
 	/// <summary> 世界坐标转换地图坐标 </summary>
 	public static bool TryWorldPosition(Vector3 worldPosition, out Vector3 position) {
-		return I.moduleMap.TryWorldPosition(worldPosition, out position);
+		return I.mMap.TryWorldPosition(worldPosition, out position);
 	}
 }

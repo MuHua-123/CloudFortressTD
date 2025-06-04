@@ -10,15 +10,15 @@ using MuHua;
 /// </summary>
 public class UITurretPanel : ModuleUIPanel {
 
-	public Action<TurretBasic> callback;
-	public event Action<TurretBasic, bool> OnSelect;
+	public Action<HTurret> callback;
+	public event Action<HTurret, bool> OnSelect;
 
-	public UIScrollList<UITurretItem, TurretBasic> ScrollList;
+	public UIScrollList<UITurretItem, HTurret> ScrollList;
 
-	public UITurretPanel(VisualElement element, VisualElement canvas, VisualTreeAsset templateAsset, Action<TurretBasic> callback) : base(element) {
+	public UITurretPanel(VisualElement element, VisualElement canvas, VisualTreeAsset templateAsset, Action<HTurret> callback) : base(element) {
 		this.callback = callback;
 
-		ScrollList = new UIScrollList<UITurretItem, TurretBasic>(element, canvas, templateAsset,
+		ScrollList = new UIScrollList<UITurretItem, HTurret>(element, canvas, templateAsset,
 			(data, element) => new UITurretItem(data, element, this), UIDirection.Vertical);
 
 		AssetsTurret.OnChange += AssetsTurretConfig_OnChange;
@@ -36,11 +36,11 @@ public class UITurretPanel : ModuleUIPanel {
 	}
 
 	/// <summary> 设置 </summary>
-	public void Settings(TurretBasic turretBasic) {
+	public void Settings(HTurret turretBasic) {
 		callback?.Invoke(turretBasic);
 	}
 	/// <summary> 设置事件 </summary>
-	public void Settings(TurretBasic turretBasic, bool isSelect) {
+	public void Settings(HTurret turretBasic, bool isSelect) {
 		OnSelect?.Invoke(turretBasic, isSelect);
 	}
 
@@ -48,14 +48,14 @@ public class UITurretPanel : ModuleUIPanel {
 	/// <summary>
 	/// 预选炮塔 UI项
 	/// </summary>
-	public class UITurretItem : ModuleUIItem<TurretBasic> {
+	public class UITurretItem : ModuleUIItem<HTurret> {
 		public readonly UITurretPanel parent;
 
 		public Label Title => Q<Label>("Title");
 		public VisualElement Image => Q<VisualElement>("Image");
 		public VisualElement Background => Q<VisualElement>("Background");
 
-		public UITurretItem(TurretBasic value, VisualElement element, UITurretPanel parent) : base(value, element) {
+		public UITurretItem(HTurret value, VisualElement element, UITurretPanel parent) : base(value, element) {
 			this.parent = parent;
 			Title.text = value.name;
 			Image.style.backgroundImage = new StyleBackground(value.icon);
@@ -70,7 +70,7 @@ public class UITurretPanel : ModuleUIPanel {
 		public override void Select() {
 			parent.Settings(value);
 		}
-		private void UIPreparePage_OnSelect(TurretBasic turret, bool arg2) {
+		private void UIPreparePage_OnSelect(HTurret turret, bool arg2) {
 			if (turret != value) { return; }
 			Background.EnableInClassList("preparepage-card-bg-s", arg2);
 		}

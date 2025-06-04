@@ -11,7 +11,7 @@ public class ManagerTurret : ModuleSingle<ManagerTurret> {
 	/// <summary> 炮塔预览 </summary>
 	// [HideInInspector] public TurretBasic preview;
 	/// <summary> 炮塔列表 </summary>
-	[HideInInspector] public List<TurretBasic> turretList = new List<TurretBasic>();
+	[HideInInspector] public List<HTurret> turretList = new List<HTurret>();
 
 	// private CameraController CameraController => ModuleCamera.CurrentCamera;
 

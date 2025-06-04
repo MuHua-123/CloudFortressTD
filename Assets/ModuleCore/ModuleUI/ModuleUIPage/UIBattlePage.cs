@@ -11,14 +11,14 @@ public class UIBattlePage : ModuleUIPage {
 
 	public VisualTreeAsset TurretCardTemplate;
 
-	public ModuleUIItems<UITurretItem, TurretBasic> turretPresets;
+	public ModuleUIItems<UITurretItem, HTurret> turretPresets;
 
 	public override VisualElement Element => root.Q<VisualElement>("BattlePage");
 
 	public VisualElement Bottom => Q<VisualElement>("Bottom");// 滚动视图
 
 	private void Awake() {
-		turretPresets = new ModuleUIItems<UITurretItem, TurretBasic>(Bottom, TurretCardTemplate,
+		turretPresets = new ModuleUIItems<UITurretItem, HTurret>(Bottom, TurretCardTemplate,
 		(data, element) => new UITurretItem(data, element, this));
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
@@ -36,14 +36,14 @@ public class UIBattlePage : ModuleUIPage {
 	/// <summary>
 	/// 炮塔 UI项
 	/// </summary>
-	public class UITurretItem : ModuleUIItem<TurretBasic> {
+	public class UITurretItem : ModuleUIItem<HTurret> {
 		public readonly UIBattlePage parent;
 
 		public Label Price => Q<Label>("Price");
 		public VisualElement Image => Q<VisualElement>("Image");
 		public VisualElement Background => Q<VisualElement>("Background");
 
-		public UITurretItem(TurretBasic value, VisualElement element, UIBattlePage parent) : base(value, element) {
+		public UITurretItem(HTurret value, VisualElement element, UIBattlePage parent) : base(value, element) {
 			this.parent = parent;
 			Price.text = $"${value.buildValue}";
 			Image.style.backgroundImage = new StyleBackground(value.icon);
