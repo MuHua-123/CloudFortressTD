@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="TurretCardTemplate" src="project://database/Assets/UI%20Toolkit/Template/TurretCardTemplate.uxml?fileID=9197481963319205126&amp;guid=6c6863bd42b956b41ab27931bf35d4df&amp;type=3#TurretCardTemplate" />
+    <ui:Template name="TurretCardTemplate" src="project://database/Assets/UI%20Toolkit/GamePage/PreparePage/TurretCardTemplate.uxml?fileID=9197481963319205126&amp;guid=6c6863bd42b956b41ab27931bf35d4df&amp;type=3#TurretCardTemplate" />
     <Style src="project://database/Assets/UI%20Toolkit/GamePage/BattlePage/BattlePage.uss?fileID=7433441132597879392&amp;guid=6682efef89409d84bbd1eb483ccf1126&amp;type=3#BattlePage" />
     <Style src="project://database/Assets/UI%20Toolkit/GamePage/GamePage.uss?fileID=7433441132597879392&amp;guid=b50610cb5b8fd9e45a739191112bfebe&amp;type=3#GamePage" />
     <ui:VisualElement style="flex-grow: 1; padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px;">
@@ -13,6 +13,10 @@
                     <ui:VisualElement style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/Assets/Icon/%E9%87%91%E5%B8%81.png?fileID=2800000&amp;guid=81f52da0d11a8ef4aaafaa42ea8b0183&amp;type=3#金币&quot;); width: 50px; height: 48px;" />
                     <ui:Label tabindex="-1" text="99999" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 10px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 32px; color: rgb(255, 188, 18); -unity-font-style: bold;" />
                 </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Count" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; flex-direction: column; align-items: stretch; justify-content: flex-start; align-self: auto;">
+                <ui:Label tabindex="-1" text="波次 99/99" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Wave" style="color: rgb(255, 255, 255); font-size: 48px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: middle-center;" />
+                <ui:Label tabindex="-1" text="倒计时：99" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Countdown" style="color: rgb(255, 255, 255); font-size: 24px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: middle-center;" />
             </ui:VisualElement>
             <ui:VisualElement name="Button" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; flex-direction: row-reverse; align-items: center;">
                 <ui:VisualElement name="Button1" class="battle-button">

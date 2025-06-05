@@ -4,10 +4,10 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "ConstSpawn1", menuName = "数据模块/怪物生产/生产规则1")]
 public class ConstSpawn1 : ConstSpawn {
-	/// <summary> 生产间隔 </summary>
-	public int interval;
 	/// <summary> 生产数量 </summary>
 	public int quantity;
+	/// <summary> 生产间隔 </summary>
+	public float interval;
 	/// <summary> 怪物类型 </summary>
 	public HMonster hMonster;
 
