@@ -30,7 +30,7 @@ public class UIBattlePage : ModuleUIPage {
 	private void ModuleUI_OnJumpPage(EnumPage page) {
 		Element.EnableInClassList("document-page-hide", page != EnumPage.Battle);
 		if (page != EnumPage.Battle) { return; }
-		turretPresets.Create(ManagerTurret.I.turretList);
+		turretPresets.Create(AssetsTurret.I.useTurrets);
 	}
 
 	/// <summary>

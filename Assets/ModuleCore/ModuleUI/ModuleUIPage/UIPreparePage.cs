@@ -26,12 +26,7 @@ public class UIPreparePage : ModuleUIPage {
 		turretPanel = new UITurretPanel(ScrollView, root, TurretCardTemplate, SettingsTurret);
 
 		Button1.clicked += () => ModuleUI.Jump(EnumPage.Scene);
-		Button2.clicked += () => AssetsScene.I.LoadScene(() => {
-			ModuleUI.Jump(EnumPage.Battle);
-			ModuleInput.Mode(EnumInputMode.Standard);
-			ModuleCamera.Mode(EnumCameraMode.MoveAxis);
-			ManagerMap.I.Initial();
-		});
+		Button2.clicked += () => AssetsScene.I.LoadScene(SingleManager.SwitchRunningMode);
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
 	}
@@ -45,13 +40,13 @@ public class UIPreparePage : ModuleUIPage {
 	private void ModuleUI_OnJumpPage(EnumPage page) {
 		Element.EnableInClassList("document-page-hide", page != EnumPage.Prepare);
 		if (page != EnumPage.Prepare) { return; }
-		ManagerTurret.I.turretList.Clear();
+		AssetsTurret.I.useTurrets.Clear();
 		AssetsTurret.I.UpdateConfig();
 	}
 
 	/// <summary> 选中炮塔 </summary>
 	public void SettingsTurret(HTurret turretBasic) {
-		var turretList = ManagerTurret.I.turretList;
+		List<HTurret> turretList = AssetsTurret.I.useTurrets;
 		bool isSelected = turretList.Contains(turretBasic);
 		if (isSelected) {
 			turretList.Remove(turretBasic);

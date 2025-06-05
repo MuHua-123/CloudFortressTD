@@ -25,7 +25,7 @@ public class ManagerMap : ModuleSingle<ManagerMap> {
 		// 创建地图空间
 		Utilities.FindObjects<HMapUnit>(Initial);
 		// 填充建筑
-		Utilities.FindObjects<MapBuilding>(Initial);
+		Utilities.FindObjects<HBuilding>(Initial);
 	}
 
 	/// <summary> 创建地图空间 </summary>
@@ -34,7 +34,7 @@ public class ManagerMap : ModuleSingle<ManagerMap> {
 		mapUnit.mapSpace = new DataMapSpace();
 	}
 	/// <summary> 创建初始建筑 </summary>
-	public void Initial(MapBuilding obj) {
+	public void Initial(HBuilding obj) {
 		if (!mMap.TryGetMapUnit(obj.transform.position, out MMapUnit mapUnit)) { return; }
 		if (mapUnit.mapSpace is DataMapSpace space) { space.building = obj.transform; }
 	}

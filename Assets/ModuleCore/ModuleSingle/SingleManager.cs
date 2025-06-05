@@ -12,32 +12,30 @@ public class SingleManager : ModuleSingle<SingleManager> {
 	public static EnumRunningMode runningMode;
 
 	/// <summary> 设置运行模式 </summary>
-	public static void SetRunningMode(EnumRunningMode runningMode) {
+	public static void SettingsRunningMode(EnumRunningMode runningMode) {
 		SingleManager.runningMode = runningMode;
 	}
-
-	protected override void Awake() {
-		NoReplace();
-		// ManagerScene.OnComplete += ManagerScene_OnComplete;
+	/// <summary> 切换运行模式 </summary>
+	public static void SwitchRunningMode() {
+		if (runningMode == EnumRunningMode.None) { EnumRunningMode_None(); }
+		if (runningMode == EnumRunningMode.Standard) { EnumRunningMode_Standard(); }
 	}
-	private void Start() {
+
+	protected override void Awake() => NoReplace();
+
+	private void Start() => EnumRunningMode_None();
+
+	/// <summary> 默认模式 </summary>
+	private static void EnumRunningMode_None() {
 		ModuleUI.Jump(EnumPage.Menu);
 		ModuleInput.Mode(EnumInputMode.None);
 		ModuleCamera.Mode(EnumCameraMode.None);
-		// SceneManager.LoadScene("MenuScene");
 	}
-
-	private void ManagerScene_OnComplete() {
-		if (runningMode == EnumRunningMode.None) {
-			ModuleUI.Jump(EnumPage.Menu);
-			ModuleInput.Mode(EnumInputMode.None);
-			ModuleCamera.Mode(EnumCameraMode.None);
-		}
-		if (runningMode == EnumRunningMode.Standard) {
-			ModuleUI.Jump(EnumPage.Battle);
-			ModuleInput.Mode(EnumInputMode.Standard);
-			ModuleCamera.Mode(EnumCameraMode.MoveAxis);
-			ManagerMap.I.Initial();
-		}
+	/// <summary> 标准模式 </summary>
+	private static void EnumRunningMode_Standard() {
+		ModuleUI.Jump(EnumPage.Battle);
+		ModuleInput.Mode(EnumInputMode.Standard);
+		ModuleCamera.Mode(EnumCameraMode.MoveAxis);
+		ManagerMap.I.Initial();
 	}
 }

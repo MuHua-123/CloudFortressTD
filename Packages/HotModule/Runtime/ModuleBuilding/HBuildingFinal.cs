@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 地图建筑
+/// 终点 - 建筑
 /// </summary>
-public class MapBuilding : MonoBehaviour {
+public class HBuildingFinal : HBuilding {
 
 }

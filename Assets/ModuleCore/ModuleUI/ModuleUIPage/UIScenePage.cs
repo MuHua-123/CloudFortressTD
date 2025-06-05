@@ -33,7 +33,7 @@ public class UIScenePage : ModuleUIPage {
 	private void Button2_clicked() {
 		if (!AssetsScene.I.isValid) { return; }
 		ModuleUI.Jump(EnumPage.Prepare);
-		SingleManager.SetRunningMode(EnumRunningMode.Standard);
+		SingleManager.SettingsRunningMode(EnumRunningMode.Standard);
 	}
 	private void ModuleUI_OnJumpPage(EnumPage page) {
 		Element.EnableInClassList("document-page-hide", page != EnumPage.Scene);
