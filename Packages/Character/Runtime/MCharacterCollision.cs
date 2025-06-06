@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace MuHua {
 	/// <summary>
-	/// 标准角色 - 模块
+	/// 碰撞角色 - 模块
 	/// </summary>
-	public class MCharacterStandard : MCharacter {
+	public class MCharacterCollision : MCharacter {
 
 		/// <summary> 当前动作 </summary>
 		public IKinesis currentKinesis;
 
-		public MCharacterStandard(Animator animator, LayerMask ground) : base(animator) {
-			movement = new MovementStandard(transform, ground);
+		public MCharacterCollision(Animator animator, CharacterController controller, LayerMask ground) : base(animator) {
+			movement = new MovementCollision(controller, ground);
 
 			Transition(new KIdle());
 		}

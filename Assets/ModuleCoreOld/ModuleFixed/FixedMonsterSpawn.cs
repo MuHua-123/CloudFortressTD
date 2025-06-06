@@ -27,7 +27,7 @@ public class FixedMonsterSpawn : ModuleFixed {
     public DataGridMap GridMap => HandleGridMap.Current;
 
     /// <summary> 怪物 资产 </summary>
-    public ModuleAssets<DataMonster> AssetsMonster => ModuleCore.AssetsMonster;
+    public ModuleAssets<DataMonsterOld> AssetsMonster => ModuleCore.AssetsMonster;
     /// <summary> 游戏状态 DataGameState 数据处理器 </summary>
     public ModuleHandle<DataGameState> HandleGameState => ModuleCore.HandleGameState;
     /// <summary> 怪物生产管理器 资产 </summary>
@@ -98,7 +98,7 @@ public class FixedMonsterSpawn : ModuleFixed {
         spawnQueue.spawnTime = spawnQueue.interval;
         spawnQueue.quantity--;
 
-        DataMonster monster = spawnQueue.To();
+        DataMonsterOld monster = spawnQueue.To();
         monster.target = target;
         monster.offset = RandomOffset();
         monster.position = transform.position + monster.offset;

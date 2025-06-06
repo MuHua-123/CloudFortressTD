@@ -7,5 +7,5 @@ using UnityEngine;
 /// </summary>
 public abstract class ConstSpawn : ScriptableObject {
 	/// <summary> 获取生产数据 </summary>
-	public abstract DataSpawn GetSpawn();
+	public abstract DataSpawn GetSpawn(float startTime);
 }

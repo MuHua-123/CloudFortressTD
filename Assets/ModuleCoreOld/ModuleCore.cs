@@ -15,7 +15,7 @@ public class ModuleCore : Module<ModuleCore> {
     public ModuleAssets<ConstCards> CardPool = new ModuleAssets<ConstCards>();
 
     /// <summary> 怪物 资产 </summary>
-    public ModuleAssets<DataMonster> AssetsMonster = new AssetsMonster();
+    public ModuleAssets<DataMonsterOld> AssetsMonster = new AssetsMonster();
     /// <summary> 怪物生产管理器 资产 </summary>
     public ModuleAssets<FixedMonsterSpawn> AssetsMonsterSpawn = new ModuleAssets<FixedMonsterSpawn>();
 
@@ -73,11 +73,11 @@ public class ModuleCore : Module<ModuleCore> {
     /// <summary> 炮弹 DataBullet 可视化内容生成模块 </summary>
     public ModuleVisualOld<DataBullet> VisualBullet;
     /// <summary> 怪物 可视化内容生成模块 </summary>
-    public ModuleVisualOld<DataMonster> VisualMonster;
+    public ModuleVisualOld<DataMonsterOld> VisualMonster;
     /// <summary> 怪物生产 可视化内容生成模块 </summary>
     public ModuleVisualOld<FixedMonsterSpawn> VisualMonsterSpawn;
     /// <summary> 生命值 可视化内容生成模块 </summary>
-    public ModuleVisualOld<DataMonster> VisualHitPoints;
+    public ModuleVisualOld<DataMonsterOld> VisualHitPoints;
     #endregion
 }
 /// <summary>

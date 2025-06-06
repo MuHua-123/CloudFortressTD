@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 
 public class InputGameState : OldModuleInput {
 	private ModulePrefab<DataTurretOld> prefabTurret;
-	private ModulePrefab<DataMonster> prefabMonster;
+	private ModulePrefab<DataMonsterOld> prefabMonster;
 
 	/// <summary> 当前相机模块 </summary>
 	public OldModuleCamera CurrentCamera => ModuleCore.CurrentCamera;

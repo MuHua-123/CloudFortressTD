@@ -19,7 +19,7 @@ public class MonsterComponentHit : MonsterComponent {
     /// <summary> 最大持续时间 </summary>
     private float MaxTime => 0.1f;
     /// <summary> 怪物数据 </summary>
-    private DataMonster Monster => prefabMonster.Value;
+    private DataMonsterOld Monster => prefabMonster.Value;
 
     private void Awake() {
         hp = new Material(hpMaterial);

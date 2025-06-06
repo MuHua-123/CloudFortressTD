@@ -13,7 +13,7 @@ public class MonsterComponentMove : MonsterComponent {
     /// <summary> 动画器 </summary>
     public Animator animator => prefabMonster.animator;
     /// <summary> 怪物数据 </summary>
-    public DataMonster Monster => prefabMonster.Value;
+    public DataMonsterOld Monster => prefabMonster.Value;
     /// <summary> 移动速度 </summary>
     public float Speed => Time.deltaTime * Monster.Speed * ModuleCore.HandleGameState.Current.PlaySpeed;
 

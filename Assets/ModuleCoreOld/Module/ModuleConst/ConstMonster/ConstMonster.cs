@@ -20,8 +20,8 @@ public class ConstMonster : ScriptableObject {
 /// 怪物预设工具
 /// </summary>
 public static class ConstMonsterTool {
-    public static DataMonster To(this ConstMonster constMonster, int strength) {
-        DataMonster monster = new DataMonster(constMonster);
+    public static DataMonsterOld To(this ConstMonster constMonster, int strength) {
+        DataMonsterOld monster = new DataMonsterOld(constMonster);
         ConstMonsterGrade grade = constMonster.grades[strength - 1];
         monster.cost = grade.cost;
         monster.speed = grade.speed;

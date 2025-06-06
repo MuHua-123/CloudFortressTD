@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 怪物预制件
 /// </summary>
-public class PrefabMonster : ModulePrefab<DataMonster> {
+public class PrefabMonster : ModulePrefab<DataMonsterOld> {
     /// <summary> 怪物身体 </summary>
     public Transform body;
     /// <summary> 死亡模型 </summary>
@@ -21,7 +21,7 @@ public class PrefabMonster : ModulePrefab<DataMonster> {
     public MonsterComponent move => GetComponent<MonsterComponentMove>();
 
     /// <summary> 怪物 资产 </summary>
-    public ModuleAssets<DataMonster> AssetsMonster => ModuleCore.AssetsMonster;
+    public ModuleAssets<DataMonsterOld> AssetsMonster => ModuleCore.AssetsMonster;
     /// <summary> 临时道具 执行模块 </summary>
     public ModuleExecute<DataTemporaryProps> ExecuteTemporaryProps => ModuleCore.ExecuteTemporaryProps;
     /// <summary> 伤害计算 执行模块 </summary>
@@ -42,7 +42,7 @@ public class PrefabMonster : ModulePrefab<DataMonster> {
         ModuleCore.HandleGameState.Current.Health--;
     }
 
-    public override void UpdateVisual(DataMonster monster) {
+    public override void UpdateVisual(DataMonsterOld monster) {
         base.UpdateVisual(monster);
         monster.height = height;
         hit.Initialize(this);

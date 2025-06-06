@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PrefabHitPoints : ModulePrefab<DataMonster> {
+public class PrefabHitPoints : ModulePrefab<DataMonsterOld> {
     public Slider hp, ac, es;
     private Transform follower;
 
-    public override void UpdateVisual(DataMonster monster) {
+    public override void UpdateVisual(DataMonsterOld monster) {
         base.UpdateVisual(monster);
         follower = monster.visual.transform;
 

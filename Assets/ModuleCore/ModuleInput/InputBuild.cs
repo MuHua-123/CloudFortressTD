@@ -30,8 +30,13 @@ public class InputBuild : MonoBehaviour {
 	#region 输入
 	public void OnBuild(InputValue value) {
 		if (preview == null) { return; }
+		// 是否允许建造炮塔判断
+		if (!ManagerMap.TryMapSpace(preview.transform.position, out DataMapSpace space)) { return; }
+		if (space.building != null) { return; }
+		// 建造炮塔
 		ModuleInput.TemporarilyDisable(false);
 		CTurret.AddControl(preview).Initial();
+		space.building = preview.transform;
 		preview = null;
 	}
 	public void OnCancel(InputValue value) {

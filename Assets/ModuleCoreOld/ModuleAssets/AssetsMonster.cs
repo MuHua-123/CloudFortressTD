@@ -6,22 +6,22 @@ using UnityEngine;
 /// <summary> 
 /// 管理怪物数据
 /// </summary>
-public class AssetsMonster : ModuleAssets<DataMonster> {
+public class AssetsMonster : ModuleAssets<DataMonsterOld> {
     public override event Action OnChange;
 
     /// <summary> 怪物 可视化内容生成模块 </summary>
-    public ModuleVisualOld<DataMonster> VisualMonster => ModuleCore.VisualMonster;
+    public ModuleVisualOld<DataMonsterOld> VisualMonster => ModuleCore.VisualMonster;
     /// <summary> 生命值 可视化内容生成模块 </summary>
-    public ModuleVisualOld<DataMonster> VisualHitPoints => ModuleCore.VisualHitPoints;
+    public ModuleVisualOld<DataMonsterOld> VisualHitPoints => ModuleCore.VisualHitPoints;
 
-    public override void Add(DataMonster monster) {
+    public override void Add(DataMonsterOld monster) {
         if (Datas.Contains(monster)) { return; }
         Datas.Add(monster);
         OnChange?.Invoke();
         VisualMonster.UpdateVisual(monster);
         VisualHitPoints.UpdateVisual(monster);
     }
-    public override void Remove(DataMonster monster) {
+    public override void Remove(DataMonsterOld monster) {
         if (!Datas.Contains(monster)) { return; }
         Datas.Remove(monster);
         OnChange?.Invoke();

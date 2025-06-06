@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MuHua;
 
-public class CMonster : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+/// <summary>
+/// 怪物 - 控制器
+/// </summary>
+public abstract class CMonster : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public abstract void Initial();
+
+	public static CMonster AddControl(HMonster hMonster) {
+		if (hMonster is HMonsterStandard monsterStandard) { return hMonster.gameObject.AddComponent<CMonsterStandard>(); }
+		return null;
+	}
 }

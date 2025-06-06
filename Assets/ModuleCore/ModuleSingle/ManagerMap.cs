@@ -8,7 +8,7 @@ using MuHua;
 /// </summary>
 public class ManagerMap : ModuleSingle<ManagerMap> {
 
-	public MMap mMap;// 地图模块
+	public MMap map;// 地图模块
 
 	protected override void Awake() => NoReplace(false);
 
@@ -21,7 +21,7 @@ public class ManagerMap : ModuleSingle<ManagerMap> {
 	}
 	public void Initial(HMapGrid hMap) {
 		// 初始化地图数据
-		mMap = new MMapGrid(hMap.mapSize.x, hMap.mapSize.y, hMap.OriginPosition);
+		map = new MMapGrid(hMap.mapSize.x, hMap.mapSize.y, hMap.OriginPosition);
 		// 创建地图空间
 		Utilities.FindObjects<HMapUnit>(Initial);
 		// 填充建筑
@@ -30,17 +30,25 @@ public class ManagerMap : ModuleSingle<ManagerMap> {
 
 	/// <summary> 创建地图空间 </summary>
 	public void Initial(HMapUnit obj) {
-		if (!mMap.TryGetMapUnit(obj.transform.position, out MMapUnit mapUnit)) { return; }
+		if (!map.TryGetMapUnit(obj.transform.position, out MMapUnit mapUnit)) { return; }
 		mapUnit.mapSpace = new DataMapSpace();
 	}
 	/// <summary> 创建初始建筑 </summary>
 	public void Initial(HBuilding obj) {
-		if (!mMap.TryGetMapUnit(obj.transform.position, out MMapUnit mapUnit)) { return; }
+		if (!map.TryGetMapUnit(obj.transform.position, out MMapUnit mapUnit)) { return; }
 		if (mapUnit.mapSpace is DataMapSpace space) { space.building = obj.transform; }
+		CBuilding.AddControl(obj).Initial();
 	}
 
 	/// <summary> 世界坐标转换地图坐标 </summary>
 	public static bool TryWorldPosition(Vector3 worldPosition, out Vector3 position) {
-		return I.mMap.TryWorldPosition(worldPosition, out position);
+		return I.map.TryWorldPosition(worldPosition, out position);
+	}
+	/// <summary> 检测建筑空间 </summary>
+	public static bool TryMapSpace(Vector3 worldPosition, out DataMapSpace mapSpace) {
+		mapSpace = null;
+		if (!I.map.TryGetMapUnit(worldPosition, out MMapUnit mapUnit)) { return false; }
+		if (mapUnit.mapSpace is DataMapSpace space) { mapSpace = space; }
+		return mapSpace != null;
 	}
 }

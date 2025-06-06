@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets.ResourceLocators;
 
 /// <summary>
-/// 模组数据
+/// 模组 - 数据类
 /// </summary>
 public class DataModule {
 	/// <summary> 是否启用 </summary>

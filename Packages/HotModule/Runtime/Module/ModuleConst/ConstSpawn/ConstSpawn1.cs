@@ -11,7 +11,7 @@ public class ConstSpawn1 : ConstSpawn {
 	/// <summary> 怪物类型 </summary>
 	public HMonster hMonster;
 
-	public override DataSpawn GetSpawn() {
+	public override DataSpawn GetSpawn(float startTime) {
 		DataSpawn spawn = new DataSpawn();
 		for (int i = 0; i < quantity; i++) {
 			DataSpawnUnit unit = new DataSpawnUnit();
@@ -19,6 +19,7 @@ public class ConstSpawn1 : ConstSpawn {
 			unit.hMonster = hMonster;
 			spawn.spawnUnits.Add(unit);
 		}
+		spawn.startTime = startTime;
 		return spawn;
 	}
 }

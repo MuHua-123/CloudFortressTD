@@ -6,6 +6,8 @@ using UnityEngine;
 /// 生产 - 数据
 /// </summary>
 public class DataSpawn {
+	/// <summary> 开始时间 </summary>
+	public float startTime;
 	/// <summary> 生产单元 </summary>
 	public List<DataSpawnUnit> spawnUnits = new List<DataSpawnUnit>();
 }

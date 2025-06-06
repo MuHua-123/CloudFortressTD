@@ -36,7 +36,7 @@ public class DataMonsterSpawnQueue {
 /// 怪物生产工具
 /// </summary>
 public static class DataMonsterSpawnTool {
-    public static DataMonster To(this DataMonsterSpawnQueue spawnQueue) {
+    public static DataMonsterOld To(this DataMonsterSpawnQueue spawnQueue) {
         int strength = spawnQueue.strength;
         return spawnQueue.monster.To(strength);
     }
