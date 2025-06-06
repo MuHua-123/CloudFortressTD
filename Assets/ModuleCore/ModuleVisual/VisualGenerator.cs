@@ -8,7 +8,9 @@ using UnityEngine;
 public abstract class VisualGenerator<T> : MonoBehaviour {
 
 	/// <summary> 更新可视化内容 </summary>
-	public abstract void CreateVisual(ref T visual, Transform original);
+	public abstract T CreateVisual(Transform original);
+	/// <summary> 更新可视化内容 </summary>
+	public abstract void UpdateVisual(ref T visual, Transform original);
 	/// <summary> 释放可视化内容 </summary>
 	public abstract void ReleaseVisual(T visual);
 

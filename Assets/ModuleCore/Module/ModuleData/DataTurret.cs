@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 炮塔 - 数据类
 /// </summary>
-public class DTurret {
+public class DataTurret {
 
 	/// <summary> 伤害 </summary>
 	public int damage;
@@ -21,7 +21,10 @@ public class DTurret {
 	/// <summary> 最大范围 </summary>
 	public float maxRange;
 
-	public DTurret(HTurretStandard hTurret) {
+	public DataTurret(HTurretStandard hTurret) {
+		range = hTurret.range;
+	}
+	public DataTurret(HTurretStandardDual hTurret) {
 		range = hTurret.range;
 	}
 }

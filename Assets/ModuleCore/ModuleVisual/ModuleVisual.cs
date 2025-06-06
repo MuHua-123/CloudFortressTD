@@ -8,7 +8,10 @@ using MuHua;
 /// </summary>
 public class ModuleVisual : ModuleSingle<ModuleVisual> {
 
-	public VisualGenerator<HTurret> GeneratorTurretBasic;
+	/// <summary> 炮塔生成器 </summary>
+	public VisualGenerator<HTurret> HTurret;
+	/// <summary> 子弹生成器 </summary>
+	public VisualGenerator<HBullet> HBullet;
 
 	protected override void Awake() => NoReplace();
 
