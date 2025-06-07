@@ -18,6 +18,7 @@ namespace MuHua {
 		public float animationBlend;// 动画混合速度
 		public Vector2 moveDirection;// 移动方向
 
+		public bool isRotation;// 是否旋转
 		public float targetRotation;// 目标旋转
 		public float rotationVelocity;// 旋转速度
 		public float rotationSmoothTime = 0.12f;// 旋转平滑 Range(0.0f, 0.3f)
@@ -39,10 +40,11 @@ namespace MuHua {
 		}
 
 		/// <summary> 移动 </summary>
-		public override void Move(Vector2 moveDirection, float moveSpeed, float acceleration) {
+		public override void Move(Vector2 moveDirection, float moveSpeed, float acceleration, bool isRotation) {
 			this.moveSpeed = moveSpeed;
 			this.acceleration = acceleration;
 			this.moveDirection = moveDirection;
+			this.isRotation = isRotation;
 		}
 		/// <summary> 跳跃 </summary>
 		public override void Jump(float jumpHeight) {
@@ -66,7 +68,7 @@ namespace MuHua {
 			Vector3 inputDirection = new Vector3(moveDirection.x, 0.0f, moveDirection.y).normalized;
 
 			// 如果有移动输入，则在玩家移动时旋转玩家
-			if (moveDirection != Vector2.zero) {
+			if (moveDirection != Vector2.zero && isRotation) {
 				targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg;
 				float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, rotationSmoothTime);
 

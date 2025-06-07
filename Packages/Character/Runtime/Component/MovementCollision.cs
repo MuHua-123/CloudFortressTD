@@ -18,6 +18,7 @@ namespace MuHua {
 		public float animationBlend;// 动画混合速度
 		public Vector2 moveDirection;// 移动方向
 
+		public bool isRotation;// 是否旋转
 		public float targetRotation;// 目标旋转
 		public float rotationVelocity;// 旋转速度
 		public float rotationSmoothTime = 0.12f;// 旋转平滑 Range(0.0f, 0.3f)
@@ -39,10 +40,11 @@ namespace MuHua {
 		}
 
 		/// <summary> 移动 </summary>
-		public override void Move(Vector2 moveDirection, float moveSpeed, float acceleration) {
+		public override void Move(Vector2 moveDirection, float moveSpeed, float acceleration, bool isRotation) {
 			this.moveSpeed = moveSpeed;
 			this.acceleration = acceleration;
 			this.moveDirection = moveDirection;
+			this.isRotation = isRotation;
 		}
 		/// <summary> H*-2*G的平方根=达到所需高度所需的速度 </summary>
 		public override void Jump(float jumpHeight) {
@@ -65,20 +67,28 @@ namespace MuHua {
 			// 使输入方向标准化
 			Vector3 inputDirection = new Vector3(moveDirection.x, 0.0f, moveDirection.y).normalized;
 
-			// 如果有移动输入，则在玩家移动时旋转玩家
-			if (moveDirection != Vector2.zero) {
-				targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg;
-				float rotation = Mathf.SmoothDampAngle(controller.transform.eulerAngles.y, targetRotation, ref rotationVelocity, rotationSmoothTime);
+			if (isRotation) {
+				// 如果有移动输入，则在玩家移动时旋转玩家
+				if (moveDirection != Vector2.zero) {
+					targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg;
+					float rotation = Mathf.SmoothDampAngle(controller.transform.eulerAngles.y, targetRotation, ref rotationVelocity, rotationSmoothTime);
 
-				// 相对于相机位置旋转到面向输入方向
-				controller.transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+					// 相对于相机位置旋转到面向输入方向
+					controller.transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+				}
+
+				// 移动
+				Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
+				Vector3 horizontal = targetDirection.normalized * (currentSpeed * Time.deltaTime);
+				Vector3 vertical = new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime;
+				controller.Move(horizontal + vertical);
 			}
-
-			// 移动
-			Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
-			Vector3 horizontal = targetDirection.normalized * (currentSpeed * Time.deltaTime);
-			Vector3 vertical = new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime;
-			controller.Move(horizontal + vertical);
+			else {
+				// 移动
+				Vector3 horizontal = inputDirection * (currentSpeed * Time.deltaTime);
+				Vector3 vertical = new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime;
+				controller.Move(horizontal + vertical);
+			}
 
 			// 地面检测
 			Vector3 position = controller.transform.position;

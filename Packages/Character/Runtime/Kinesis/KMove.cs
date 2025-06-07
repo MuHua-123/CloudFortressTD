@@ -20,6 +20,8 @@ namespace MuHua {
 		public Vector3 position;
 		/// <summary> 初始角度 </summary>
 		public Vector3 eulerAngles;
+		/// <summary> 是否旋转 </summary>
+		public bool isRotation;
 		/// <summary> 初始设置 </summary>
 		public bool isInitial = false;
 
@@ -30,9 +32,10 @@ namespace MuHua {
 		/// <summary> 运动器 </summary>
 		public Movement movement => character.movement;
 
-		public KMove(MCharacter character, Vector2 moveDirection) {
+		public KMove(MCharacter character, Vector2 moveDirection, bool isRotation) {
 			this.character = character;
 			this.moveDirection = moveDirection;
+			this.isRotation = isRotation;
 		}
 
 		public void Settings(float moveSpeed, float acceleration) {
@@ -49,7 +52,7 @@ namespace MuHua {
 			return true;
 		}
 		public override void StartKinesis() {
-			movement.Move(moveDirection, moveSpeed, acceleration);
+			movement.Move(moveDirection, moveSpeed, acceleration, isRotation);
 			if (!isInitial) { return; }
 			transform.position = position;
 			transform.eulerAngles = eulerAngles;

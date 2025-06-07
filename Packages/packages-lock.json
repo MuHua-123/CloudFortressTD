@@ -413,9 +413,7 @@
       "version": "file:Character",
       "depth": 0,
       "source": "embedded",
-      "dependencies": {
-        "com.unity.inputsystem": "1.7.0"
-      }
+      "dependencies": {}
     },
     "muhua-hot-module": {
       "version": "file:HotModule",
