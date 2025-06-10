@@ -410,10 +410,11 @@
       "url": "https://packages.unity.cn"
     },
     "muhua-character": {
-      "version": "file:Character",
+      "version": "https://github.com/MuHua-123/MuHua-Character.git?path=Packages/Character",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "b5232393c28dac1828e7eafafba77dd159a53aa6"
     },
     "muhua-hot-module": {
       "version": "file:HotModule",
