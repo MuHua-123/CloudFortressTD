@@ -18,7 +18,7 @@ public static class Utilities {
 	/// <summary> 查询场景中的第一个类型 </summary> 
 	public static void FindObjects<T>(Action<T> action) where T : UnityEngine.Object {
 		T[] types = GameObject.FindObjectsOfType<T>();
-		for (int i = 0; i < types.Length; i++) { action?.Invoke(types[0]); }
+		for (int i = 0; i < types.Length; i++) { action?.Invoke(types[i]); }
 	}
 
 	/// <summary> 输入方向 转换成 目标的相对方向  </summary>

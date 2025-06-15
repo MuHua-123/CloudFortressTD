@@ -45,8 +45,18 @@ public class CBuildingSpawn : CBuilding {
 			DataSpawnUnit unit = spawn.spawnUnits[i];
 			if (unit.spawnTime > differ) { continue; }
 			spawn.spawnUnits.Remove(unit);
+
 			Debug.Log($"创建怪物：{unit.hMonster}");
+			HMonster temp = ModuleVisual.I.HMonster.CreateVisual(unit.hMonster.transform);
+			Vector3 final = hSpawn.final.transform.position;
+			CMonster.AddControl(temp).Initial(transform.position, transform.eulerAngles, final, RandomOffset());
 		}
 		if (spawn.spawnUnits.Count == 0) { spawns.Remove(spawn); }
+	}
+	/// <summary> 随机生成偏移值 </summary>
+	private Vector3 RandomOffset() {
+		float x = UnityEngine.Random.Range(-0.3f, 0.3f);
+		float z = UnityEngine.Random.Range(-0.3f, 0.3f);
+		return new Vector3(x, 0, z);
 	}
 }

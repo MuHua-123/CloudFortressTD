@@ -10,6 +10,7 @@ public abstract class CBuilding : MonoBehaviour {
 	public abstract void Initial();
 
 	public static CBuilding AddControl(HBuilding hBuilding) {
+		if (hBuilding is HBuildingFinal final) { return hBuilding.gameObject.AddComponent<CBuildingFinal>(); }
 		if (hBuilding is HBuildingSpawn spawn) { return hBuilding.gameObject.AddComponent<CBuildingSpawn>(); }
 		return null;
 	}

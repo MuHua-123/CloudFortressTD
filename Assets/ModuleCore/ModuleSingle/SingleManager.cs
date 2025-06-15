@@ -37,5 +37,6 @@ public class SingleManager : ModuleSingle<SingleManager> {
 		ModuleInput.Mode(EnumInputMode.Standard);
 		ModuleCamera.Mode(EnumCameraMode.MoveAxis);
 		ManagerMap.I.Initial();
+		ManagerBattle.I.Initial();
 	}
 }

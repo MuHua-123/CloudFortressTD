@@ -53,7 +53,7 @@ public class ModuleInput : ModuleSingle<ModuleInput> {
 	}
 
 	/// <summary> 启用预览 </summary>
-	public void EnablePreview(HTurret turretBasic) {
-		inputBuild.EnablePreview(turretBasic);
+	public void EnablePreview(HTurret turretBasic, Action cancel) {
+		inputBuild.EnablePreview(turretBasic, cancel);
 	}
 }

@@ -6,9 +6,14 @@ using UnityEngine;
 /// 怪物 - 热更
 /// </summary>
 public abstract class HMonster : MonoBehaviour {
-	[Header("基本属性")]
+	[Header("基本组件")]
 	/// <summary> 地面图层 </summary>
 	public LayerMask ground;
 	/// <summary> 动画器 </summary>
 	public Animator animator;
+	[Header("基本属性")]
+	/// <summary> 移动速度 </summary>
+	public float moveSpeed = 1;
+	/// <summary> 加速度 </summary>
+	public float acceleration = 15;
 }

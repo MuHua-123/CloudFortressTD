@@ -6,14 +6,17 @@
     align-self: auto;
     margin-left: 10px;
     transition-duration: 0.2s;
+    background-image: none;
 }
 
 .battle-button-s {
+    -unity-background-image-tint-color: rgb(0, 203, 255);
 }
 
 .battle-button:hover {
     scale: 1.1 1.1;
 }
+
 .battlepage-card-bg {
     width: 160px;
     height: 160px;
@@ -23,6 +26,7 @@
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     transition-duration: 0.2s;
+    background-image: none;
 }
 
 .battlepage-card-bg-s {

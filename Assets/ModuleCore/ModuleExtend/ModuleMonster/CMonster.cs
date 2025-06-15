@@ -8,10 +8,13 @@ using MuHua;
 /// </summary>
 public abstract class CMonster : MonoBehaviour {
 
-	public abstract void Initial();
+	/// <summary> 角色模块 </summary>
+	public abstract MCharacter MCharacter { get; }
+
+	public abstract void Initial(Vector3 position, Vector3 eulerAngles, Vector3 final, Vector3 offset);
 
 	public static CMonster AddControl(HMonster hMonster) {
-		if (hMonster is HMonsterStandard monsterStandard) { return hMonster.gameObject.AddComponent<CMonsterStandard>(); }
+		if (hMonster is HMonsterStandard standard) { return hMonster.gameObject.AddComponent<CMonsterStandard>(); }
 		return null;
 	}
 }

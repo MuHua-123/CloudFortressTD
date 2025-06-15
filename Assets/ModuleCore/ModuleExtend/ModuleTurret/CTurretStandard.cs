@@ -12,7 +12,7 @@ public class CTurretStandard : CTurret {
 	public HTurretStandard hTurret;
 	public MTurretStandard mTurret;
 
-	public override DataTurret Data { get; }
+	public override DataTurret Data => dTurret;
 
 	/// <summary> 范围 </summary>
 	public float Range => Data.range;

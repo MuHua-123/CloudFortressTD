@@ -414,7 +414,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "b5232393c28dac1828e7eafafba77dd159a53aa6"
+      "hash": "6056fbb8d3cbbdf1074b95e496fc9cea19d3336c"
     },
     "muhua-hot-module": {
       "version": "file:HotModule",
@@ -448,8 +448,10 @@
       "version": "https://github.com/MuHua-123/MuHua-Core.git?path=Packages/UITool",
       "depth": 0,
       "source": "git",
-      "dependencies": {},
-      "hash": "1e179f06022d421e42d81dc0f9a487f982e81486"
+      "dependencies": {
+        "com.unity.render-pipelines.core": "14.0.11"
+      },
+      "hash": "28a7a98a6fd374dee8340cee67689af8f4602d48"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

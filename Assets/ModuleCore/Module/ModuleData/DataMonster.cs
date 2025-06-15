@@ -7,8 +7,14 @@ using UnityEngine;
 /// </summary>
 public class DataMonster {
 
-	public DataMonster(HMonsterStandard hMonster) {
+	/// <summary> 移动速度 </summary>
+	public float moveSpeed = 1;
+	/// <summary> 加速度 </summary>
+	public float acceleration = 15;
 
+	public DataMonster(HMonsterStandard hMonster) {
+		moveSpeed = hMonster.moveSpeed;
+		acceleration = hMonster.acceleration;
 	}
 
 }

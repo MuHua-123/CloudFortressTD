@@ -48,7 +48,12 @@ public class ManagerMap : ModuleSingle<ManagerMap> {
 	public static bool TryMapSpace(Vector3 worldPosition, out DataMapSpace mapSpace) {
 		mapSpace = null;
 		if (!I.map.TryGetMapUnit(worldPosition, out MMapUnit mapUnit)) { return false; }
+		Debug.Assert(mapUnit != null, "地图单元不能为空");
 		if (mapUnit.mapSpace is DataMapSpace space) { mapSpace = space; }
 		return mapSpace != null;
+	}
+	/// <summary> 查询地图路径 </summary>
+	public static bool FindPath(Vector3 sp, Vector3 ep, out List<Vector3> vectorPath) {
+		return I.map.FindPath(sp, ep, false, out vectorPath);
 	}
 }

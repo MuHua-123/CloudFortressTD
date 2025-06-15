@@ -8,6 +8,8 @@ using MuHua;
 /// 战斗 - 管理器
 /// </summary>
 public class ManagerBattle : ModuleSingle<ManagerBattle> {
+	/// <summary> 游戏速度 </summary>
+	public static float GameSpeed = 1f;
 	/// <summary> 初始化事件 </summary>
 	public static event Action OnInitial;
 	/// <summary> 新的波次 </summary>
@@ -41,7 +43,7 @@ public class ManagerBattle : ModuleSingle<ManagerBattle> {
 	}
 
 	private void Update() {
-		countdown -= Time.deltaTime;
+		countdown -= Time.deltaTime * GameSpeed;
 		if (countdown >= 0) { return; }
 		countdown = interval;
 		if (wave.x >= wave.y) { return; }

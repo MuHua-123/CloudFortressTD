@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ using UnityEngine.InputSystem;
 public class InputBuild : MonoBehaviour {
 
 	private HTurret preview;
+	private Action callback;
 
 	private CameraController CameraController => ModuleCamera.CurrentCamera;
 
@@ -19,7 +21,8 @@ public class InputBuild : MonoBehaviour {
 	}
 
 	/// <summary> 启用预览 </summary>
-	public void EnablePreview(HTurret hTurret) {
+	public void EnablePreview(HTurret hTurret, Action callback) {
+		this.callback = callback;
 		ModuleInput.TemporarilyDisable(true);
 		ModuleVisual.I.HTurret.UpdateVisual(ref preview, hTurret.transform);
 
@@ -38,9 +41,13 @@ public class InputBuild : MonoBehaviour {
 		CTurret.AddControl(preview).Initial();
 		space.building = preview.transform;
 		preview = null;
+		callback?.Invoke();
+		callback = null;
 	}
 	public void OnCancel(InputValue value) {
 		if (preview == null) { return; }
+		callback?.Invoke();
+		callback = null;
 		ModuleInput.TemporarilyDisable(false);
 		ModuleVisual.I.HTurret.ReleaseVisual(preview);
 	}
