@@ -25,7 +25,7 @@ public class UIPreparePage : ModuleUIPage {
 	private void Awake() {
 		turretPanel = new UITurretPanel(ScrollView, root, TurretCardTemplate, SettingsTurret);
 
-		Button1.clicked += () => ModuleUI.Jump(EnumPage.Scene);
+		Button1.clicked += () => ModuleUI.Settings(EnumPage.Scene);
 		Button2.clicked += () => AssetsScene.I.LoadScene(SingleManager.SwitchRunningMode);
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;

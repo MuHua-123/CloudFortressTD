@@ -27,14 +27,14 @@ public class SingleManager : ModuleSingle<SingleManager> {
 
 	/// <summary> 默认模式 </summary>
 	private static void EnumRunningMode_None() {
-		ModuleUI.Jump(EnumPage.Menu);
-		ModuleInput.Mode(EnumInputMode.None);
+		ModuleUI.Settings(EnumPage.Menu);
+		ModuleInput.Settings(EnumInputMode.None);
 		ModuleCamera.Mode(EnumCameraMode.None);
 	}
 	/// <summary> 标准模式 </summary>
 	private static void EnumRunningMode_Standard() {
-		ModuleUI.Jump(EnumPage.Battle);
-		ModuleInput.Mode(EnumInputMode.Standard);
+		ModuleUI.Settings(EnumPage.Battle);
+		ModuleInput.Settings(EnumInputMode.Standard);
 		ModuleCamera.Mode(EnumCameraMode.MoveAxis);
 		ManagerMap.I.Initial();
 		ManagerBattle.I.Initial();

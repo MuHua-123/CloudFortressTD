@@ -23,7 +23,7 @@ public class InputBuild : MonoBehaviour {
 	/// <summary> 启用预览 </summary>
 	public void EnablePreview(HTurret hTurret, Action callback) {
 		this.callback = callback;
-		ModuleInput.TemporarilyDisable(true);
+		// ModuleInput.TemporarilyDisable(true);
 		ModuleVisual.I.HTurret.UpdateVisual(ref preview, hTurret.transform);
 
 		if (preview == null || CameraController == null) { return; }
@@ -37,7 +37,7 @@ public class InputBuild : MonoBehaviour {
 		if (!ManagerMap.TryMapSpace(preview.transform.position, out DataMapSpace space)) { return; }
 		if (space.building != null) { return; }
 		// 建造炮塔
-		ModuleInput.TemporarilyDisable(false);
+		// ModuleInput.TemporarilyDisable(false);
 		CTurret.AddControl(preview).Initial();
 		space.building = preview.transform;
 		preview = null;
@@ -48,7 +48,7 @@ public class InputBuild : MonoBehaviour {
 		if (preview == null) { return; }
 		callback?.Invoke();
 		callback = null;
-		ModuleInput.TemporarilyDisable(false);
+		// ModuleInput.TemporarilyDisable(false);
 		ModuleVisual.I.HTurret.ReleaseVisual(preview);
 	}
 	#endregion

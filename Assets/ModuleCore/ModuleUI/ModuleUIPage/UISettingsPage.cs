@@ -16,7 +16,7 @@ public class UISettingsPage : ModuleUIPage {
 	public Button Button3 => Bottom.Q<Button>("Button3");// ???
 
 	private void Awake() {
-		Button1.clicked += () => ModuleUI.Jump(EnumPage.Menu);
+		Button1.clicked += () => ModuleUI.Settings(EnumPage.Menu);
 		// Button2.clicked += () => { };
 		// Button3.clicked += () => { };
 

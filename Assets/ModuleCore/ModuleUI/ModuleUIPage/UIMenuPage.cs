@@ -18,9 +18,9 @@ public class UIMenuPage : ModuleUIPage {
 	public Button Button4 => Menu.Q<Button>("Button4");// 退出游戏
 
 	private void Awake() {
-		Button1.clicked += () => ModuleUI.Jump(EnumPage.Scene);
+		Button1.clicked += () => ModuleUI.Settings(EnumPage.Scene);
 		Button2.clicked += () => { };
-		Button3.clicked += () => ModuleUI.Jump(EnumPage.Settings);
+		Button3.clicked += () => ModuleUI.Settings(EnumPage.Settings);
 		Button4.clicked += () => Application.Quit();
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
