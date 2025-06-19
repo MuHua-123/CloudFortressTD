@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 怪物 - 热更
+/// 怪物热更数据
 /// </summary>
 public abstract class HMonster : MonoBehaviour {
 	[Header("基本组件")]
