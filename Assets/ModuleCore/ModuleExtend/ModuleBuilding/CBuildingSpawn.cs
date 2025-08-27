@@ -46,7 +46,6 @@ public class CBuildingSpawn : CBuilding {
 			if (unit.spawnTime > differ) { continue; }
 			spawn.spawnUnits.Remove(unit);
 
-			Debug.Log($"创建怪物：{unit.hMonster}");
 			HMonster temp = ModuleVisual.I.HMonster.CreateVisual(unit.hMonster.transform);
 			Vector3 final = hSpawn.final.transform.position;
 			CMonster.AddControl(temp).Initial(transform.position, transform.eulerAngles, final, RandomOffset());

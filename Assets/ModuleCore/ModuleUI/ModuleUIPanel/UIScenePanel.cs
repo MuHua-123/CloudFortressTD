@@ -11,13 +11,13 @@ using MuHua;
 public class UIScenePanel : ModuleUIPanel {
 
 	public Action<DataScene> callback;
-	public UIScrollList<UISceneItem, DataScene> ScrollList;
+	public UIScrollViewListV<UISceneItem, DataScene> ScrollList;
 
 	public UIScenePanel(VisualElement element, VisualElement canvas, VisualTreeAsset templateAsset, Action<DataScene> callback) : base(element) {
 		this.callback = callback;
 
-		ScrollList = new UIScrollList<UISceneItem, DataScene>(element, canvas, templateAsset,
-			(data, element) => new UISceneItem(data, element, this), UIDirection.Horizontal);
+		ScrollList = new UIScrollViewListV<UISceneItem, DataScene>(element, canvas, templateAsset,
+			(data, element) => new UISceneItem(data, element, this));
 
 		AssetsScene.OnChangeConfig += AssetsSceneConfig_OnChangeConfig;
 	}

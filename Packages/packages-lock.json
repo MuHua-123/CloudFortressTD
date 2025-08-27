@@ -429,14 +429,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "b3ca97724ece09768ddbe4b164ba1f98f258b991"
+      "hash": "f9cc818995a936775d8c963409c5699d3b8a9165"
     },
     "muhua-tools": {
       "version": "https://github.com/MuHua-123/MuHua-Core.git?path=Packages/Tools",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "1ddf5879277adbe7d52af3236bd0ce4195240dd1"
+      "hash": "38f522bb92930a9376b31a0cb15e3567130f338e"
     },
     "muhua-turret": {
       "version": "file:Turret",
@@ -445,13 +445,14 @@
       "dependencies": {}
     },
     "muhua-ui-tool": {
-      "version": "https://github.com/MuHua-123/MuHua-Core.git?path=Packages/UITool",
+      "version": "https://github.com/MuHua-123/MuHua-UIElements.git?path=Packages/UITool",
       "depth": 0,
       "source": "git",
       "dependencies": {
+        "com.unity.shadergraph": "14.0.11",
         "com.unity.render-pipelines.core": "14.0.11"
       },
-      "hash": "28a7a98a6fd374dee8340cee67689af8f4602d48"
+      "hash": "301030487e13073efcfc0a42975beb6bba651088"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

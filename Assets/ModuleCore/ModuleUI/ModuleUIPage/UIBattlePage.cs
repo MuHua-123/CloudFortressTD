@@ -118,7 +118,7 @@ public class UITurretContainerPanel : ModuleUIPanel {
 				(data, element) => new UITurretItem(data, element, this));
 	}
 
-	public void Release() => turretPresets.Release();
+	public void Release() => turretPresets.Dispose();
 
 	public void UpdatePanel() => turretPresets.Create(AssetsTurret.I.useTurrets);
 

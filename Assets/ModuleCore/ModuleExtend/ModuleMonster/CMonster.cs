@@ -9,7 +9,7 @@ using MuHua;
 public abstract class CMonster : MonoBehaviour {
 
 	/// <summary> 角色模块 </summary>
-	public abstract MCharacter MCharacter { get; }
+	// public abstract MCharacter MCharacter { get; }
 
 	public abstract void Initial(Vector3 position, Vector3 eulerAngles, Vector3 final, Vector3 offset);
 

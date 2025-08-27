@@ -13,13 +13,13 @@ public class UITurretPanel : ModuleUIPanel {
 	public Action<HTurret> callback;
 	public event Action<HTurret, bool> OnSelect;
 
-	public UIScrollList<UITurretItem, HTurret> ScrollList;
+	public UIScrollViewListV<UITurretItem, HTurret> ScrollList;
 
 	public UITurretPanel(VisualElement element, VisualElement canvas, VisualTreeAsset templateAsset, Action<HTurret> callback) : base(element) {
 		this.callback = callback;
 
-		ScrollList = new UIScrollList<UITurretItem, HTurret>(element, canvas, templateAsset,
-			(data, element) => new UITurretItem(data, element, this), UIDirection.Vertical);
+		ScrollList = new UIScrollViewListV<UITurretItem, HTurret>(element, canvas, templateAsset,
+			(data, element) => new UITurretItem(data, element, this));
 
 		AssetsTurret.OnChange += AssetsTurretConfig_OnChange;
 	}
@@ -63,8 +63,8 @@ public class UITurretPanel : ModuleUIPanel {
 			element.RegisterCallback<ClickEvent>(evt => Select());
 			parent.OnSelect += UIPreparePage_OnSelect;
 		}
-		public override void Release() {
-			base.Release();
+		public override void Dispose() {
+			base.Dispose();
 			parent.OnSelect -= UIPreparePage_OnSelect;
 		}
 		public override void Select() {
