@@ -40,9 +40,9 @@ public class UIBattlePage : ModuleUIPage {
 		battleCount.Update();
 	}
 
-	private void ModuleUI_OnJumpPage(EnumPage page) {
-		Element.EnableInClassList("document-page-hide", page != EnumPage.Battle);
-		if (page != EnumPage.Battle) { return; }
+	private void ModuleUI_OnJumpPage(Page page) {
+		Element.EnableInClassList("document-page-hide", page != Page.Battle);
+		if (page != Page.Battle) { return; }
 		turretContainer.UpdatePanel();
 		battleButtons.ChangeButtonState();
 	}
@@ -118,7 +118,7 @@ public class UITurretContainerPanel : ModuleUIPanel {
 				(data, element) => new UITurretItem(data, element, this));
 	}
 
-	public void Release() => turretPresets.Dispose();
+	public void Release() => turretPresets.Release();
 
 	public void UpdatePanel() => turretPresets.Create(AssetsTurret.I.useTurrets);
 
@@ -143,7 +143,7 @@ public class UITurretContainerPanel : ModuleUIPanel {
 			Background.EnableInClassList("battlepage-card-bg-s", false);
 		}
 		public override void SelectState() {
-			ModuleInput.I.EnablePreview(value, DefaultState);
+			// ModuleInput.I.EnablePreview(value, DefaultState);
 			Background.EnableInClassList("battlepage-card-bg-s", true);
 		}
 	}

@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/ModulePlace/UI%20Toolkit/PlaceColumn/PlaceColumn.uss?fileID=7433441132597879392&amp;guid=8f41bc316defb6d4cb2d816ecb2769b1&amp;type=3#PlaceColumn" />
+    <ui:VisualElement name="Button" class="place-button">
+        <ui:VisualElement name="Icon" style="background-image: url(&quot;project://database/Assets/ModulePlace/Assets/FBX/7%E8%BD%A6%E9%97%B4/%E5%A5%97%E7%BB%93%E6%9C%BA/%E5%A5%97%E7%BB%93%E6%9C%BA.png?fileID=2800000&amp;guid=bc0c3892dd0e08347a6412e2d471d6c2&amp;type=3#套结机&quot;); width: 70px; height: 70px; flex-shrink: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

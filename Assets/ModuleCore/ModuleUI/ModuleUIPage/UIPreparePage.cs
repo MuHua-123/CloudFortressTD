@@ -25,8 +25,8 @@ public class UIPreparePage : ModuleUIPage {
 	private void Awake() {
 		turretPanel = new UITurretPanel(ScrollView, root, TurretCardTemplate, SettingsTurret);
 
-		Button1.clicked += () => ModuleUI.Settings(EnumPage.Scene);
-		Button2.clicked += () => AssetsScene.I.LoadScene(SingleManager.SwitchRunningMode);
+		Button1.clicked += () => ModuleUI.Settings(Page.Scene);
+		// Button2.clicked += () => AssetsScene.I.LoadScene(SingleManager.SwitchRunningMode);
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
 	}
@@ -37,9 +37,9 @@ public class UIPreparePage : ModuleUIPage {
 		turretPanel.Update();
 	}
 
-	private void ModuleUI_OnJumpPage(EnumPage page) {
-		Element.EnableInClassList("document-page-hide", page != EnumPage.Prepare);
-		if (page != EnumPage.Prepare) { return; }
+	private void ModuleUI_OnJumpPage(Page page) {
+		Element.EnableInClassList("document-page-hide", page != Page.Prepare);
+		if (page != Page.Prepare) { return; }
 		AssetsTurret.I.useTurrets.Clear();
 		AssetsTurret.I.UpdateConfig();
 	}

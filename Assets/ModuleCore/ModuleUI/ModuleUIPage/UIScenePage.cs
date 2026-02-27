@@ -22,7 +22,7 @@ public class UIScenePage : ModuleUIPage {
 	private void Awake() {
 		scenePanel = new UIScenePanel(ScrollView, root, SceneTemplate, SettingsScene);
 
-		Button1.clicked += () => ModuleUI.Settings(EnumPage.Menu);
+		Button1.clicked += () => ModuleUI.Settings(Page.Menu);
 		Button2.clicked += () => Button2_clicked();
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
@@ -32,12 +32,12 @@ public class UIScenePage : ModuleUIPage {
 
 	private void Button2_clicked() {
 		if (!AssetsScene.I.isValid) { return; }
-		ModuleUI.Settings(EnumPage.Prepare);
-		SingleManager.SettingsRunningMode(EnumRunningMode.Standard);
+		ModuleUI.Settings(Page.Prepare);
+		// SingleManager.SettingsRunningMode(EnumRunningMode.Standard);
 	}
-	private void ModuleUI_OnJumpPage(EnumPage page) {
-		Element.EnableInClassList("document-page-hide", page != EnumPage.Scene);
-		if (page != EnumPage.Scene) { return; }
+	private void ModuleUI_OnJumpPage(Page page) {
+		Element.EnableInClassList("document-page-hide", page != Page.Scene);
+		if (page != Page.Scene) { return; }
 		SettingsScene(null);
 		AssetsScene.I.UpdateSceneConfig();
 	}

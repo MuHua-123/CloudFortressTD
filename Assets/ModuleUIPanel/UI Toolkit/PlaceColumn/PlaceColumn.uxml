@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="PlaceObjectTemplate" src="project://database/Assets/UI%20Toolkit/GamePanel/PlaceObject/PlaceObjectTemplate.uxml?fileID=9197481963319205126&amp;guid=660e450171326e44f9cf530c5f200c39&amp;type=3#PlaceObjectTemplate" />
+    <ui:Template name="PlaceObjectType" src="project://database/Assets/UI%20Toolkit/GamePanel/PlaceObject/PlaceObjectType.uxml?fileID=9197481963319205126&amp;guid=3d3d87366d9911646a2f9ebdf32ee2cf&amp;type=3#PlaceObjectType" />
+    <Style src="project://database/Assets/UI%20Toolkit/GamePanel/PlaceObject/PlaceObject.uss?fileID=7433441132597879392&amp;guid=8f41bc316defb6d4cb2d816ecb2769b1&amp;type=3#PlaceObject" />
+    <ui:VisualElement picking-mode="Ignore" style="align-items: center;">
+        <ui:VisualElement name="Container" style="flex-direction: row; align-items: center; justify-content: center;">
+            <ui:Instance template="PlaceObjectTemplate" name="PlaceObjectTemplate" />
+            <ui:Instance template="PlaceObjectTemplate" name="PlaceObjectTemplate" />
+            <ui:Instance template="PlaceObjectTemplate" name="PlaceObjectTemplate" />
+        </ui:VisualElement>
+        <ui:VisualElement name="SlideButton" style="width: auto;">
+            <ui:VisualElement name="Slide" style="background-color: rgb(255, 255, 255); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; width: 70px; position: absolute; height: 100%;" />
+            <ui:VisualElement name="Container" style="flex-direction: row;">
+                <ui:Instance template="PlaceObjectType" name="PlaceObjectType" />
+                <ui:Instance template="PlaceObjectType" name="PlaceObjectType" />
+                <ui:Instance template="PlaceObjectType" name="PlaceObjectType" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

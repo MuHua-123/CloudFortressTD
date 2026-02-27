@@ -18,15 +18,15 @@ public class UIMenuPage : ModuleUIPage {
 	public Button Button4 => Menu.Q<Button>("Button4");// 退出游戏
 
 	private void Awake() {
-		Button1.clicked += () => ModuleUI.Settings(EnumPage.Scene);
+		Button1.clicked += () => ModuleUI.Settings(Page.Scene);
 		Button2.clicked += () => { };
-		Button3.clicked += () => ModuleUI.Settings(EnumPage.Settings);
+		Button3.clicked += () => ModuleUI.Settings(Page.Settings);
 		Button4.clicked += () => Application.Quit();
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
 	}
 
-	private void ModuleUI_OnJumpPage(EnumPage page) {
-		Element.EnableInClassList("document-page-hide", page != EnumPage.Menu);
+	private void ModuleUI_OnJumpPage(Page page) {
+		Element.EnableInClassList("document-page-hide", page != Page.Menu);
 	}
 }

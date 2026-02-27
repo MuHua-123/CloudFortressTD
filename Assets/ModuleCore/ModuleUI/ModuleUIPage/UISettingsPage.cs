@@ -16,14 +16,14 @@ public class UISettingsPage : ModuleUIPage {
 	public Button Button3 => Bottom.Q<Button>("Button3");// ???
 
 	private void Awake() {
-		Button1.clicked += () => ModuleUI.Settings(EnumPage.Menu);
+		Button1.clicked += () => ModuleUI.Settings(Page.Menu);
 		// Button2.clicked += () => { };
 		// Button3.clicked += () => { };
 
 		ModuleUI.OnJumpPage += ModuleUI_OnJumpPage;
 	}
 
-	private void ModuleUI_OnJumpPage(EnumPage page) {
-		Element.EnableInClassList("document-page-hide", page != EnumPage.Settings);
+	private void ModuleUI_OnJumpPage(Page page) {
+		Element.EnableInClassList("document-page-hide", page != Page.Settings);
 	}
 }

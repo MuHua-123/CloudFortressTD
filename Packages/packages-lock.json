@@ -436,7 +436,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "38f522bb92930a9376b31a0cb15e3567130f338e"
+      "hash": "ea665c58cd57ff25240f461a496bd2050a8e85ff"
     },
     "muhua-turret": {
       "version": "file:Turret",
@@ -452,7 +452,7 @@
         "com.unity.shadergraph": "14.0.11",
         "com.unity.render-pipelines.core": "14.0.11"
       },
-      "hash": "301030487e13073efcfc0a42975beb6bba651088"
+      "hash": "64938f113712a13794c577f2a7ca641e68c1e8ef"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
