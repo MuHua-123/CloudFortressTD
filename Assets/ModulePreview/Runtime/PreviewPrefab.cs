@@ -25,7 +25,15 @@ public class PreviewPrefab : MonoBehaviour {
 	public Texture2D GetPreview(Transform prefab, int width, int height) {
 		// 设置预制件
 		Transform temp = Instantiate(prefab, parent);
-		// if (temp.Try(out PlaceBounds bounds)) { Normalized(temp, bounds); }
+		// 设置中心点
+		BoundsWorld boundsWorld = new BoundsWorld();
+		boundsWorld.Calculate(transform);
+		Vector3 size = boundsWorld.size;
+		Vector3 center = boundsWorld.center;
+		float max = Mathf.Max(size.x, size.y, size.z);
+		float scale = 1 / max;
+		temp.localScale = new Vector3(scale, scale, scale);
+		temp.localPosition = center * -scale;
 		// 渲染相机
 		rendererCamera.Render();
 		// 读取像素
@@ -42,14 +50,12 @@ public class PreviewPrefab : MonoBehaviour {
 
 	/// <summary> 销毁对象 </summary>
 	private void DestroyAll() {
-		foreach (Transform item in parent) { DestroyImmediate(item.gameObject); }
+		List<Transform> transforms = new List<Transform>();
+		foreach (Transform item in parent) {
+			if (item != null) { transforms.Add(item); }
+		}
+		for (int i = 0; i < transforms.Count; i++) {
+			DestroyImmediate(transforms[i].gameObject);
+		}
 	}
-	/// <summary> 包围盒归一化 </summary>
-	// private void Normalized(Transform temp, PlaceBounds bounds) {
-	// 	Vector3 size = bounds.localSize;
-	// 	float max = Mathf.Max(size.x, size.y, size.z);
-	// 	float scale = 1 / max;
-	// 	temp.localScale = new Vector3(scale, scale, scale);
-	// 	temp.localPosition = bounds.localCenter * -scale;
-	// }
 }
