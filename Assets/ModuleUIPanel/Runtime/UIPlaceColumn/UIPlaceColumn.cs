@@ -25,8 +25,8 @@ public class UIPlaceColumn : ModuleUIPanel {
 	}
 
 	/// <summary> 初始化 </summary>
-	public void Initial() {
-		placeTypes.Create(AssetsManager.I.placeTypes);
+	public void Initial(List<PlaceType> list) {
+		placeTypes.Create(list);
 		placeTypes.SelectFirst();
 	}
 	/// <summary> 设置类型 </summary>

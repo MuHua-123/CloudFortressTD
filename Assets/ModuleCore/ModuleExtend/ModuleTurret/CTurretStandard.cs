@@ -40,9 +40,9 @@ public class CTurretStandard : CTurret {
 	/// <summary> 发射子弹 </summary>
 	public void LaunchBullet(ITurretTarget initTarget) {
 		hTurret.animator.SetTrigger("Fire");
-		HBullet hBullet = ModuleVisual.I.HBullet.CreateVisual(hTurret.bulletPrefab);
-		CBullet control = CBullet.AddControl(hBullet);
-		control.Initial(this, initTarget, hTurret.firePoint);
+		// HBullet hBullet = ModuleVisual.I.HBullet.CreateVisual(hTurret.bulletPrefab);
+		// CBullet control = CBullet.AddControl(hBullet);
+		// control.Initial(this, initTarget, hTurret.firePoint);
 	}
 	/// <summary> 侦察比较器 </summary>
 	public bool DetectionComparer(ITurretTarget ta1, ITurretTarget ta2) {

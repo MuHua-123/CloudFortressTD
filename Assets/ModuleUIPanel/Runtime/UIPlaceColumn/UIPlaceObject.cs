@@ -29,7 +29,7 @@ public class UIPlaceObject : ModuleUIItem<PlaceObject> {
 		button.EnableInClassList("place-button-s", false);
 	}
 	public override void SelectState() {
-		// PlaceHandleCreate.I.CreateStart(value);
+		PlaceHandleCreate.I.CreateStart(value);
 		button.EnableInClassList("place-button-s", true);
 	}
 }

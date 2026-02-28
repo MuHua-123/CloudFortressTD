@@ -10,4 +10,9 @@ public class PlaceObject : MonoBehaviour {
 	public Sprite preview;
 	/// <summary> guid </summary>
 	public string guid = System.Guid.NewGuid().ToString("N");
+	/// <summary> 是否启用 </summary>
+	public bool isEnable;
+
+	/// <summary> 是否启用 </summary>
+	public virtual bool IsEnable => isEnable;
 }

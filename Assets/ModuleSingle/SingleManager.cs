@@ -10,6 +10,12 @@ public class SingleManager : ModuleSingle<SingleManager> {
 
 	protected override void Awake() => NoReplace();
 
+	private void Start() {
+		ModuleUI.Settings(Page.Classic);
+		ModuleInput.Settings(InputMode.Standard);
+		ModuleCamera.Settings(CameraMode.Observe);
+	}
+
 	// /// <summary> 运行模式 </summary>
 	// public static EnumRunningMode runningMode;
 

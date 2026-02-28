@@ -46,9 +46,9 @@ public class CBuildingSpawn : CBuilding {
 			if (unit.spawnTime > differ) { continue; }
 			spawn.spawnUnits.Remove(unit);
 
-			HMonster temp = ModuleVisual.I.HMonster.CreateVisual(unit.hMonster.transform);
+			// HMonster temp = ModuleVisual.I.HMonster.CreateVisual(unit.hMonster.transform);
 			Vector3 final = hSpawn.final.transform.position;
-			CMonster.AddControl(temp).Initial(transform.position, transform.eulerAngles, final, RandomOffset());
+			// CMonster.AddControl(temp).Initial(transform.position, transform.eulerAngles, final, RandomOffset());
 		}
 		if (spawn.spawnUnits.Count == 0) { spawns.Remove(spawn); }
 	}

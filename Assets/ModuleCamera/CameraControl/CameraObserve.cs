@@ -29,8 +29,8 @@ public class CameraObserve : CameraControl {
 		set => transform.eulerAngles = value;
 	}
 	public override float VisualField {
-		get => Mathf.Abs(mainCamera.transform.localPosition.z / 2);
-		set => mainCamera.transform.localPosition = new Vector3(0, 0, -value * 2);
+		get => Mathf.Abs(mainCamera.transform.localPosition.z);
+		set => mainCamera.transform.localPosition = new Vector3(0, 0, -value);
 	}
 
 	public override void ModuleCamera_OnCameraMode(CameraMode mode) {

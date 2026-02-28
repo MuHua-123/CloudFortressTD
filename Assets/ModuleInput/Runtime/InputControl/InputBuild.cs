@@ -24,7 +24,7 @@ public class InputBuild : MonoBehaviour {
 	public void EnablePreview(HTurret hTurret, Action callback) {
 		this.callback = callback;
 		// ModuleInput.TemporarilyDisable(true);
-		ModuleVisual.I.HTurret.UpdateVisual(ref preview, hTurret.transform);
+		// ModuleVisual.I.HTurret.UpdateVisual(ref preview, hTurret.transform);
 
 		if (preview == null || CameraController == null) { return; }
 		preview.transform.position = GetMousePosition();
@@ -49,7 +49,7 @@ public class InputBuild : MonoBehaviour {
 		callback?.Invoke();
 		callback = null;
 		// ModuleInput.TemporarilyDisable(false);
-		ModuleVisual.I.HTurret.ReleaseVisual(preview);
+		// ModuleVisual.I.HTurret.ReleaseVisual(preview);
 	}
 	#endregion
 

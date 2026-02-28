@@ -10,11 +10,13 @@ public class ModuleVisual : ModuleSingle<ModuleVisual> {
 
 	[Header("生成器")]
 	/// <summary> 炮塔生成器 </summary>
-	public VisualGenerator<HTurret> HTurret;
+	// public VisualGenerator<HTurret> HTurret;
 	/// <summary> 子弹生成器 </summary>
-	public VisualGenerator<HBullet> HBullet;
+	// public VisualGenerator<HBullet> HBullet;
 	/// <summary> 怪物生成器 </summary>
-	public VisualGenerator<HMonster> HMonster;
+	// public VisualGenerator<HMonster> HMonster;
+	/// <summary> 对象生成器 </summary>
+	public VisualGenerator<PlaceObject> GeneratorPlaceObject;
 
 	protected override void Awake() => NoReplace();
 
