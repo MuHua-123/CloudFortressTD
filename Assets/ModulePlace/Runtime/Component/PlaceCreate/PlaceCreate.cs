@@ -13,7 +13,8 @@ public class PlaceCreate : MonoBehaviour {
 
 	/// <summary> 开始创建 </summary>
 	public virtual void CreateStart() {
-		position = transform.position;
+		if (!RayManager.GroundPosition(out Vector3 v1)) { return; }
+		position = transform.position = v1;
 	}
 	/// <summary> 取消创建 </summary>
 	public virtual void CreateCancel() { }
