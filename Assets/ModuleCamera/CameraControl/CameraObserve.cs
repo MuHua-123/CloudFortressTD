@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 /// <summary>
 /// 观察相机
@@ -8,6 +10,7 @@ using UnityEngine;
 public class CameraObserve : CameraControl {
 
 	public Camera mainCamera;
+	public Volume Volume;
 
 	public override Camera Camera {
 		get => mainCamera;
@@ -29,8 +32,17 @@ public class CameraObserve : CameraControl {
 		set => transform.eulerAngles = value;
 	}
 	public override float VisualField {
-		get => Mathf.Abs(mainCamera.transform.localPosition.z);
-		set => mainCamera.transform.localPosition = new Vector3(0, 0, -value);
+		get => GetVisualField();
+		set => SetVisualField(value);
+	}
+	private float GetVisualField() {
+		return Mathf.Abs(mainCamera.transform.localPosition.z);
+	}
+	private void SetVisualField(float value) {
+		value = Mathf.Clamp(value, 10, 30);
+		mainCamera.transform.localPosition = new Vector3(0, 0, -value);
+		if (!Volume.profile.TryGet(out DepthOfField depthOfField)) { return; }
+		depthOfField.focusDistance.SetValue(new FloatParameter(value));
 	}
 
 	public override void ModuleCamera_OnCameraMode(CameraMode mode) {
