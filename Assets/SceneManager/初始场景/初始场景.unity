@@ -198,6 +198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   document: {fileID: 1674868121}
+  SceneTemplate: {fileID: 9197481963319205126, guid: 9d284791ec439c34f990c65b56ddd27d, type: 3}
+  PlaceTemplate: {fileID: 9197481963319205126, guid: ed59ab0f14a941e48b3e69c9e84df31a, type: 3}
 --- !u!1 &213891934
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +850,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce5a208853e8fca40b8c9a8294a6b77f, type: 2}
   - {fileID: 11400000, guid: f724eb9ee6555a64e8b20c0097086059, type: 2}
   - {fileID: 11400000, guid: 2978384a64af98f45b2bc55e160e959e, type: 2}
+  classic:
+  - {fileID: 11400000, guid: 5fd7ba4d53fb4bc46914c192986df4a3, type: 2}
   allObjects: []
 --- !u!1 &840396346
 GameObject:

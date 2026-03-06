@@ -30,14 +30,18 @@ public class SceneSystem {
 	}
 
 	/// <summary> 加载场景(协程) </summary>
-	public static void Load(SceneData scene) => Load(scene.name);
+	public static void Load(SceneData scene, Action complete = null, LoadSceneMode mode = LoadSceneMode.Single) {
+		Load(scene.name, complete, mode);
+	}
 	/// <summary> 加载场景(协程) </summary>
 	public static void Load(string sceneName, Action complete = null, LoadSceneMode mode = LoadSceneMode.Single) {
 		if (loader == null) { Debug.LogError("未初始化加载器!"); return; }
 		SingleManager.I.StartCoroutine(loader.ILoad(sceneName, complete, mode));
 	}
 	/// <summary> 加载场景(异步) </summary>
-	public static void LoadAsync(SceneData scene) => LoadAsync(scene.name);
+	public static void LoadAsync(SceneData scene, Action complete = null, LoadSceneMode mode = LoadSceneMode.Single) {
+		LoadAsync(scene.name, complete, mode);
+	}
 	/// <summary> 加载场景(异步) </summary>
 	public static void LoadAsync(string sceneName, Action complete = null, LoadSceneMode mode = LoadSceneMode.Single) {
 		if (loader == null) { Debug.LogError("未初始化加载器!"); return; }

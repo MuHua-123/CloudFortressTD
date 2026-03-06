@@ -9,9 +9,17 @@ using MuHua;
 /// </summary>
 public class UILoadingManager : ModuleUISingle<UILoadingManager> {
 
+	public UILoading loading;
+
 	public override VisualElement Element => root.Q<VisualElement>("LoadingManager");
+
+	public VisualElement Loading => Q<VisualElement>("Loading");
 
 	protected override void Awake() {
 		NoReplace(false);
+
+		loading = new UILoading(Loading, root);
+
+		SceneSystem.OnProgress = (active, value) => loading.Settings(active, value, "加载中...");
 	}
 }

@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
->
-    
-</engine:UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Loading" src="project://database/Assets/ModuleUISingle/UI%20Toolkit/LoadingManager/Loading/Loading.uxml?fileID=9197481963319205126&amp;guid=fb5d6f3bc717b0d4d9de29e39c671f95&amp;type=3#Loading" />
+    <Style src="project://database/Assets/UI%20Toolkit/Document/Document.uss?fileID=7433441132597879392&amp;guid=6c5dcc10b66adf345b00f2d3a1b43c22&amp;type=3#Document" />
+    <ui:Instance template="Loading" name="Loading" class="document-page document-page-hide" />
+</ui:UXML>

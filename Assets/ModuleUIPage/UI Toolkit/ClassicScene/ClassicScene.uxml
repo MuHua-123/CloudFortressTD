@@ -1,23 +1,31 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="PlaceTemplate" src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicScene/PlaceTemplate.uxml?fileID=9197481963319205126&amp;guid=ed59ab0f14a941e48b3e69c9e84df31a&amp;type=3#PlaceTemplate" />
     <ui:Template name="SceneTemplate" src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicScene/SceneTemplate.uxml?fileID=9197481963319205126&amp;guid=9d284791ec439c34f990c65b56ddd27d&amp;type=3#SceneTemplate" />
+    <ui:Template name="PlaceTemplate" src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicScene/PlaceTemplate.uxml?fileID=9197481963319205126&amp;guid=ed59ab0f14a941e48b3e69c9e84df31a&amp;type=3#PlaceTemplate" />
     <Style src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicScene/ClassicScene.uss?fileID=7433441132597879392&amp;guid=aadffa86dfad3d847aed8cb10a82c491&amp;type=3#ClassicScene" />
-    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.3);">
-        <ui:VisualElement style="flex-grow: 1;">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.3); align-items: stretch;">
+        <ui:VisualElement name="Container1" style="flex-direction: row; flex-wrap: wrap; flex-grow: 1; justify-content: center;">
+            <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+            <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+            <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+            <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+            <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+            <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+            <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+            <ui:Instance template="SceneTemplate" name="SceneTemplate" />
             <ui:Instance template="SceneTemplate" name="SceneTemplate" />
             <ui:Instance template="SceneTemplate" name="SceneTemplate" />
             <ui:Instance template="SceneTemplate" name="SceneTemplate" />
         </ui:VisualElement>
-        <ui:VisualElement style="height: 150px; flex-direction: row; align-items: center; justify-content: center;">
+        <ui:VisualElement name="Container2" style="height: 150px; flex-direction: row; align-items: center; justify-content: center;">
             <ui:Instance template="PlaceTemplate" name="PlaceTemplate" />
             <ui:Instance template="PlaceTemplate" name="PlaceTemplate" />
             <ui:Instance template="PlaceTemplate" name="PlaceTemplate" />
             <ui:Instance template="PlaceTemplate" name="PlaceTemplate" />
         </ui:VisualElement>
         <ui:VisualElement name="Bottom" style="height: 100px; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; background-color: rgba(0, 0, 0, 0.6); flex-direction: row; align-items: center; justify-content: space-between;">
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" class="classic-scene-button" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); font-size: 24px;" />
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" class="classic-scene-button" />
+            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button1" class="classic-scene-button" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SceneName" style="color: rgb(255, 255, 255); font-size: 24px;" />
+            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button2" class="classic-scene-button" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

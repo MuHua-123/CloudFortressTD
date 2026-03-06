@@ -11,7 +11,13 @@ public class AssetsManager : ModuleSingle<AssetsManager> {
 	/// <summary> 放置类型 </summary>
 	public List<PlaceTypeConst> placeTypeConsts;
 
+	[Header("场景")]
+	/// <summary> 经典模式 </summary>
+	public List<SceneConst> classic;
+
 	public List<PlaceType> placeTypes = new List<PlaceType>();
+	/// <summary> 经典模式 - 场景数据 </summary>
+	public List<SceneData> classicSceneData = new List<SceneData>();
 
 	[HideInInspector]
 	/// <summary> 全部对象 </summary>
@@ -23,6 +29,8 @@ public class AssetsManager : ModuleSingle<AssetsManager> {
 		placeTypes = new List<PlaceType>();
 		allObjects = new List<PlaceObject>();
 		placeTypeConsts.ForEach(To);
+
+		classic.ForEach(obj => classicSceneData.Add(obj.To()));
 	}
 
 	/// <summary> 对象查询 </summary> 
