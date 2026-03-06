@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Message1" src="project://database/Assets/ModuleUISingle/UI%20Toolkit/PopupManager/Message/Message1.uxml?fileID=9197481963319205126&amp;guid=abba321009af7374fab0573063390012&amp;type=3#Message1" />
+    <ui:Template name="Message2" src="project://database/Assets/ModuleUISingle/UI%20Toolkit/PopupManager/Message/Message2.uxml?fileID=9197481963319205126&amp;guid=64c8f6a9923ad4342a545b1d220ac33e&amp;type=3#Message2" />
+    <ui:Template name="Message3" src="project://database/Assets/ModuleUISingle/UI%20Toolkit/PopupManager/Message/Message3.uxml?fileID=9197481963319205126&amp;guid=d0d62b55e75a5814b88ba5b20ee9ce0e&amp;type=3#Message3" />
+    <Style src="project://database/Assets/UI%20Toolkit/Document/Document.uss?fileID=7433441132597879392&amp;guid=6c5dcc10b66adf345b00f2d3a1b43c22&amp;type=3#Document" />
+    <ui:Instance template="Message1" name="Message1" class="document-page document-page-hide" />
+    <ui:Instance template="Message2" name="Message2" class="document-page document-page-hide" />
+    <ui:Instance template="Message3" name="Message3" class="document-page document-page-hide" />
+</ui:UXML>

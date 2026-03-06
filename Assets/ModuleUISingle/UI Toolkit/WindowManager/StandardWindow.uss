@@ -1,0 +1,125 @@
+.window-hidden {
+    display: none;
+    opacity: 0;
+}
+
+.window {
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: 350px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    flex-grow: 0;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-left-color: rgb(51, 51, 51);
+    border-right-color: rgb(51, 51, 51);
+    border-top-color: rgb(51, 51, 51);
+    border-bottom-color: rgb(51, 51, 51);
+}
+
+.window-top {
+    justify-content: space-between;
+    background-color: rgb(51, 51, 51);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-left: 0;
+    height: 30px;
+    flex-direction: row;
+    flex-shrink: 1;
+    flex-grow: 0;
+    align-items: center;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.window-title {
+    font-size: 16px;
+    color: rgb(236, 240, 241);
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-text-align: middle-left;
+}
+
+.window-close-button {
+    color: rgb(236, 240, 241);
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    height: 30px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    align-items: center;
+    justify-content: center;
+}
+
+.window-close-button:hover {
+    background-color: rgb(255, 89, 89);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.window-close-icon {
+    background-image: url("project://database/Assets/ModuleUISingle/Assets/Icon/%E5%85%B3%E9%97%AD.png?fileID=2800000&guid=e8c964cc069623b4f8c1a024a6187e65&type=3#关闭");
+    width: 25px;
+    height: 25px;
+}
+
+.window-container {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: rgb(242, 242, 242);
+    overflow: hidden;
+    flex-grow: 1;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

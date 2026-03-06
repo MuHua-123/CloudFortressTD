@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="PlaceColumn" src="project://database/Assets/ModuleUIPanel/UI%20Toolkit/PlaceColumn/PlaceColumn.uxml?fileID=9197481963319205126&amp;guid=e51d8321d6181fd48a17cd498a516fa5&amp;type=3#PlaceColumn" />
+    <Style src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicPage/ClassicPage.uss?fileID=7433441132597879392&amp;guid=4d3d4ea4b7f1753488bda72caa41ab22&amp;type=3#ClassicPage" />
+    <ui:Instance template="PlaceColumn" name="PlaceColumn" picking-mode="Ignore" style="position: absolute; bottom: 0; right: 0; left: 0;" />
+</ui:UXML>

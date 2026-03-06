@@ -54,18 +54,28 @@ public enum Page {
 	None,
 	/// <summary> 主页面 </summary>
 	Home,
+	/// <summary> 游戏设置 </summary>
+	Settings,
+
+	/// <summary> 经典模式 </summary>
+	Classic,
+	/// <summary> 经典模式 - 场景选择 </summary>
+	ClassicScene,
+	/// <summary> 经典模式 - 战斗场景 </summary>
+	ClassicBattle,
+	/// <summary> 经典模式 - 游戏暂停 </summary>
+	ClassicPause,
+
+
+
 	/// <summary> 菜单面 </summary>
 	Menu,
 	/// <summary> 场景选择 </summary>
 	Scene,
-	/// <summary> 经典模式 </summary>
-	Classic,
 	/// <summary> 准备游戏 </summary>
 	Prepare,
 	/// <summary> 战斗页面 </summary>
 	Battle,
 	/// <summary> 结算页面 </summary>
 	Settlement,
-	/// <summary> 游戏设置 </summary>
-	Settings,
 }

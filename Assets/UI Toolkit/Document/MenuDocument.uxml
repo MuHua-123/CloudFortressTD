@@ -1,16 +1,19 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="MenuPage" src="project://database/Assets/UI%20Toolkit/GamePage/MenuPage/MenuPage.uxml?fileID=9197481963319205126&amp;guid=da05030edbbb9af42a67b84307261797&amp;type=3#MenuPage" />
-    <ui:Template name="ScenePage" src="project://database/Assets/UI%20Toolkit/GamePage/ScenePage/ScenePage.uxml?fileID=9197481963319205126&amp;guid=9ff6a36f9baaaaa4bb5df9ff3f60471d&amp;type=3#ScenePage" />
-    <ui:Template name="SettingsPage" src="project://database/Assets/UI%20Toolkit/GamePage/SettingsPage/SettingsPage.uxml?fileID=9197481963319205126&amp;guid=2cdb779d49f4870468c24d962e0b9eb4&amp;type=3#SettingsPage" />
-    <ui:Template name="PreparePage" src="project://database/Assets/UI%20Toolkit/GamePage/PreparePage/PreparePage.uxml?fileID=9197481963319205126&amp;guid=6cfd030a69dafc2489b8e1b7efa52853&amp;type=3#PreparePage" />
-    <ui:Template name="BattlePage" src="project://database/Assets/UI%20Toolkit/GamePage/BattlePage/BattlePage.uxml?fileID=9197481963319205126&amp;guid=925a10b8fc452f54c92dddd9a97ec5b7&amp;type=3#BattlePage" />
+    <ui:Template name="HomePage" src="project://database/Assets/ModuleUIPage/UI%20Toolkit/HomePage/HomePage.uxml?fileID=9197481963319205126&amp;guid=4095a8eff385b20499c6f0e783a6ebfd&amp;type=3#HomePage" />
+    <ui:Template name="SettingsPage" src="project://database/Assets/ModuleUIPage/UI%20Toolkit/SettingsPage/SettingsPage.uxml?fileID=9197481963319205126&amp;guid=58583104fd4fcf64386f7b30c1d84d6d&amp;type=3#SettingsPage" />
+    <ui:Template name="ClassicScene" src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicScene/ClassicScene.uxml?fileID=9197481963319205126&amp;guid=42d0732fb7f8bbc43b8bcd419a6a48e9&amp;type=3#ClassicScene" />
+    <ui:Template name="ClassicBattle" src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicBattle/ClassicBattle.uxml?fileID=9197481963319205126&amp;guid=f552b6924b44b09499b38a2b73941df0&amp;type=3#ClassicBattle" />
+    <ui:Template name="ClassicPause" src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicPause/ClassicPause.uxml?fileID=9197481963319205126&amp;guid=9f77ffa50645de7448e1e1e5395f5e01&amp;type=3#ClassicPause" />
+    <ui:Template name="WindowManager" src="project://database/Assets/ModuleUISingle/UI%20Toolkit/WindowManager/WindowManager.uxml?fileID=9197481963319205126&amp;guid=38637777d33ceba4591997e87b1b0105&amp;type=3#WindowManager" />
+    <ui:Template name="LoadingManager" src="project://database/Assets/ModuleUISingle/UI%20Toolkit/LoadingManager/LoadingManager.uxml?fileID=9197481963319205126&amp;guid=0a8060b716b62c14db58aebeaea413a7&amp;type=3#LoadingManager" />
+    <ui:Template name="PopupManager" src="project://database/Assets/ModuleUISingle/UI%20Toolkit/PopupManager/PopupManager.uxml?fileID=9197481963319205126&amp;guid=902a0ace64806f74691b9f46e5886c83&amp;type=3#PopupManager" />
     <Style src="project://database/Assets/UI%20Toolkit/Document/Document.uss?fileID=7433441132597879392&amp;guid=6c5dcc10b66adf345b00f2d3a1b43c22&amp;type=3#Document" />
-    <ui:Instance template="MenuPage" name="MenuPage" class="document-page document-page-hide" />
-    <ui:Instance template="ScenePage" name="ScenePage" class="document-page document-page-hide" />
+    <ui:Instance template="HomePage" name="HomePage" class="document-page document-page-hide" />
     <ui:Instance template="SettingsPage" name="SettingsPage" class="document-page document-page-hide" />
-    <ui:Instance template="PreparePage" name="PreparePage" class="document-page document-page-hide" />
-    <ui:Instance template="BattlePage" name="BattlePage" class="document-page document-page-hide" />
-    <ui:VisualElement name="Window" picking-mode="Ignore" class="document-page" style="flex-grow: 1;" />
-    <ui:VisualElement name="Loading" picking-mode="Ignore" class="document-page" style="flex-grow: 1;" />
-    <ui:VisualElement name="Popup" picking-mode="Ignore" class="document-page" style="flex-grow: 1;" />
+    <ui:Instance template="ClassicScene" name="ClassicScene" class="document-page document-page-hide" />
+    <ui:Instance template="ClassicBattle" name="ClassicBattle" picking-mode="Ignore" class="document-page document-page-hide" />
+    <ui:Instance template="ClassicPause" name="ClassicPause" class="document-page document-page-hide" />
+    <ui:Instance template="WindowManager" name="WindowManager" picking-mode="Ignore" class="document-page" />
+    <ui:Instance template="LoadingManager" name="LoadingManager" picking-mode="Ignore" class="document-page" />
+    <ui:Instance template="PopupManager" name="PopupManager" picking-mode="Ignore" class="document-page" />
 </ui:UXML>
