@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
->
-    
-</engine:UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/ModuleUIPage/UI%20Toolkit/HomePage/HomePage.uss?fileID=7433441132597879392&amp;guid=d2f29dd018ac1ec448b828f5de7c0217&amp;type=3#HomePage" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: stretch; justify-content: center;">
+        <ui:VisualElement style="width: 500px; background-color: rgba(0, 0, 0, 0.4); align-items: center; justify-content: center;">
+            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button1" class="home-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

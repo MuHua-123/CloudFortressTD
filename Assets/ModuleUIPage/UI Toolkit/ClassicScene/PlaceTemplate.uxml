@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicScene/ClassicScene.uss?fileID=7433441132597879392&amp;guid=aadffa86dfad3d847aed8cb10a82c491&amp;type=3#ClassicScene" />
+    <ui:VisualElement name="Button" class="place-button" style="width: 80px; height: 100px; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgba(0, 0, 0, 0.3); align-items: center; justify-content: space-between;">
+        <ui:VisualElement name="Icon" style="width: 70px; height: 70px; flex-shrink: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; color: rgb(255, 255, 255);" />
+    </ui:VisualElement>
+</ui:UXML>
