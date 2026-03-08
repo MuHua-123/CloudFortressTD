@@ -2,7 +2,15 @@
     <ui:Template name="SceneTemplate" src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicScene/SceneTemplate.uxml?fileID=9197481963319205126&amp;guid=9d284791ec439c34f990c65b56ddd27d&amp;type=3#SceneTemplate" />
     <ui:Template name="PlaceTemplate" src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicScene/PlaceTemplate.uxml?fileID=9197481963319205126&amp;guid=ed59ab0f14a941e48b3e69c9e84df31a&amp;type=3#PlaceTemplate" />
     <Style src="project://database/Assets/ModuleUIPage/UI%20Toolkit/ClassicScene/ClassicScene.uss?fileID=7433441132597879392&amp;guid=aadffa86dfad3d847aed8cb10a82c491&amp;type=3#ClassicScene" />
-    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.3); align-items: stretch;">
+    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/BG/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240921230923.png?fileID=2800000&amp;guid=6639bbfcf81ad62478c1d34752dd6190&amp;type=3#微信图片_20240921230923&quot;); position: absolute; left: 0; top: 0; right: 0; bottom: 0; -unity-background-image-tint-color: rgb(183, 183, 183);">
+        <ui:VisualElement style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/BG/SPR_FantasyMenus_Background_Vignette_01.png?fileID=2800000&amp;guid=fd12dc72353f8d2409222d98558052a0&amp;type=3#SPR_FantasyMenus_Background_Vignette_01&quot;); -unity-background-image-tint-color: rgba(9, 22, 31, 0.53); left: 0; top: 0; right: 0; bottom: 0;" />
+        <ui:VisualElement style="flex-grow: 1; position: absolute; -unity-background-image-tint-color: rgba(9, 22, 31, 0.77); bottom: 0; right: 0; left: 0; top: 0; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/BG/SPR_FantasyMenus_Gradient_Vertical_01.png?fileID=2800000&amp;guid=debba16649b4f524ebffdb71a90477f1&amp;type=3#SPR_FantasyMenus_Gradient_Vertical_01&quot;);" />
+        <ui:VisualElement style="flex-grow: 1; position: absolute; left: 60px; top: 60px; right: 60px; bottom: 120px; align-items: center; justify-content: space-between; display: flex;">
+            <ui:VisualElement style="flex-grow: 1; position: absolute; left: 15px; top: 13px; right: 15px; bottom: 13px; background-color: rgba(0, 0, 0, 0); -unity-background-image-tint-color: rgba(0, 0, 0, 0.3); rotate: 180deg; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/BG/SPR_FantasyMenus_Gradient_Vertical_Solid_01.png?fileID=2800000&amp;guid=7cad19a295448df4f98f54a8682e59a5&amp;type=3#SPR_FantasyMenus_Gradient_Vertical_Solid_01&quot;);" />
+            <ui:VisualElement style="flex-grow: 1; position: absolute; left: 0; top: 0; right: 0; bottom: 0; -unity-slice-scale: 0.3px; -unity-background-image-tint-color: rgb(243, 176, 75); background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/Frame/SPR_HUD_FantasyWarrior_Tracery_FrameDetail_01.png?fileID=21300000&amp;guid=13824338c228fd444ae1a15ff5f88a1f&amp;type=3#SPR_HUD_FantasyWarrior_Tracery_FrameDetail_01&quot;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.3); align-items: stretch; display: none;">
         <ui:VisualElement name="Container1" style="flex-direction: row; flex-wrap: wrap; flex-grow: 1; justify-content: center;">
             <ui:Instance template="SceneTemplate" name="SceneTemplate" />
             <ui:Instance template="SceneTemplate" name="SceneTemplate" />
@@ -26,6 +34,35 @@
             <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button1" class="classic-scene-button" />
             <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SceneName" style="color: rgb(255, 255, 255); font-size: 24px;" />
             <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button2" class="classic-scene-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 1; flex-direction: column; align-items: stretch; justify-content: center; flex-wrap: nowrap;">
+        <ui:VisualElement name="ScrollView" class="scrollview" style="margin-top: 90px; margin-right: 90px; margin-bottom: 0; margin-left: 90px; flex-grow: 1; flex-shrink: 1;">
+            <ui:VisualElement name="Viewport" class="scrollview-viewport" style="margin-right: 10px; margin-bottom: 10px; margin-top: 10px; margin-left: 10px; background-color: rgba(255, 255, 255, 0);">
+                <ui:VisualElement name="Container" class="scrollview-container" style="background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-wrap: wrap; justify-content: center;">
+                    <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+                    <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+                    <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+                    <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+                    <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+                    <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+                    <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+                    <ui:Instance template="SceneTemplate" name="SceneTemplate" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="ScrollerHorizontal" class="scroller-horizontal scrollview-horizontal-scroller" style="display: none;">
+                <ui:VisualElement name="Dragger" class="scroller-horizontal-dragger scrollview-horizontal-scroller-dragger" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ScrollerVertical" class="scroller-vertical scrollview-vertical-scroller" style="display: none;">
+                <ui:VisualElement name="Dragger" class="scroller-vertical-dragger scrollview-vertical-scroller-dragger" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="height: 140px; flex-shrink: 0; flex-direction: row; align-items: center; justify-content: space-between; padding-top: 20px; padding-right: 70px; padding-bottom: 20px; padding-left: 70px;" />
+    </ui:VisualElement>
+    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; position: absolute; left: -1px; top: 0; right: 2px; bottom: 0;">
+        <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; position: absolute; left: 60px; top: 60px; right: 60px; bottom: 120px; align-items: center; justify-content: space-between;">
+            <ui:VisualElement style="background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/Icon/SPR_FantasyWarrior_Greeble_Curlicue_17.png?fileID=2800000&amp;guid=ecf2221bd95fceb4fbdb27bbb234f8c1&amp;type=3#SPR_FantasyWarrior_Greeble_Curlicue_17&quot;); width: 64px; height: 64px; top: -15px;" />
+            <ui:VisualElement style="background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/Icon/SPR_FantasyWarrior_Greeble_Curlicue_17.png?fileID=2800000&amp;guid=ecf2221bd95fceb4fbdb27bbb234f8c1&amp;type=3#SPR_FantasyWarrior_Greeble_Curlicue_17&quot;); width: 64px; height: 64px; rotate: 180deg; bottom: -15px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
