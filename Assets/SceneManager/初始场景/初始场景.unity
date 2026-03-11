@@ -852,6 +852,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2978384a64af98f45b2bc55e160e959e, type: 2}
   classic:
   - {fileID: 11400000, guid: 5fd7ba4d53fb4bc46914c192986df4a3, type: 2}
+  - {fileID: 11400000, guid: 55b08ef931823004298a0f50784be21e, type: 2}
   allObjects: []
 --- !u!1 &840396346
 GameObject:

@@ -12,5 +12,9 @@ EditorBuildSettings:
     path: "Assets/SceneManager/\u7ECF\u5178\u6A21\u5F0F/\u5173\u5361 1/\u5173\u5361
       1.unity"
     guid: 6e505fcbd80ac434b87bbcb80463656c
+  - enabled: 1
+    path: "Assets/SceneManager/\u7ECF\u5178\u6A21\u5F0F/\u5173\u5361 2/\u5173\u5361
+      2.unity"
+    guid: 25a0588293ba500409dde5b7b2b198da
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 4224fc478e5ff6e428380dc4f44cf2dc, type: 2}

@@ -14,3 +14,52 @@
     border-bottom-color: rgba(0, 0, 0, 0);
     width: 160px;
 }
+
+.scene-frame {
+    -unity-slice-scale: 0.3px;
+    -unity-background-scale-mode: stretch-to-fill;
+    -unity-slice-left: 80;
+    -unity-slice-top: 80;
+    -unity-slice-right: 220;
+    -unity-slice-bottom: 80;
+    width: 480px;
+    height: 300px;
+    align-items: center;
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    transition-duration: 0.2s;
+    overflow: visible;
+    background-image: url("project://database/Assets/ModuleUIPage/Assets/Frame/SPR_FantasyMenus_Frame_Box_Medium_04.png?fileID=2800000&guid=8e3f522cc96281044bb8f48ec65f590c&type=3#SPR_FantasyMenus_Frame_Box_Medium_04");
+}
+
+.scene-frame-s {
+    scale: 1.05 1.05;
+}
+
+.scene-frame:hover {
+    scale: 1.05 1.05;
+}
+
+.scene-image {
+    flex-grow: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition-duration: 0.2s;
+    -unity-background-image-tint-color: rgb(139, 139, 139);
+    background-image: url("project://database/Assets/ModuleUIPage/Assets/BG/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240921230923.png?fileID=2800000&guid=6639bbfcf81ad62478c1d34752dd6190&type=3#微信图片_20240921230923");
+}
+
+.scene-image-s {
+    scale: 1.1 1.1;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.scene-image:hover {
+    scale: 1.1 1.1;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}

@@ -1,21 +1,21 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/ModuleUIPage/UI%20Toolkit/HomePage/HomePage.uss?fileID=7433441132597879392&amp;guid=d2f29dd018ac1ec448b828f5de7c0217&amp;type=3#HomePage" />
-    <ui:VisualElement style="flex-grow: 1; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/Home/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240921230923.png?fileID=2800000&amp;guid=6639bbfcf81ad62478c1d34752dd6190&amp;type=3#微信图片_20240921230923&quot;);">
-        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/Home/SPR_FantasyMenus_Background_Vignette_01.png?fileID=2800000&amp;guid=fd12dc72353f8d2409222d98558052a0&amp;type=3#SPR_FantasyMenus_Background_Vignette_01&quot;); position: absolute; left: 0; top: 0; right: 0; bottom: 0; -unity-background-image-tint-color: rgba(9, 22, 31, 0.45);" />
-        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/Home/SPR_FantasyMenus_Gradient_Vertical_01.png?fileID=2800000&amp;guid=debba16649b4f524ebffdb71a90477f1&amp;type=3#SPR_FantasyMenus_Gradient_Vertical_01&quot;); position: absolute; left: 0; top: 800px; right: 0; bottom: 0; -unity-background-image-tint-color: rgba(9, 22, 31, 0.7);" />
-        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/Home/T_UI_Gradient_D.png?fileID=2800000&amp;guid=0cafb520bab8ecd4d910d3be958ab211&amp;type=3#T_UI_Gradient_D&quot;); position: absolute; left: 1150px; top: 0; right: 0; bottom: 0; -unity-background-image-tint-color: rgb(9, 22, 31);" />
+    <ui:VisualElement style="flex-grow: 1; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/BG/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240921230923.png?fileID=2800000&amp;guid=6639bbfcf81ad62478c1d34752dd6190&amp;type=3#微信图片_20240921230923&quot;);">
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/BG/SPR_FantasyMenus_Background_Vignette_01.png?fileID=2800000&amp;guid=fd12dc72353f8d2409222d98558052a0&amp;type=3#SPR_FantasyMenus_Background_Vignette_01&quot;); position: absolute; left: 0; top: 0; right: 0; bottom: 0; -unity-background-image-tint-color: rgba(9, 22, 31, 0.45);" />
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/BG/SPR_FantasyMenus_Gradient_Vertical_01.png?fileID=2800000&amp;guid=debba16649b4f524ebffdb71a90477f1&amp;type=3#SPR_FantasyMenus_Gradient_Vertical_01&quot;); position: absolute; left: 0; top: 800px; right: 0; bottom: 0; -unity-background-image-tint-color: rgba(9, 22, 31, 0.7);" />
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/BG/T_UI_Gradient_D.png?fileID=2800000&amp;guid=0cafb520bab8ecd4d910d3be958ab211&amp;type=3#T_UI_Gradient_D&quot;); position: absolute; left: 1150px; top: 0; right: 0; bottom: 0; -unity-background-image-tint-color: rgb(9, 22, 31);" />
     </ui:VisualElement>
     <ui:VisualElement style="flex-grow: 1; flex-direction: column; align-items: center; justify-content: center; width: 600px; position: absolute; right: 0; top: 0; bottom: 0;">
-        <ui:VisualElement style="width: 512px; height: 256px; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/Home/Logo@1x.png?fileID=2800000&amp;guid=e6cf88dcbe9670440b62d765ab6d3a2b&amp;type=3#Logo@1x&quot;);" />
+        <ui:VisualElement style="width: 512px; height: 256px; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px; background-image: url(&quot;project://database/Assets/ModuleUIPage/Assets/Logo/Logo@1x.png?fileID=2800000&amp;guid=e6cf88dcbe9670440b62d765ab6d3a2b&amp;type=3#Logo@1x&quot;);" />
         <ui:VisualElement style="height: 100px;" />
         <ui:VisualElement style="width: 500px; align-items: center; justify-content: center;">
-            <ui:VisualElement style="width: 240px; height: 60px;">
+            <ui:VisualElement style="height: 60px;">
                 <ui:Button text="开始游戏" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button1" class="home-button" />
             </ui:VisualElement>
-            <ui:VisualElement style="flex-grow: 1; height: 60px;">
+            <ui:VisualElement style="height: 60px;">
                 <ui:Button text="游戏设置" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button2" class="home-button" />
             </ui:VisualElement>
-            <ui:VisualElement style="flex-grow: 1; height: 60px;">
+            <ui:VisualElement style="height: 60px;">
                 <ui:Button text="退出游戏" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button3" class="home-button" />
             </ui:VisualElement>
         </ui:VisualElement>

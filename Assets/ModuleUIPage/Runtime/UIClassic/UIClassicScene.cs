@@ -13,24 +13,26 @@ public class UIClassicScene : UIStandardPage {
 	/// <summary> 放置模板 </summary>
 	public VisualTreeAsset PlaceTemplate;
 
+	private UIButton1 back;
+	private UIButton1 next;
 	private SceneData sceneData;
-	private ModuleUIItems<UIScene, SceneData> SceneDatas;
+	private UIScrollViewListV<UIScene, SceneData> SceneDatas;
 
 	public override VisualElement Element => root.Q<VisualElement>("ClassicScene");
 
 	public Label SceneName => Q<Label>("SceneName");
-	public Button Button1 => Q<Button>("Button1");// 返回
-	public Button Button2 => Q<Button>("Button2");// 开始
-	public VisualElement Container1 => Q<VisualElement>("Container1");
+	public VisualElement Back => Q<VisualElement>("Back");// 返回
+	public VisualElement Next => Q<VisualElement>("Next");// 开始
+	public VisualElement SceneList => Q<VisualElement>("SceneList");
 
 	public override void Awake() {
 		base.Awake();
 
-		SceneDatas = new ModuleUIItems<UIScene, SceneData>(Container1, SceneTemplate,
-		(data, element) => new UIScene(data, element, this));
+		back = new UIButton1(Back, "返回", Button1_clicked);
+		next = new UIButton1(Next, "开始游戏", Button2_clicked);
 
-		Button1.clicked += Button1_clicked;
-		Button2.clicked += Button2_clicked;
+		SceneDatas = new UIScrollViewListV<UIScene, SceneData>(SceneList, Element, SceneTemplate,
+		(data, element) => new UIScene(data, element, this));
 	}
 	private void Button1_clicked() {
 		ModuleUI.Settings(Page.Home);
@@ -38,6 +40,11 @@ public class UIClassicScene : UIStandardPage {
 	private void Button2_clicked() {
 		if (sceneData == null) { return; }
 		SceneSystem.Load(sceneData, () => ModuleUI.Settings(Page.ClassicBattle));
+	}
+
+	private void Update() {
+		SceneDatas.Update();
+		SceneDatas.ForEach(obj => obj.Update());
 	}
 
 	protected override void ModuleUI_OnJumpPage(Page page) {
@@ -61,21 +68,32 @@ public class UIClassicScene : UIStandardPage {
 
 		public readonly UIClassicScene parent;
 
-		public Label Name => Q<Label>("Name");
+		private float time;
+
+		public Label Title => Q<Label>("Title");
 		public VisualElement Image => Q<VisualElement>("Image");
+		public VisualElement Frame => Q<VisualElement>("Frame");
 
 		public UIScene(SceneData value, VisualElement element, UIClassicScene parent) : base(value, element) {
 			this.parent = parent;
-			Name.text = value.name;
+			Title.text = value.name;
 			Image.style.backgroundImage = new StyleBackground(value.preview);
-			element.RegisterCallback<ClickEvent>(evt => Select());
+			Image.RegisterCallback<ClickEvent>(evt => Select());
 		}
 		public override void DefaultState() {
-			Image.EnableInClassList("", false);
+			Frame.EnableInClassList("scene-frame-s", false);
+			Image.EnableInClassList("scene-image-s", false);
 		}
 		public override void SelectState() {
-			Image.EnableInClassList("", true);
+			time = 0.1f;
+			Frame.EnableInClassList("scene-frame-s", true);
+			Image.EnableInClassList("scene-image-s", true);
 			parent.Settings(value);
+		}
+		public void Update() {
+			time -= Time.deltaTime;
+			Frame.EnableInClassList("scene-click", time >= 0);
+			Image.EnableInClassList("scene-click", time >= 0);
 		}
 	}
 }
