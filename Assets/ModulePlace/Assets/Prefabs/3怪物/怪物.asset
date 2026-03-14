@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211024d535c27c4469437ab149416db3, type: 3}
   m_Name: "\u602A\u7269"
   m_EditorClassIdentifier: 
-  placeObjects: []
+  placeObjects:
+  - {fileID: 5672743884452191379, guid: fc29b6c4df68ba948a4db6fde05ea2a9, type: 3}

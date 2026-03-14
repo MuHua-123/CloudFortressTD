@@ -44,7 +44,6 @@ public class InputCamera : InputControl {
 			CameraControl.VisualField = v;
 		}
 
-		// if (!isEnable) { return; }
 		cameraMove.Drag();
 		cameraRotate.Drag();
 	}
@@ -52,7 +51,6 @@ public class InputCamera : InputControl {
 	#region 输入系统
 	/// <summary> 移动 </summary>
 	public void OnMove(InputValue inputValue) {
-		// if (!isEnable) { return; }
 		if (ModuleInput.IsPointerOverUIObject) { return; }
 		if (inputValue.isPressed) { cameraMove.Down(); }
 		else { cameraMove.Up(); }
@@ -62,24 +60,15 @@ public class InputCamera : InputControl {
 		// if (!isEnable) { return; }
 		if (!inputValue.isPressed) { cameraRotate.Up(); return; }
 		if (ModuleInput.IsPointerOverUIObject) { return; }
-		// if (RayManager.PlaceObject(out PlaceObject placeObject)) { return; }
-		// if (RayManager.Indicator(out Indicator indicator)) { return; }
 		if (inputValue.isPressed) { cameraRotate.Down(); }
 	}
 	/// <summary> 缩放视图 </summary>
 	public void OnZoomView(InputValue inputValue) {
-		// if (!isEnable) { return; }
 		if (ModuleInput.IsPointerOverUIObject) { return; }
 		Vector2 scroll = inputValue.Get<Vector2>();
 		visualField = CameraControl.VisualField - scroll.y * 40;
 		visualField = Mathf.Clamp(visualField, 5, 250);
 	}
-	/// <summary> 控制 </summary>
-	// public void OnControl(InputValue inputValue) {
-	// 	isEnable = inputValue.isPressed;
-	// 	cameraMove.Up();
-	// 	cameraRotate.Up();
-	// }
 	#endregion
 }
 /// <summary>
@@ -87,7 +76,8 @@ public class InputCamera : InputControl {
 /// </summary>
 public class InputCameraMove {
 
-	public bool isDown;
+	public static bool isDown;
+	public static bool isValid;
 	public Vector3 postiton;
 	public Vector2 mousePosition;
 
@@ -96,6 +86,7 @@ public class InputCameraMove {
 	/// <summary> 按下 </summary>
 	public void Down() {
 		isDown = true;
+		isValid = false;
 		postiton = CameraControl.Position;
 		mousePosition = ModuleInput.mousePosition;
 	}
@@ -105,6 +96,8 @@ public class InputCameraMove {
 		bool b1 = WorldPosition(mousePosition, out Vector3 v1);
 		bool b2 = WorldPosition(ModuleInput.mousePosition, out Vector3 v2);
 		if (!b1 || !b2) { return; }
+		float distance = Vector3.Distance(v1, v2);
+		if (distance > 0.1f) { isValid = true; }
 		Vector3 offset = v1 - v2;
 		CameraControl.Position = postiton + offset;
 	}
@@ -126,7 +119,8 @@ public class InputCameraMove {
 /// </summary>
 public class InputCameraRotate {
 
-	public bool isDown;
+	public static bool isDown;
+	public static bool isValid;
 	public Vector2 original;
 	public Vector2 eulerAngles;
 	public Vector2 mousePosition;
@@ -142,6 +136,9 @@ public class InputCameraRotate {
 	/// <summary> 拖动 </summary>
 	public void Drag() {
 		if (!isDown) { return; }
+		float distance = Vector3.Distance(ModuleInput.mousePosition, mousePosition);
+		if (distance > 1f) { isValid = true; }
+
 		Vector3 offset = ModuleInput.mousePosition - mousePosition;
 		float x = offset.y / Screen.height * 180;
 		float y = offset.x / Screen.width * 360;

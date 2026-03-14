@@ -14,7 +14,7 @@ public class ModuleVisual : ModuleSingle<ModuleVisual> {
 	/// <summary> 子弹生成器 </summary>
 	// public VisualGenerator<HBullet> HBullet;
 	/// <summary> 怪物生成器 </summary>
-	// public VisualGenerator<HMonster> HMonster;
+	public VisualGenerator<PlaceObjectMonster> GeneratorMonster;
 	/// <summary> 对象生成器 </summary>
 	public VisualGenerator<PlaceObject> GeneratorPlaceObject;
 

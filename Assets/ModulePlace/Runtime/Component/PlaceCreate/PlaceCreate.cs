@@ -15,13 +15,19 @@ public class PlaceCreate : MonoBehaviour {
 	public virtual void CreateStart() {
 		if (!RayManager.GroundPosition(out Vector3 v1)) { return; }
 		position = transform.position = v1;
+		// 打开网格指示器
+		IndicatorHandleGrid.I.Open();
 	}
 	/// <summary> 取消创建 </summary>
-	public virtual void CreateCancel() { }
+	public virtual void CreateCancel() {
+		IndicatorHandleGrid.I.Close();
+	}
 	/// <summary> 创建完成 </summary>
 	public virtual void CreateComplete() {
 		transform.position = position;
 		PlaceObject.isEnable = true;
+		// 关闭网格指示器
+		IndicatorHandleGrid.I.Close();
 		// 添加到图层
 		// PlaceHandleLayer.I.AddLayerObject(this);
 	}
@@ -33,6 +39,8 @@ public class PlaceCreate : MonoBehaviour {
 		if (!RayManager.GroundPosition(out Vector3 v1)) { return; }
 		position.x = Mathf.Round(v1.x);
 		position.z = Mathf.Round(v1.z);
+		// 显示网格
+		IndicatorHandleGrid.I.Settings(v1);
 	}
 	/// <summary> 按下 </summary>
 	public virtual void CreateDown() {

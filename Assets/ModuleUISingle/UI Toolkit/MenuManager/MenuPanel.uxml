@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Item" src="project://database/Assets/ModuleUIMenu/UI%20Toolkit/MenuPanel/MenuTemplate.uxml?fileID=9197481963319205126&amp;guid=1ee167986f6e9a840a45450b4b6adfc2&amp;type=3#MenuTemplate" />
+    <Style src="project://database/Assets/ModuleUIMenu/UI%20Toolkit/MenuManager/MenuManager.uss?fileID=7433441132597879392&amp;guid=a53da9fc389948e40ac96af14dd02c10&amp;type=3#MenuManager" />
+    <ui:VisualElement name="Container" style="background-color: rgb(255, 255, 255); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; align-self: flex-start; min-width: 150px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-left-color: rgb(51, 51, 51); border-right-color: rgb(51, 51, 51); border-top-color: rgb(51, 51, 51); border-bottom-color: rgb(51, 51, 51);">
+        <ui:Instance template="Item" name="Item" />
+        <ui:Instance template="Item" name="Item" />
+        <ui:Instance template="Item" name="Item" />
+        <ui:Instance template="Item" name="Item" />
+        <ui:Instance template="Item" name="Item" />
+    </ui:VisualElement>
+</ui:UXML>

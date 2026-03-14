@@ -118,6 +118,34 @@
             ]
         },
         {
+            "name": "InputShortcut",
+            "id": "351b4963-7759-4c97-ba6b-252af98dba91",
+            "actions": [
+                {
+                    "name": "Menu",
+                    "type": "PassThrough",
+                    "id": "9163eb07-7f90-4fb8-a65b-06664707c3a2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3a262572-e47f-45a7-8d1c-7cec52179a40",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "PlaceInputCreate",
             "id": "f92ac453-b616-4a00-853c-fb09bf5b4f9c",
             "actions": [

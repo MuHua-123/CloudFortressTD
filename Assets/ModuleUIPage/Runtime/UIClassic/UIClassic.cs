@@ -24,12 +24,6 @@ public class UIClassic : UIStandardPage {
 		placeColumn = new UIPlaceColumn(PlaceColumn, root, PlaceObjectTemplate, PlaceTypeTemplate);
 	}
 
-	private void Start() {
-		ModuleUI.Settings(Page.Classic);
-		ModuleInput.Settings(InputMode.Standard);
-		ModuleCamera.Settings(CameraMode.Observe);
-	}
-
 	protected override void ModuleUI_OnJumpPage(Page page) {
 		bool isDisable = page != Page.Classic;
 		Element.EnableInClassList("document-page-hide", isDisable);

@@ -31,7 +31,10 @@ public class MonsterHandleSpawn : ModuleSingle<MonsterHandleSpawn> {
 		monsterWave = waveConst.To();
 		// 初始化生产列表
 		spawns = new List<MonsterSpawn>();
-		Utilities.FindObjects<MonsterSpawn>(spawns.Add);
+		Utilities.FindObjects<MonsterSpawn>(obj => {
+			obj.Initial();
+			spawns.Add(obj);
+		});
 	}
 	/// <summary> 开始生产 </summary>
 	public void Spawn() {
@@ -43,8 +46,8 @@ public class MonsterHandleSpawn : ModuleSingle<MonsterHandleSpawn> {
 	}
 	/// <summary> 开始生产 </summary>
 	public void Spawn(int i) {
-		if (spawns.Count >= i) { return; }
-		if (spawnDatas.Count >= i) { return; }
+		if (spawns.Count <= i) { return; }
+		if (spawnDatas.Count <= i) { return; }
 		MonsterSpawn spawn = spawns[i];
 		MonsterSpawnData spawnData = spawnDatas[i];
 		spawn.Settings(spawnData);
