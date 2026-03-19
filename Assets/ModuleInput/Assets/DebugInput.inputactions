@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "DebugInput",
     "maps": [
         {
@@ -9,7 +10,7 @@
                     "name": "SwitchView",
                     "type": "Button",
                     "id": "5ebac2b4-21e3-4570-9fd0-186aaa4f8e79",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false

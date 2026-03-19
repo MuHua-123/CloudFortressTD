@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "StandardInput",
     "maps": [
         {
@@ -153,7 +154,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "095a51ca-6073-472d-b0e4-ed348245073e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
